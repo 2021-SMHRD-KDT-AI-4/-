@@ -6,6 +6,10 @@ drop table BOARD cascade constraints;
 drop table NOW_F4F cascade constraints;
 drop table PAST_F4F cascade constraints;
 
+-- 시퀀스 삭제
+drop sequence BOARD_NUM_SEQ;
+drop sequence PRED_LIKE_NUM_SEQ;
+
 -- USER 테이블
 create table USER_TB(
 	USER_ID varchar2(100),
@@ -17,14 +21,14 @@ create table USER_TB(
 
 -- PRED_LIKE 테이블
 create table PRED_LIKE(
-	NUM number(10),
+	PRED_LIKE_NUM number(10),
     PRED_INSTA_ID varchar2(100),
     UPLOAD_DAY varchar2(100),
     UPLOAD_TIME varchar2(100),
     HASHTAG varchar2(500),
     FILE_NAME varchar2(300),
     DATE_D date default sysdate,
-    constraint PRED_LIKE_NUM_PK primary key(NUM),
+    constraint PRED_LIKE_NUM_PK primary key(PRED_LIKE_NUM),
     constraint PRED_LIKE_PRED_INSTA_ID_FK foreign key(PRED_INSTA_ID) references USER_TB(INSTA_ID)
 );
 
@@ -33,11 +37,12 @@ create table RESULT_TB(
     RESULT_NUM number(10),
     LIKE_NUM number(10),
     REC_HASHTAG varchar2(500),
-    constraint RESULT_RESULT_NUM_FK foreign key(RESULT_NUM) references PRED_LIKE(NUM)
+    constraint RESULT_RESULT_NUM_FK foreign key(RESULT_NUM) references PRED_LIKE(PRED_LIKE_NUM)
 );
 
 -- BOARD 테이블
 create table BOARD(
+    BOARD_NUM number(10),
     BOARD_USER_ID varchar2(100),
     BOARD_TITLE varchar2(100),
     BOARD_CONTENT varchar2(1000),
@@ -61,5 +66,9 @@ create table PAST_F4F(
     PAST_DATE date,
     constraint PAST_F4F_PAST_USER_ID_FK foreign key(PAST_USER_ID) references USER_TB(USER_ID)
 );
+
+-- 시퀀스 생성
+create sequence BOARD_NUM_SEQ start with 1 increment by 1;
+create sequence PRED_LIKE_NUM_SEQ start with 1 increment by 1;
 
 commit;
