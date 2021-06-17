@@ -7298,10 +7298,10 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #f05d23; }
+  color: #6c757d; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #f05d23;
+    color: #6c757d;
     outline: none !important; }
 
 h1, h2, h3, h4, h5,
@@ -7656,7 +7656,7 @@ h1, h2, h3, h4, h5,
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
       margin-top: -10px;
-      color: #f05d23 !important;
+      color: #6c757d; !important;
       -moz-transition: all 0.7s ease;
       -o-transition: all 0.7s ease;
       -webkit-transition: all 0.7s ease;
@@ -7869,11 +7869,11 @@ h1, h2, h3, h4, h5,
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
-    background: #f05d23;
-    border: 1px solid #f05d23;
+    background: #6c757d;;
+    border: 1px solid #6c757d;;
     color: #fff; }
     .btn.btn-primary:hover {
-      border: 1px solid #f05d23;
+      border: 1px solid #6c757d;;
       background: transparent;
       color: #f05d23; }
     .btn.btn-primary.btn-outline-primary {

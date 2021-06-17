@@ -7,18 +7,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class JoinService
- */
+import com.model.MemberDAO;
+import com.model.MemberDTO;
+
 @WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+      String email = request.getParameter("email");
+      String pw = request.getParameter("pw");
+      String SNSIns = request.getParameter("SNSIns");
+   
+      MemberDTO dto = new MemberDTO(email, pw, SNSIns);
+      MemberDAO dao = new MemberDAO();
+      
+      int cnt = dao.join(dto);
+      
+      if(cnt>0){
+         response.sendRedirect("Main.html");
+         System.out.println("회원가입 성공");
+      }else{
+         response.sendRedirect("Join.html");
+         System.out.println("가입실패!!!!!!!");
+      }
+            
+   }
 
 }
