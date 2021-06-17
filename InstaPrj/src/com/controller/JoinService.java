@@ -1,4 +1,4 @@
-package com.model;
+package com.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginService
+ * Servlet implementation class JoinService
  */
-@WebServlet("/LoginService")
-public class LoginService extends HttpServlet {
+@WebServlet("/JoinService")
+public class JoinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
