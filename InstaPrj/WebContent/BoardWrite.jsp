@@ -46,7 +46,9 @@
 	</style>
   </head>
   <body>
-  <% String writer = "test2"; %>
+  <%
+  
+  String writer = "test2"; %>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
