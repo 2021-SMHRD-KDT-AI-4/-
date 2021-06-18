@@ -1,3 +1,7 @@
+<%@page import="com.model.BoardDTO"%>
+<%@page import="com.model.BoardDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,35 +30,24 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-	h1 { font-size: 350%;
-	    text-align: center; 
-	    margin-top: 7%;
-	    }
-	button{ font-size:130%;
-	      margin-left:80%;}
-	table{
-	  border-collapse: collapse;
-	  text-align: left;
-	  margin: auto;
-	  line-height: 1.5;
-	  width: 60%;
-	}
-	</style>
   </head>
   <body>
+<% 
+  int num = Integer.parseInt(request.getParameter("num"));
+  BoardDAO dao = new BoardDAO();
+  BoardDTO dto = dao.showOne(num);
+  %>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="index.html">00ë‹˜<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="index.html">00´Ô<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="Main.html">Main</a></li>
 					<li><a href="Like.html">Like</a></li>
 					<li><a href="Unfollow.html">Unfollow</a></li>
 					<li class="colorlib-active"><a href="notice.html">notice</a></li>
-				</ul>			
+				</ul>
 			</nav>
 
 			<div class="colorlib-footer">
@@ -74,39 +67,44 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-							<form action="" method="post">
-		                         <h1>ê²Œì‹œë¬¼ ìž‘ì„±í•˜ê¸°!</h1> 
-						            <div class="write_title">
-						            <table border="1" width="600" height="500" >
-						               <tr>
-						                  <td><input type="text" name="title" placeholder="ì œëª©" size="20" style="width:100%; border: 0;"></td>
-						               </tr>
-						               <tr>
-						               <td><textarea name="content" rows="13" placeholder="ë‚´ìš©" style="width:100%; border: 0;"></textarea></textarea></td>
-						               </tr>
-						            </table>
-						            </div>
-		                     </form>
+							<form action="BoardDeleteService?num=<%= dto.getNum() %>&writer=<%=dto.getWriter() %>" method="post">
+								<h2>°Ô½Ã¹° È®ÀÎÇÏ±â</h2>
+								<table border="1px">
+									<tr>
+										<td>±ÛÁ¦¸ñ</td>
+										<td><%= dto.getTitle() %></td>
+									</tr>
+									<tr>
+										<td>ÀÛ¼ºÀÚ</td>
+										<td><%= dto.getWriter() %></td>
+									</tr>
+									<tr>
+										<td>³¯Â¥</td>
+										<td><%= dto.getDay() %></td>
+									</tr>
+									<tr>
+										<td>»çÁø</td>
+										<td><img src="img/<%=dto.getFilename()%>"></td>
+									</tr>
+									<tr>
+										<td>³»¿ë</td>
+										<td><%= dto.getContent() %></td>
+									</tr>
+									<tr>
+										<td colspan="2"> 
+											 <input type="submit" value="¼öÁ¤">
+											 <input type="button" value="»èÁ¦" name="delete">
+										</td>
+									</tr>
+								</table>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
 
-  <script>
-  	function setThumbnail(event){
-		var reader = new FileReader();
-		
-		reader.onload = function(event){
-			var img = document.createElement("img");
-			img.setAttribute("src", event.target.result);
-			document.querySelector("div#image_container").appendChild(img);
-		};
-		
-		reader.readAsDataURL(event.target.files[0]);
-	}
-  	
+   	
   </script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -122,9 +120,6 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
-  </body>
+</div>
+</body>
 </html>

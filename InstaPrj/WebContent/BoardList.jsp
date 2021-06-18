@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.BoardDAO"%>
+<%@page import="com.model.BoardDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,20 +31,62 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+	h1 { font-size: 350%;
+	    text-align: center; 
+	    margin-top: 7%;
+	    }
+	button{ font-size:130%;
+	      margin-left:80%;}
+	table.instatable {
+	  border-collapse: collapse;
+	  text-align: left;
+	  margin: auto;
+	  line-height: 1.5;
+	  width: 70%;
+	
+	}
+	table.instatable thead th {
+	  padding: 10px;
+	  font-weight: bold;
+	  vertical-align: top;
+	  color: #369;
+	  border-bottom: 3px solid #036;
+	}
+	table.instatable tbody th {
+	  width: 150px;
+	  padding: 10px;
+	  font-weight: bold;
+	  vertical-align: top;
+	  border-bottom: 1px solid #ccc;
+	  background: #f3f6f7;
+	}
+	table.instatable td {
+	  width: 350px;
+	  padding: 10px;
+	  vertical-align: top;
+	  border-bottom: 1px solid #ccc;
+	}
+	</style>
+
   </head>
   <body>
-
+<% 
+BoardDAO dao = new BoardDAO();
+ArrayList<BoardDTO> list = dao.showBoard();
+%>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="index.html">00ë‹˜<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="index.html">00´Ô<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="Main.html">Main</a></li>
 					<li><a href="Like.html">Like</a></li>
 					<li><a href="Unfollow.html">Unfollow</a></li>
 					<li class="colorlib-active"><a href="notice.html">notice</a></li>
-				</ul>
+				</ul>			
 			</nav>
 
 			<div class="colorlib-footer">
@@ -59,40 +106,47 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-							<form action="" method="post">
-								<h2>ê²Œì‹œë¬¼ ì‘ì„±í•˜ê¸°</h2>
-								<table border="1px">
-									<tr>
-										<td>ê¸€ì œëª©</td>
-										<td><input type="text" name="noteTitle"></td>
-									</tr>
-									<tr>
-										<td>ì‘ì„±ì</td>
-										<td><input type="text" name="noteWriter"></td>
-									</tr>
-									<tr>
-										<td>ë‚ ì§œ</td>
-										<td><input type="date" id="noteDate"></td>
-									</tr>
-									<tr>
-										<td>ë‚´ìš©</td>
-										<td><textarea rows="10" cols="60" style="resize:none;"></textarea></td>
-									</tr>
-									<tr>
-										<td colspan="2"> 
-											 <input type="submit" value="ìˆ˜ì •">
-											 <input type="reset" value="ì´ˆê¸°í™”">
-										</td>
-									</tr>
-								</table>
-							</form>
+							<h1>ÀÎ½ºÅ¸±×·¥ È«º¸ °Ô½ÃÆÇ</h1> 
+				            <button type="button" onclick="location.href='BoardWrite.html'">±Û¾²±â</button><br>
+				            <table class="instatable">
+							     <thead>
+							     <tr>
+							    <th scope="cols">¹øÈ£</th>
+							    <th scope="cols">Á¦¸ñ</th>
+							    <th scope="cols">ÀÛ¼ºÀÚ</th>
+							    <th scope="cols">ÀÛ¼ºÀÏ</th>
+							  </tr>
+							  </thead>
+							  <tbody>
+							  <% for (int i = 0; i<list.size(); i++){ %>
+							  <tr>
+							    <th scope="row"><%= i+1 %></th>
+							    <td><a href="BoardView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a></td>
+							    <td><%= list.get(i).getWriter()%></td>
+							    <td><%= list.get(i).getDay() %>~</td>
+							    <%} %>
+							  </tbody>
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 
-   	
+  <script>
+  	function setThumbnail(event){
+		var reader = new FileReader();
+		
+		reader.onload = function(event){
+			var img = document.createElement("img");
+			img.setAttribute("src", event.target.result);
+			document.querySelector("div#image_container").appendChild(img);
+		};
+		
+		reader.readAsDataURL(event.target.files[0]);
+	}
+  	
   </script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -108,3 +162,9 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
