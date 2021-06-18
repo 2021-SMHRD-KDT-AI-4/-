@@ -36,9 +36,13 @@
     <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
     <STYLE>
-	   table {font-size: 15pt;
+	   table.login {font-size: 15pt;
 	         
 	         margin:auto;}
+	         
+	   table.join {font-size: 15pt;
+	         
+	         margin:auto;}  
 	 </STYLE>
   </head>
   <body>
@@ -50,17 +54,44 @@
          <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
             <!-- 로그인 안했을 때 -->
             <%if(info == null) {%>
-	            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
-	            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
+	            <!-- 로그인창 -->
+				<form action="LoginService" method="post">
+					<table  id="login">
+						<tr>
+							<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
+							<td rowspan="2" align="center">
+								<input type="submit" value="LogIn" class="button fit">
+							</td>
+						</tr>
+						<tr>
+							<td><input type="password" name="pw" placeholder="PW를 입력하세요"></td>
+						</tr>
+						<tr>
+							<td><a>아이디/비밀번호찾기</a></a><a href="Join.jsp">회원가입</a></td>
+						</tr>
+					</table>
+				</form>
+	            
 	         <% }else{  %>
 	            <!-- 로그인 했을때  -->
-	            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
-	            <a href="LogoutService">로그아웃</a>
+	            <table id="join">
+						<tr>
+							<td><h2><%= info.getINSTA_ID() %></h2></td>
+						</tr>
+						<tr>
+							<td><a href="LogoutService">로그아웃</a></td>
+						</tr>
+					</table>
+	            
+	            
 	         <% } %>
             
             <nav id="colorlib-main-menu" role="navigation">
 
                <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+               <tr>
+                   <td colspan="2"> Menu </td>
+               </tr>
                <tr>
                    <td><i class="fas fa-home fa-2x"></i> </td>
                    <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
