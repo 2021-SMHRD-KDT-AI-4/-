@@ -50,8 +50,8 @@
             <%if(info == null) {
             	System.out.println("로그인 안했을 때");%>
             
-            <h1 id="colorlib-logo"><a href="Login.html">로그인</a>
-            <h1 id="colorlib-logo"><a href="Join.html">회원가입</a></h1>
+            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
+            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
          <% }else{  
 	         System.out.println("로그인 안했을 때");%>
             <!-- 로그인 했을때  -->

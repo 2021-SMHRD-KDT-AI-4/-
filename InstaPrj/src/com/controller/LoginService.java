@@ -32,8 +32,8 @@ public class LoginService extends HttpServlet {
          System.out.println("로그인 성공");
             
       } else {
-         response.sendRedirect("Login.html");
          System.out.println("로그인 실패!!!!!!!!!!");
+         // 로그인 안됐을 때 경고창
       }      
  
       response.sendRedirect("Main.jsp");

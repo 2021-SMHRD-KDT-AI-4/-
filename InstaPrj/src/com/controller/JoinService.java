@@ -26,11 +26,12 @@ public class JoinService extends HttpServlet {
       int cnt = dao.join(dto);
       
       if(cnt>0){
-         response.sendRedirect("Main.html");
+         response.sendRedirect("Main.jsp");
          System.out.println("회원가입 성공");
       }else{
-         response.sendRedirect("Join.html");
+         response.sendRedirect("Join.jsp");
          System.out.println("가입실패!!!!!!!");
+         // 가입 실패했을 때
       }
             
    }
