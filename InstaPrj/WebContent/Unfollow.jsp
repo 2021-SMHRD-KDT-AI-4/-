@@ -1,3 +1,6 @@
+<%@page import="com.model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,27 +29,31 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-  
   </head>
-  
   <body>
+  
+  	<% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
 
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="login.html">Î°úÍ∑∏Ïù∏<span></span></a></h1>
-			<nav id="colorlib-main-menu" role="navigation">
+			 <%if(info == null) {%>
+	            <!-- ∑Œ±◊¿Œ æ»«ﬂ¿ª ∂ß -->
+	            <h1 id="colorlib-logo"><a href="Login.html">∑Œ±◊¿Œ</a>
+	            <h1 id="colorlib-logo"><a href="Join.html">»∏ø¯∞°¿‘</a></h1>
+	         <% }else{ %>
+	            <!-- ∑Œ±◊¿Œ «ﬂ¿ª∂ß  -->
+	            <a href="LogoutService">∑Œ±◊æ∆øÙ</a>
+	         <% } %>
 				<ul>
-					<li class="colorlib-active"><a href="Main.html">Main</a></li>
-					<li><a href="Like.html">Like</a></li>		
-					<li><a href="Unfollow.html">Unfollow</a></li>			
-					<li><a href="BoardList.html">BoardList</a></li>			
-				</ul>
+					<li><a href="Main.html">Main</a></li>
+					<li><a href="Like.html">Like</a></li>
+					<li class="colorlib-active"><a href="Unfollow.html">Unfollow</a></li>
+					<li><a href="notice.html">notice</a></li>
+				</ul>			
 			</nav>
 
 			<div class="colorlib-footer">
-				<!-- Î™©Î°ùÏ∞Ω ÏôºÏ™Ω ÌïòÎã® -->
 				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 				<ul>
@@ -57,48 +64,44 @@
 				</ul>
 			</div>
 		</aside> <!-- END COLORLIB-ASIDE -->
-		
 		<div id="colorlib-main">
 			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-							<h2 class="subheading"></h2>
-							<!-- Î°úÍ∑∏Ïù∏Ï∞Ω -->
-							<form action="   " method="post">
 								<table>
 									<tr>
-										<td><h3>Î°úÍ∑∏Ïù∏</h3></td>
+										<td>§∑§∑¥‘§∑§© æ∆»«— ∞Ë¡§</td>
 									</tr>
 									<tr>
-										<td><input type="text" name="email" placeholder="EmailÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî"></td>
-										<td rowspan="2" align="center"><input type="submit" value="LogIn" class="button fit"></td>
+										<td>º≠∫ÒΩ∫ º≥∏Ì</td>
 									</tr>
 									<tr>
-										<td><input type="password" name="pw" placeholder="PWÎ•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî"></td>
+										<td><button onclick="location.href = 'UnfollowList.html'">»Æ¿Œ«œ±‚</button></td>
 									</tr>
 								</table>
-							</form>
 						</div>
 					</div>
 				</div>
 			</div>
-			
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-		</div><!-- END COLORLIB-MAIN -->
-	</div><!-- END COLORLIB-PAGE -->
+		</div>
+		
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
+  <script>
+  	function setThumbnail(event){
+		var reader = new FileReader();
+		
+		reader.onload = function(event){
+			var img = document.createElement("img");
+			img.setAttribute("src", event.target.result);
+			document.querySelector("div#image_container").appendChild(img);
+		};
+		
+		reader.readAsDataURL(event.target.files[0]);
+	}
+  	
+  </script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

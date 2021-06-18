@@ -71,12 +71,6 @@ create table PAST_F4F(
 create sequence BOARD_NUM_SEQ start with 1 increment by 1;
 create sequence PRED_LIKE_NUM_SEQ start with 1 increment by 1;
 
-<<<<<<< HEAD
 commit
 
-insert into USER_TB values('test2','1234','test');
 select * from USER_TB;
-select * from board;
-=======
-commit;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git

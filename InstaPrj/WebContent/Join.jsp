@@ -1,3 +1,6 @@
+
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,15 +30,16 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-  
+  <style>
+
+  </style>
   </head>
-  
   <body>
 
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="login.html">Î°úÍ∑∏Ïù∏<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="login.html">∑Œ±◊¿Œ<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li class="colorlib-active"><a href="Main.html">Main</a></li>
@@ -46,7 +50,7 @@
 			</nav>
 
 			<div class="colorlib-footer">
-				<!-- Î™©Î°ùÏ∞Ω ÏôºÏ™Ω ÌïòÎã® -->
+				<!-- ∏Ò∑œ√¢ øﬁ¬  «œ¥‹ -->
 				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 				<ul>
@@ -60,27 +64,27 @@
 		
 		<div id="colorlib-main">
 			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="js-fullheight d-flex justify-content-center align-items-center">
+				<div class="overlay" style="margin-top: auto; margin-bottom: auto;"></div>
+				<div class="js-fullheight d-flex justify-content-center align-items-center" >
 					<div class="col-md-8 text text-center">
 						<div class="desc">
 							<h2 class="subheading"></h2>
-							<!-- Î°úÍ∑∏Ïù∏Ï∞Ω -->
-							<form action="" method="post">
+							<!-- ∑Œ±◊¿Œ√¢ -->
+							<form action="JoinService" method="post">
 								<table style="margin-left: auto; margin-right: auto;">
 									<tr>
-										<td><h3>ÌöåÏõêÍ∞ÄÏûÖ</h3></td>
+										<td><h3>»∏ø¯∞°¿‘</h3></td>
 									</tr>
 									<tr> 
 							
-										<td><input type="text" name="email" placeholder="EmailÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî"></td>
+										<td><input type="text" name="email" placeholder="Email¿ª ¿‘∑¬«œººø‰"></td>
 										<td rowspan="4" align="center"><input type="submit" value="JoinUs" class="button fit"></td>
 									</tr>
 									<tr>
-										<td><input type="password" name="pw" placeholder="PWÎ•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî"></td>
+										<td><input type="password" name="pw" placeholder="PW∏¶ ¿‘∑¬«œººø‰"></td>
 									</tr>
 									<tr>
-										<td><input type="text"  name="SNSIns" placeholder="Ïù∏Ïä§ÌÉÄÍ∑∏Îû®ÏïÑÏù¥ÎîîÎ•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî"></td>
+										<td><input type="text"  name="SNSIns" placeholder="¿ŒΩ∫≈∏±◊∑•æ∆¿Ãµ∏¶ ¿‘∑¬«œººø‰"></td>
 									</tr>
 								</table>
 							</form>
@@ -89,9 +93,8 @@
 				</div>
 			</div>
 			
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+           
+  
           </div>
         </div>
       </div>
