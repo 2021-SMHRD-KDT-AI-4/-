@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.BoardDAO"%>
+<%@page import="com.model.BoardDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,20 +39,47 @@
 	    }
 	button{ font-size:130%;
 	      margin-left:80%;}
-	table{
+	table.instatable {
 	  border-collapse: collapse;
 	  text-align: left;
 	  margin: auto;
 	  line-height: 1.5;
-	  width: 60%;
+	  width: 70%;
+	
+	}
+	table.instatable thead th {
+	  padding: 10px;
+	  font-weight: bold;
+	  vertical-align: top;
+	  color: #369;
+	  border-bottom: 3px solid #036;
+	}
+	table.instatable tbody th {
+	  width: 150px;
+	  padding: 10px;
+	  font-weight: bold;
+	  vertical-align: top;
+	  border-bottom: 1px solid #ccc;
+	  background: #f3f6f7;
+	}
+	table.instatable td {
+	  width: 350px;
+	  padding: 10px;
+	  vertical-align: top;
+	  border-bottom: 1px solid #ccc;
 	}
 	</style>
+
   </head>
   <body>
+<% 
+BoardDAO dao = new BoardDAO();
+ArrayList<BoardDTO> list = dao.showBoard();
+%>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="index.html">00ë‹˜<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="index.html">00´Ô<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="Main.html">Main</a></li>
@@ -74,30 +106,27 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-							<form action="BoardWritService.java" method="post">
-		                         <h1>ê²Œì‹œë¬¼ ìž‘ì„±í•˜ê¸°!</h1> 
-						            <div class="write_title">
-						            <table border="1" width="600" height="500" >
-						               <tr>
-						                  <td><input type="text" name="title" placeholder="ì œëª©" size="20" style="width:100%; border: 0;"></td>
-						               </tr>
-						               <tr>
-						                  <td><input type="text" name="writer" placeholder="ìž‘ì„±ìž" size="20" style="width:100%; border: 0;"></td>
-						               </tr>
-						               <tr>
-						               <td><textarea name="content" rows="13" placeholder="ë‚´ìš©" style="width:100%; border: 0;"></textarea></textarea></td>
-						               </tr>
-						               <tr>
-						               	<td><input type="file" name = "filename"></td>
-						               <tr>
-						               	<td><input type="reset">
-						               	<input type ="submit">
-						               	</td>
-						               	
-						               </tr>
-						            </table>
-						            </div>
-		                     </form>
+							<h1>ÀÎ½ºÅ¸±×·¥ È«º¸ °Ô½ÃÆÇ</h1> 
+				            <button type="button" onclick="location.href='BoardWrite.html'">±Û¾²±â</button><br>
+				            <table class="instatable">
+							     <thead>
+							     <tr>
+							    <th scope="cols">¹øÈ£</th>
+							    <th scope="cols">Á¦¸ñ</th>
+							    <th scope="cols">ÀÛ¼ºÀÚ</th>
+							    <th scope="cols">ÀÛ¼ºÀÏ</th>
+							  </tr>
+							  </thead>
+							  <tbody>
+							  <% for (int i = 0; i<list.size(); i++){ %>
+							  <tr>
+							    <th scope="row"><%= i+1 %></th>
+							    <td><a href="BoardView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a></td>
+							    <td><%= list.get(i).getWriter()%></td>
+							    <td><%= list.get(i).getDay() %>~</td>
+							    <%} %>
+							  </tbody>
+							</table>
 						</div>
 					</div>
 				</div>

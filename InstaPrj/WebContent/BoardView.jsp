@@ -1,3 +1,7 @@
+<%@page import="com.model.BoardDTO"%>
+<%@page import="com.model.BoardDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,11 +32,15 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
+<% 
+  int num = Integer.parseInt(request.getParameter("num"));
+  BoardDAO dao = new BoardDAO();
+  BoardDTO dto = dao.showOne(num);
+  %>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="index.html">00Îãò<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="index.html">00¥‘<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="Main.html">Main</a></li>
@@ -59,29 +67,33 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-							<form action="" method="post">
-								<h2>Í≤åÏãúÎ¨º ÏûëÏÑ±ÌïòÍ∏∞</h2>
+							<form action="BoardDeleteService?num=<%= dto.getNum() %>&writer=<%=dto.getWriter() %>" method="post">
+								<h2>∞‘Ω√π∞ »Æ¿Œ«œ±‚</h2>
 								<table border="1px">
 									<tr>
-										<td>Í∏ÄÏ†úÎ™©</td>
-										<td><input type="text" name="noteTitle"></td>
+										<td>±€¡¶∏Ò</td>
+										<td><%= dto.getTitle() %></td>
 									</tr>
 									<tr>
-										<td>ÏûëÏÑ±Ïûê</td>
-										<td><input type="text" name="noteWriter"></td>
+										<td>¿€º∫¿⁄</td>
+										<td><%= dto.getWriter() %></td>
 									</tr>
 									<tr>
-										<td>ÎÇ†Ïßú</td>
-										<td><input type="date" id="noteDate"></td>
+										<td>≥Ø¬•</td>
+										<td><%= dto.getDay() %></td>
 									</tr>
 									<tr>
-										<td>ÎÇ¥Ïö©</td>
-										<td><textarea rows="10" cols="60" style="resize:none;"></textarea></td>
+										<td>ªÁ¡¯</td>
+										<td><img src="img/<%=dto.getFilename()%>"></td>
+									</tr>
+									<tr>
+										<td>≥ªøÎ</td>
+										<td><%= dto.getContent() %></td>
 									</tr>
 									<tr>
 										<td colspan="2"> 
-											 <input type="submit" value="ÏàòÏ†ï">
-											 <input type="reset" value="Ï¥àÍ∏∞Ìôî">
+											 <input type="submit" value="ºˆ¡§">
+											 <input type="button" value="ªË¡¶" name="delete">
 										</td>
 									</tr>
 								</table>
@@ -108,3 +120,6 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
+</div>
+</body>
+</html>
