@@ -29,6 +29,14 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+  
+  	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+    
+    <STYLE>
+	   table {font-size: 15pt;
+	         
+	         margin:auto;}
+	 </STYLE>
   </head>
   <body>
   
@@ -37,22 +45,35 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+	          <!-- 로그인 안했을 때 -->
 			 <%if(info == null) {%>
-	            <!-- 로그인 안했을 때 -->
 	            <h1 id="colorlib-logo"><a href="Login.html">로그인</a>
 	            <h1 id="colorlib-logo"><a href="Join.html">회원가입</a></h1>
 	         <% }else{ %>
 	            <!-- 로그인 했을때  -->
+	            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
 	            <a href="LogoutService">로그아웃</a>
 	         <% } %>
-				<ul>
-					<li><a href="Main.html">Main</a></li>
-					<li><a href="Like.html">Like</a></li>
-					<li class="colorlib-active"><a href="Unfollow.html">Unfollow</a></li>
-					<li><a href="notice.html">notice</a></li>
-				</ul>			
+				 <nav id="colorlib-main-menu" role="navigation">
+               <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+               <tr>
+                   <td><i class="fas fa-home fa-2x"></i> </td>
+                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart fa-2x"></i> </td>
+                   <td><a href="Like.jsp">Like</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+                   <td><a href="BoardList.jsp">FORUM</a></td>
+               </tr>
+           </table>			
 			</nav>
-
 			<div class="colorlib-footer">
 				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
@@ -65,7 +86,7 @@
 			</div>
 		</aside> <!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">

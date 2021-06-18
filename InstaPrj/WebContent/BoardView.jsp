@@ -1,3 +1,4 @@
+<%@page import="com.model.MemberDTO"%>
 <%@page import="com.model.BoardDTO"%>
 <%@page import="com.model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -30,8 +31,18 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+    
+    <STYLE>
+	   table {font-size: 15pt;
+	         
+	         margin:auto;}
+	 </STYLE>
   </head>
   <body>
+  <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+
 <% 
   int num = Integer.parseInt(request.getParameter("num"));
   BoardDAO dao = new BoardDAO();
@@ -40,15 +51,40 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="index.html">00님<span></span></a></h1>
-			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li><a href="Main.html">Main</a></li>
-					<li><a href="Like.html">Like</a></li>
-					<li><a href="Unfollow.html">Unfollow</a></li>
-					<li class="colorlib-active"><a href="notice.html">notice</a></li>
-				</ul>
-			</nav>
+			<!-- 로그인 안했을 때 -->
+            <%if(info == null) {
+            	System.out.println("로그인 안했을 때");%>
+            
+            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
+            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
+         <% }else{  
+	         System.out.println("로그인 안했을 때");%>
+            <!-- 로그인 했을때  -->
+            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
+            <a href="LogoutService">로그아웃</a>
+         <% } %>
+            
+            <nav id="colorlib-main-menu" role="navigation">
+
+               <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+               <tr>
+                   <td><i class="fas fa-home fa-2x"></i> </td>
+                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart fa-2x"></i> </td>
+                   <td><a href="Like.jsp">Like</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+                   <td><a href="BoardList.jsp">FORUM</a></td>
+               </tr>
+           </table>
+		</nav>
 
 			<div class="colorlib-footer">
 				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -62,7 +98,7 @@
 			</div>
 		</aside> <!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
@@ -92,8 +128,12 @@
 									</tr>
 									<tr>
 										<td colspan="2"> 
-											 <input type="submit" value="수정">
-											 <input type="button" value="삭제" name="delete">
+										<!-- 
+										by.창현	
+										button 으로 삭제 단 작성자만 삭제할 수 있음 
+										작성자가 본인이 아닐때 빈페이지 나오니까 alert 로 자기가 쓴 게시물 아니라는걸 알려줘야함!
+										 -->
+											<button type="button" onclick="location.href='BoardDeleteService?num=<%= dto.getNum() %>&writer=<%=dto.getWriter() %>'">게시물삭제</button>
 										</td>
 									</tr>
 								</table>

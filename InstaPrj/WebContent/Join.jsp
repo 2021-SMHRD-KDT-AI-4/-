@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -30,10 +29,18 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-  <style>
-
-  </style>
+	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+	 
+	 <STYLE>
+	   table {font-size: 15pt;
+	         
+	         margin:auto;}
+	 </STYLE>
+	
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+  
   </head>
+  
   <body>
 
 	<div id="colorlib-page">
@@ -41,12 +48,25 @@
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="login.html">로그인<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li class="colorlib-active"><a href="Main.html">Main</a></li>
-					<li><a href="Like.html">Like</a></li>		
-					<li><a href="Unfollow.html">Unfollow</a></li>			
-					<li><a href="BoardList.html">BoardList</a></li>			
-				</ul>
+				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+				<table  frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+               <tr>
+                   <td><i class="fas fa-home fa-2x"></i> </td>
+                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart fa-2x"></i> </td>
+                   <td><a href="Like.jsp">Like</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+                   <td><a href="BoardList.jsp">FORUM</a></td>
+               </tr>
+           </table>
 			</nav>
 
 			<div class="colorlib-footer">
@@ -63,25 +83,26 @@
 		</aside> <!-- END COLORLIB-ASIDE -->
 		
 		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay" style="margin-top: auto; margin-bottom: auto;"></div>
-				<div class="js-fullheight d-flex justify-content-center align-items-center" >
+			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
+				<div class="overlay"></div>
+				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
 							<h2 class="subheading"></h2>
 							<!-- 로그인창 -->
 							<form action="JoinService" method="post">
-								<table style="margin-left: auto; margin-right: auto;">
+								<table>
 									<tr>
 										<td><h3>회원가입</h3></td>
 									</tr>
-									<tr> 
-							
-										<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
-										<td rowspan="4" align="center"><input type="submit" value="JoinUs" class="button fit"></td>
+									<tr>
+										<td><input id="input_id" type="text" name="email" placeholder="Email을 입력하세요"></td>
+										<td><input type="button" value="ID중복체크" onclick="idcheck()">
+											<span id="sp"></span></td>
 									</tr>
 									<tr>
 										<td><input type="password" name="pw" placeholder="PW를 입력하세요"></td>
+										<td align="center"><input type="submit" value="JoinUs" class="button fit"></td>
 									</tr>
 									<tr>
 										<td><input type="text"  name="SNSIns" placeholder="인스타그램아이디를 입력하세요"></td>
@@ -93,8 +114,9 @@
 				</div>
 			</div>
 			
-           
-  
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
       </div>
@@ -123,6 +145,31 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  
+  <script>
+				function idcheck(){
+					var input = $('#input_id').val();
+					
+					$.ajax({
+						type : "post",  //데이터 보내는 방식
+						data : {"USER_ID" : input}, //서버로 보내는 데이타
+						url : "IdCheckService", //서버 파일 이름
+						dataType : "text" , //응답 데이터 형식
+						success : function(data){
+							if(data=='true'){
+								alert("사용할 수 없는 id입니다");
+							}else{
+								console.log(data);
+								alert("사용 가능한 id입니다");
+							}
+						},
+						error : function(){
+							alert("실패!");
+						}
+					});
+					
+				}
+			</script>
     
   </body>
 </html>

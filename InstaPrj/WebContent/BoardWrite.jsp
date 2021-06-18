@@ -1,3 +1,4 @@
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -29,6 +30,8 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+    
     <style>
 	h1 { font-size: 350%;
 	    text-align: center; 
@@ -42,39 +45,55 @@
 	  margin: auto;
 	  line-height: 1.5;
 	  width: 60%;
+	  font-size: 15pt;
 	}
 	</style>
   </head>
   <body>
-  <%
-  
-  String writer = "test2"; %>
+ 
+  <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+   
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="index.html">00님<span></span></a></h1>
-			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li><a href="Main.html">Main</a></li>
-					<li><a href="Like.html">Like</a></li>
-					<li><a href="Unfollow.html">Unfollow</a></li>
-					<li class="colorlib-active"><a href="notice.html">notice</a></li>
-				</ul>			
-			</nav>
+			<!-- 로그인 안했을 때 -->
+            <%if(info == null) {
+            	System.out.println("로그인 안했을 때");%>
+            
+            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
+            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
+         <% }else{  
+	         System.out.println("로그인 안했을 때");%>
+            <!-- 로그인 했을때  -->
+            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
+            <a href="LogoutService">로그아웃</a>
+         <% } %>
+            
+            <nav id="colorlib-main-menu" role="navigation">
 
-			<div class="colorlib-footer">
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-				<ul>
-					<li><a href="#"><i class="icon-facebook"></i></a></li>
-					<li><a href="#"><i class="icon-twitter"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin"></i></a></li>
-				</ul>
-			</div>
+               <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+               <tr>
+                   <td><i class="fas fa-home fa-2x"></i> </td>
+                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart fa-2x"></i> </td>
+                   <td><a href="Like.jsp">Like</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+                   <td><a href="BoardList.jsp">FORUM</a></td>
+               </tr>
+           </table>
+           </nav>
+		</div>
 		</aside> <!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
@@ -88,7 +107,7 @@
 						                  <td><input type="text" name="title" placeholder="제목" size="20" style="width:100%; border: 0;"></td>
 						               </tr>
 						               <tr>
-						                  <td><%= writer %></td>
+						                  <td><p name="writer"><%= info.getUSER_ID() %></p></td>
 						               </tr>
 						               <tr>
 						               <td><textarea name="content" rows="13" placeholder="내용" style="width:100%; border: 0;"></textarea></textarea></td>

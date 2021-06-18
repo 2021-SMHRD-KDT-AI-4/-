@@ -30,6 +30,15 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+  <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+    
+    <STYLE>
+	   table {font-size: 15pt;
+	         
+	         margin:auto;}
+	 </STYLE>
+
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
   
   </head>
   
@@ -40,12 +49,24 @@
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="login.html">로그인<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li class="colorlib-active"><a href="Main.html">Main</a></li>
-					<li><a href="Like.html">Like</a></li>		
-					<li><a href="Unfollow.html">Unfollow</a></li>			
-					<li><a href="BoardList.html">BoardList</a></li>			
-				</ul>
+				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+               <tr>
+                   <td><i class="fas fa-home fa-2x"></i> </td>
+                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart fa-2x"></i> </td>
+                   <td><a href="Like.jsp">Like</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+               </tr>
+               <tr>
+                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+                   <td><a href="notice.jsp">notice</a></td>
+               </tr>
+           </table>
 			</nav>
 
 			<div class="colorlib-footer">
@@ -62,7 +83,7 @@
 		</aside> <!-- END COLORLIB-ASIDE -->
 		
 		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
@@ -76,7 +97,9 @@
 									</tr>
 									<tr>
 										<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
-										<td rowspan="2" align="center"><input type="submit" value="LogIn" class="button fit"></td>
+										<td rowspan="2" align="center">
+											<input type="submit" value="LogIn" class="button fit">
+										</td>
 									</tr>
 									<tr>
 										<td><input type="password" name="pw" placeholder="PW를 입력하세요"></td>
