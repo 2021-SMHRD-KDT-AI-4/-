@@ -107,6 +107,42 @@ private void conn() {
       
       return info;
    }
+   
+   public boolean idCheck(String uSER_ID) {
+	   
+	   boolean check = false;
+	   
+	   conn();
+	   
+	   try {
+	      
+	      String sql = "select * from USER_TB where USER_ID=? and USER_PW=?";
+	        
+	      psmt = conn.prepareStatement(sql);
+	        
+	        psmt.setString(1, uSER_ID);
+	        
+	        
+	        rs = psmt.executeQuery();
+	        
+	        if(rs.next()) {
+	           check = true;
+	        }else {
+	           check = false;
+	        }
+	        
+	        
+	     } catch (Exception e) {
+	        e.printStackTrace();
+	     }finally {
+	        close();
+	     }
+	   
+	   return check;
+	}
+   
+   
+   
 }
 
 
