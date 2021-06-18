@@ -29,31 +29,48 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-  
-  	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
-    <STYLE>
-	   table {font-size: 15pt;
-	         
-	         margin:auto;}
-	 </STYLE>
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+    
+    <style>
+	h1 { font-size: 350%;
+	    text-align: center; 
+	    margin-top: 7%;
+	    }
+	button{ font-size:130%;
+	      margin-left:80%;}
+	table{
+	  border-collapse: collapse;
+	  text-align: left;
+	  margin: auto;
+	  line-height: 1.5;
+	  width: 60%;
+	  font-size: 15pt;
+	}
+	</style>
   </head>
   <body>
-  
-  	<% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
-
+  <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+   
+  <% String writer = "test2"; %>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			 <%if(info == null) {%>
-	            <!-- 로그인 안했을 때 -->
-	            <h1 id="colorlib-logo"><a href="Login.html">로그인</a>
-	            <h1 id="colorlib-logo"><a href="Join.html">회원가입</a></h1>
-	         <% }else{ %>
-	            <!-- 로그인 했을때  -->
-	            <a href="LogoutService">로그아웃</a>
-	         <% } %>
-				 <nav id="colorlib-main-menu" role="navigation">
+			<!-- 로그인 안했을 때 -->
+            <%if(info == null) {
+            	System.out.println("로그인 안했을 때");%>
+            
+            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
+            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
+         <% }else{  
+	         System.out.println("로그인 안했을 때");%>
+            <!-- 로그인 했을때  -->
+            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
+            <a href="LogoutService">로그아웃</a>
+         <% } %>
+            
+            <nav id="colorlib-main-menu" role="navigation">
+
                <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
                <tr>
                    <td><i class="fas fa-home fa-2x"></i> </td>
@@ -71,18 +88,9 @@
                    <td><i class="fas fa-comment-alt fa-2x"></i> </td>
                    <td><a href="BoardList.jsp">FORUM</a></td>
                </tr>
-           </table>			
-			</nav>
-			<div class="colorlib-footer">
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-				<ul>
-					<li><a href="#"><i class="icon-facebook"></i></a></li>
-					<li><a href="#"><i class="icon-twitter"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin"></i></a></li>
-				</ul>
-			</div>
+           </table>
+           </nav>
+		</div>
 		</aside> <!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
 			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
@@ -90,17 +98,30 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-								<table>
-									<tr>
-										<td>ㅇㅇ님ㅇㄹ 언팔한 계정</td>
-									</tr>
-									<tr>
-										<td>서비스 설명</td>
-									</tr>
-									<tr>
-										<td><button onclick="location.href = 'UnfollowList.html'">확인하기</button></td>
-									</tr>
-								</table>
+		                         <h1>게시물 작성하기!</h1> 
+		                         <form action="BoardWriteService"  method="post" enctype = "multipart/form-data">
+						            <div class="write_title">
+						            
+						            <table border="1" width="600" height="500" >
+						               <tr>
+						                  <td><input type="text" name="title" placeholder="제목" size="20" style="width:100%; border: 0;"></td>
+						               </tr>
+						               <tr>
+						                  <td><%= writer %></td>
+						               </tr>
+						               <tr>
+						               <td><textarea name="content" rows="13" placeholder="내용" style="width:100%; border: 0;"></textarea></textarea></td>
+						               </tr>
+						               <tr>
+						               	<td><input type="file" name = "filename"></td>
+						               <tr>
+						               	<td><input type="reset">
+						               	<input type ="submit">
+						               	</td>
+						               </tr>
+						            </table>
+						            </div>
+						            </form>
 						</div>
 					</div>
 				</div>

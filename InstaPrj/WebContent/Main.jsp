@@ -43,9 +43,7 @@
   </head>
   <body>
   
-  <% MemberDTO info = (MemberDTO)session.getAttribute("info");
-  System.out.println(info);
-  	%>
+  <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
    
    <div id="colorlib-page">
          <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
@@ -64,6 +62,7 @@
          <% } %>
             
             <nav id="colorlib-main-menu" role="navigation">
+
                <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
                <tr>
                    <td><i class="fas fa-home fa-2x"></i> </td>
@@ -79,7 +78,7 @@
                </tr>
                <tr>
                    <td><i class="fas fa-comment-alt fa-2x"></i> </td>
-                   <td><a href="notice.jsp">notice</a></td>
+                   <td><a href="BoardList.jsp">FORUM</a></td>
                </tr>
            </table>
          </nav>

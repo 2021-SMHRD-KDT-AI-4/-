@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -29,6 +28,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+<<<<<<< HEAD
 
 	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
  <STYLE>
@@ -36,7 +36,13 @@
 	         
 	         margin:auto;}
 	 </STYLE>
+=======
+	
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+  
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
   </head>
+  
   <body>
 
 	<div id="colorlib-page">
@@ -44,7 +50,11 @@
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="login.html">로그인<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
+<<<<<<< HEAD
 				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+=======
+				<table  frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
                <tr>
                    <td><i class="fas fa-home fa-2x"></i> </td>
                    <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
@@ -59,7 +69,7 @@
                </tr>
                <tr>
                    <td><i class="fas fa-comment-alt fa-2x"></i> </td>
-                   <td><a href="notice.jsp">notice</a></td>
+                   <td><a href="BoardList.jsp">FORUM</a></td>
                </tr>
            </table>
 			</nav>
@@ -79,19 +89,18 @@
 		
 		<div id="colorlib-main">
 			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay" style="margin-top: auto; margin-bottom: auto;"></div>
-				<div class="js-fullheight d-flex justify-content-center align-items-center" >
+				<div class="overlay"></div>
+				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
 							<h2 class="subheading"></h2>
 							<!-- 로그인창 -->
 							<form action="JoinService" method="post">
-								<table style="margin-left: auto; margin-right: auto;">
+								<table>
 									<tr>
 										<td><h3>회원가입</h3></td>
 									</tr>
-									<tr> 
-							
+									<tr>
 										<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
 										<td rowspan="4" align="center"><input type="submit" value="JoinUs" class="button fit"></td>
 									</tr>
@@ -108,8 +117,9 @@
 				</div>
 			</div>
 			
-           
-  
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
       </div>

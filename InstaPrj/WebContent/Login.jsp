@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+<<<<<<< HEAD
   <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
     <STYLE>
@@ -37,6 +38,10 @@
 	         
 	         margin:auto;}
 	 </STYLE>
+=======
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+  
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
   </head>
   
   <body>
@@ -47,6 +52,7 @@
 			<h1 id="colorlib-logo"><a href="login.html">·Î±×ÀÎ<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+<<<<<<< HEAD
                <tr>
                    <td><i class="fas fa-home fa-2x"></i> </td>
                    <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
@@ -64,6 +70,25 @@
                    <td><a href="notice.jsp">notice</a></td>
                </tr>
            </table>
+=======
+	               <tr>
+	                   <td><i class="fas fa-home fa-2x"></i> </td>
+	                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-heart fa-2x"></i> </td>
+	                   <td><a href="Like.jsp">Like</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+	                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+	                   <td><a href="BoardList.jsp">FORUM</a></td>
+	               </tr>
+	           </table>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
 			</nav>
 
 			<div class="colorlib-footer">

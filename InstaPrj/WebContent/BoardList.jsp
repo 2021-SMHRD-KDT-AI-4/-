@@ -1,4 +1,7 @@
 <%@page import="com.model.MemberDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.BoardDAO"%>
+<%@page import="com.model.BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -29,31 +32,74 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-  
-  	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
-    <STYLE>
-	   table {font-size: 15pt;
-	         
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
+       
+    <style>
+	h1 { font-size: 350%;
+	    text-align: center; 
+	    margin-top: 7%;
+	    }
+	button{ font-size:130%;
+	      margin-left:80%;}
+	table {font-size: 15pt;
 	         margin:auto;}
-	 </STYLE>
+	table.instatable {
+	  border-collapse: collapse;
+	  text-align: left;
+	  margin: auto;
+	  line-height: 1.5;
+	  width: 70%;
+	
+	}
+	table.instatable thead th {
+	  padding: 10px;
+	  font-weight: bold;
+	  vertical-align: top;
+	  color: #369;
+	  border-bottom: 3px solid #036;
+	}
+	table.instatable tbody th {
+	  width: 150px;
+	  padding: 10px;
+	  font-weight: bold;
+	  vertical-align: top;
+	  border-bottom: 1px solid #ccc;
+	  background: #f3f6f7;
+	}
+	table.instatable td {
+	  width: 350px;
+	  padding: 10px;
+	  vertical-align: top;
+	  border-bottom: 1px solid #ccc;
+	}
+	</style>
+
   </head>
   <body>
-  
-  	<% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
-
+  <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+  <% 
+  BoardDAO dao = new BoardDAO();
+  ArrayList<BoardDTO> list = dao.showBoard();
+  %>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			 <%if(info == null) {%>
-	            <!-- 로그인 안했을 때 -->
-	            <h1 id="colorlib-logo"><a href="Login.html">로그인</a>
-	            <h1 id="colorlib-logo"><a href="Join.html">회원가입</a></h1>
-	         <% }else{ %>
-	            <!-- 로그인 했을때  -->
-	            <a href="LogoutService">로그아웃</a>
-	         <% } %>
-				 <nav id="colorlib-main-menu" role="navigation">
+			<!-- 로그인 안했을 때 -->
+            <%if(info == null) {
+            	System.out.println("로그인 안했을 때");%>
+            
+            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
+            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
+         <% }else{  
+	         System.out.println("로그인 안했을 때");%>
+            <!-- 로그인 했을때  -->
+            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
+            <a href="LogoutService">로그아웃</a>
+         <% } %>
+            
+            <nav id="colorlib-main-menu" role="navigation">
+
                <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
                <tr>
                    <td><i class="fas fa-home fa-2x"></i> </td>
@@ -72,7 +118,8 @@
                    <td><a href="BoardList.jsp">FORUM</a></td>
                </tr>
            </table>			
-			</nav>
+		</nav>
+
 			<div class="colorlib-footer">
 				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
@@ -90,17 +137,27 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-								<table>
-									<tr>
-										<td>ㅇㅇ님ㅇㄹ 언팔한 계정</td>
-									</tr>
-									<tr>
-										<td>서비스 설명</td>
-									</tr>
-									<tr>
-										<td><button onclick="location.href = 'UnfollowList.html'">확인하기</button></td>
-									</tr>
-								</table>
+							<h1>인스타그램 홍보 게시판</h1> 
+				            <button type="button" onclick="location.href='BoardWrite.html'">글쓰기</button><br>
+				            <table class="instatable">
+							     <thead>
+							     <tr>
+							    <th scope="cols">번호</th>
+							    <th scope="cols">제목</th>
+							    <th scope="cols">작성자</th>
+							    <th scope="cols">작성일</th>
+							  </tr>
+							  </thead>
+							  <tbody>
+							  <% for (int i = 0; i<list.size(); i++){ %>
+							  <tr>
+							    <th scope="row"><%= i+1 %></th>
+							    <td><a href="BoardView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a></td>
+							    <td><%= list.get(i).getWriter()%></td>
+							    <td><%= list.get(i).getDay() %>~</td>
+							    <%} %>
+							  </tbody>
+							</table>
 						</div>
 					</div>
 				</div>
