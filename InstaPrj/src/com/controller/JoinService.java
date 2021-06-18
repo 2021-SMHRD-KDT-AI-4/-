@@ -28,8 +28,8 @@ public class JoinService extends HttpServlet {
       if(cnt>0){
          System.out.println("회원가입 성공");
       }else{
-         System.out.println("가입실패");
-         // 가입 실패했을 때
+         System.out.println("회원가입실패");
+         
       }
       response.sendRedirect("Main.jsp");
             

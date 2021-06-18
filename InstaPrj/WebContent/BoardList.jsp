@@ -42,9 +42,11 @@
 	    }
 	button{ font-size:130%;
 	      margin-left:80%;}
+	      
 	table {font-size: 15pt;
 	         margin:auto;}
-	table.instatable {
+	         
+	.instatable {
 	  border-collapse: collapse;
 	  text-align: left;
 	  margin: auto;
@@ -52,14 +54,14 @@
 	  width: 70%;
 	
 	}
-	table.instatable thead th {
+	.instatable thead th {
 	  padding: 10px;
 	  font-weight: bold;
 	  vertical-align: top;
 	  color: #369;
 	  border-bottom: 3px solid #036;
 	}
-	table.instatable tbody th {
+	.instatable tbody th {
 	  width: 150px;
 	  padding: 10px;
 	  font-weight: bold;
@@ -67,7 +69,7 @@
 	  border-bottom: 1px solid #ccc;
 	  background: #f3f6f7;
 	}
-	table.instatable td {
+	.instatable td {
 	  width: 350px;
 	  padding: 10px;
 	  vertical-align: top;
@@ -78,10 +80,12 @@
   </head>
   <body>
   <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+  
   <% 
   BoardDAO dao = new BoardDAO();
   ArrayList<BoardDTO> list = dao.showBoard();
   %>
+  
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">

@@ -28,19 +28,17 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-<<<<<<< HEAD
 
 	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
- <STYLE>
+	 
+	 <STYLE>
 	   table {font-size: 15pt;
 	         
 	         margin:auto;}
 	 </STYLE>
-=======
 	
     <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
   
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
   </head>
   
   <body>
@@ -50,11 +48,8 @@
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="login.html">로그인<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
-<<<<<<< HEAD
 				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
-=======
 				<table  frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
                <tr>
                    <td><i class="fas fa-home fa-2x"></i> </td>
                    <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
@@ -101,11 +96,13 @@
 										<td><h3>회원가입</h3></td>
 									</tr>
 									<tr>
-										<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
-										<td rowspan="4" align="center"><input type="submit" value="JoinUs" class="button fit"></td>
+										<td><input id="input_id" type="text" name="email" placeholder="Email을 입력하세요"></td>
+										<td><input type="button" value="ID중복체크" onclick="idcheck()">
+											<span id="sp"></span></td>
 									</tr>
 									<tr>
 										<td><input type="password" name="pw" placeholder="PW를 입력하세요"></td>
+										<td align="center"><input type="submit" value="JoinUs" class="button fit"></td>
 									</tr>
 									<tr>
 										<td><input type="text"  name="SNSIns" placeholder="인스타그램아이디를 입력하세요"></td>
@@ -148,6 +145,31 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  
+  <script>
+				function idcheck(){
+					var input = $('#input_id').val();
+					
+					$.ajax({
+						type : "post",  //데이터 보내는 방식
+						data : {"USER_ID" : input}, //서버로 보내는 데이타
+						url : "IdCheckService", //서버 파일 이름
+						dataType : "text" , //응답 데이터 형식
+						success : function(data){
+							if(data=='true'){
+								alert("사용할 수 없는 id입니다");
+							}else{
+								console.log(data);
+								alert("사용 가능한 id입니다");
+							}
+						},
+						error : function(){
+							alert("실패!");
+						}
+					});
+					
+				}
+			</script>
     
   </body>
 </html>

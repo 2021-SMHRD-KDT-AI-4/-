@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +18,12 @@ public class LoginService extends HttpServlet {
    private static final long serialVersionUID = 1L;
 
    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
+	  
+	  response.setCharacterEncoding("UTF-8");
+      response.setContentType("text/html; charset=UTF-8");
+       
+	  PrintWriter out = response.getWriter();
+	   
       String USER_ID  = request.getParameter("email");
       String USER_PW  = request.getParameter("pw");
    
@@ -30,13 +37,17 @@ public class LoginService extends HttpServlet {
          
          session.setAttribute("info", info);
          System.out.println("로그인 성공");
+
             
       } else {
-         System.out.println("로그인 실패!!!!!!!!!!");
-         // 로그인 안됐을 때 경고창
-      }      
- 
+         System.out.println("");
+         out.println("<script>alert('로그인 실패하셨습니다.');history.go(-1);</script>"); 
+         out.close();
+         
+      }    
       response.sendRedirect("Main.jsp");
+      
+ 
    }
 
 }

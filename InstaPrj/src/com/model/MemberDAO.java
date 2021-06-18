@@ -108,7 +108,7 @@ private void conn() {
       return info;
    }
    
-   public boolean idCheck(String uSER_ID) {
+   public boolean idCheck(String USER_ID) {
 	   
 	   boolean check = false;
 	   
@@ -116,12 +116,11 @@ private void conn() {
 	   
 	   try {
 	      
-	      String sql = "select * from USER_TB where USER_ID=? and USER_PW=?";
+	      String sql = "select * from USER_TB where USER_ID=?";
 	        
 	      psmt = conn.prepareStatement(sql);
 	        
-	        psmt.setString(1, uSER_ID);
-	        
+	        psmt.setString(1, USER_ID);
 	        
 	        rs = psmt.executeQuery();
 	        
@@ -137,7 +136,7 @@ private void conn() {
 	     }finally {
 	        close();
 	     }
-	   
+	
 	   return check;
 	}
    

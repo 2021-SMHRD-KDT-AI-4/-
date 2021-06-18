@@ -16,9 +16,11 @@ public class IdCheckService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String USER_ID = request.getParameter("email");
+		
+		  String USER_ID = request.getParameter("USER_ID");
 	      
 	      MemberDAO dao = new MemberDAO();
+	      
 	      boolean check = dao.idCheck(USER_ID);
 	      
 	      PrintWriter out = response.getWriter();

@@ -97,7 +97,9 @@
 									</tr>
 									<tr>
 										<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
-										<td rowspan="2" align="center"><input type="submit" value="LogIn" class="button fit"></td>
+										<td rowspan="2" align="center">
+											<input type="submit" value="LogIn" class="button fit">
+										</td>
 									</tr>
 									<tr>
 										<td><input type="password" name="pw" placeholder="PW를 입력하세요"></td>

@@ -39,9 +39,8 @@
 	 </STYLE>
   </head>
   <body>
-   <% MemberDTO info = (MemberDTO)session.getAttribute("info");
-  System.out.println(info);
-  	%>
+   <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+  
   <%
 		request.setCharacterEncoding("EUC-KR");
   		String date = request.getParameter("date");
@@ -52,8 +51,7 @@
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<!-- 로그인 안했을 때 -->
-            <%if(info == null) {
-            	System.out.println("로그인 안했을 때");%>
+            <%if(info == null) {%>
             
             <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
             <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
