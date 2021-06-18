@@ -1,6 +1,7 @@
 
 <%@page import="com.model.MemberDTO"%>
 <%@page import="com.model.MemberDAO"%>
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -37,18 +38,24 @@
        
   </head>
   <body>
-  <% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
+  
+  <% MemberDTO info = (MemberDTO)session.getAttribute("info");
+  System.out.println(info);
+  	%>
    
    <div id="colorlib-page">
          <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
          <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-            <%if(info == null) {%>
             <!-- 로그인 안했을 때 -->
+            <%if(info == null) {
+            	System.out.println("로그인 안했을 때");%>
+            
             <h1 id="colorlib-logo"><a href="Login.html">로그인</a>
             <h1 id="colorlib-logo"><a href="Join.html">회원가입</a></h1>
-         <% }else{ %>
+         <% }else{  
+	         System.out.println("로그인 안했을 때");%>
             <!-- 로그인 했을때  -->
-            <a href="update.jsp">회원정보수정</a>
+            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
             <a href="LogoutService">로그아웃</a>
          <% } %>
             
@@ -88,7 +95,6 @@
             <div class="overlay"></div>
             <div class="js-fullheight d-flex justify-content-center align-items-center">
                <div class="col-md-8 text text-center">
-                  <!-- 인스타 프로필 사진 연동 -->
                   <div class="img mb-4" style="background-image: url(images/author.jpg);"></div>
                   <div class="desc">
                      <h2 class="subheading"></h2>
@@ -102,9 +108,6 @@
                         <p class="mb-4">즐거운 하루 보내세요</p>
                      <% } %>
                      <p><a href="#" class="btn-custom">More About Me <span class="ion-ios-arrow-forward"></span></a></p>
-                     <!-- 로그인 했을때 -->
-                     <!-- 00님 환영합니다. -->
-                     <!-- 서비스 설명 -->
                   </div>
                </div>
             </div>

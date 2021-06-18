@@ -95,7 +95,7 @@ private void conn() {
             String USER_ID = rs.getString(1);
             String USER_PW = rs.getString(2);
             String INSTA_ID = rs.getString(3);
-            info = new MemberDTO(INSTA_ID);
+            info = new MemberDTO(USER_ID,USER_PW,INSTA_ID);
          }
          
          
