@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
   
   </head>
   
@@ -40,12 +41,24 @@
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="login.html">·Î±×ÀÎ<span></span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li class="colorlib-active"><a href="Main.html">Main</a></li>
-					<li><a href="Like.html">Like</a></li>		
-					<li><a href="Unfollow.html">Unfollow</a></li>			
-					<li><a href="BoardList.html">BoardList</a></li>			
-				</ul>
+				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+	               <tr>
+	                   <td><i class="fas fa-home fa-2x"></i> </td>
+	                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-heart fa-2x"></i> </td>
+	                   <td><a href="Like.jsp">Like</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+	                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+	                   <td><a href="notice.jsp">notice</a></td>
+	               </tr>
+	           </table>
 			</nav>
 
 			<div class="colorlib-footer">

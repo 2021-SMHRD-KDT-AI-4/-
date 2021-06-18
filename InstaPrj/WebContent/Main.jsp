@@ -39,9 +39,7 @@
   </head>
   <body>
   
-  <% MemberDTO info = (MemberDTO)session.getAttribute("info");
-  System.out.println(info);
-  	%>
+  <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
    
    <div id="colorlib-page">
          <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
@@ -60,25 +58,25 @@
          <% } %>
             
             <nav id="colorlib-main-menu" role="navigation">
-               <table border="1" frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
-               <tr>
-                   <td><i class="fas fa-home fa-2x"></i> </td>
-                   <td class="colorlib-active"><a href="Main.html">Main</a></td>
-               </tr>
-               <tr>
-                   <td><i class="fas fa-heart fa-2x"></i> </td>
-                   <td><a href="Like.html">Like</a></td>
-               </tr>
-               <tr>
-                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
-                   <td><a href="Unfollow.html">Unfollow</a></td>
-               </tr>
-               <tr>
-                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
-                   <td><a href="notice.html">notice</a></td>
-               </tr>
-           </table>
-         </nav>
+	            <table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
+	               <tr>
+	                   <td><i class="fas fa-home fa-2x"></i> </td>
+	                   <td class="colorlib-active"><a href="Main.jsp">Main</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-heart fa-2x"></i> </td>
+	                   <td><a href="Like.jsp">Like</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-heart-broken fa-2x"></i> </td>
+	                   <td><a href="Unfollow.jsp">Unfollow</a></td>
+	               </tr>
+	               <tr>
+	                   <td><i class="fas fa-comment-alt fa-2x"></i> </td>
+	                   <td><a href="notice.jsp">notice</a></td>
+	               </tr>
+	           </table>
+        	 </nav>
          <div class="colorlib-footer">
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
