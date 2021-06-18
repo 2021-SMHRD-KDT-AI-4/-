@@ -96,16 +96,16 @@
 										<td><h3>회원가입</h3></td>
 									</tr>
 									<tr>
-										<td><input id="input_id" type="text" name="email" placeholder="Email을 입력하세요"></td>
+										<td><input id="input_id" type="text" name="email" placeholder="이메일을 입력하세요"></td>
 										<td><input type="button" value="ID중복체크" onclick="idcheck()">
 											<span id="sp"></span></td>
 									</tr>
 									<tr>
-										<td><input type="password" name="pw" placeholder="PW를 입력하세요"></td>
+										<td><input type="password" name="pw" placeholder="비밀번호를 입력하세요"></td>
 										<td align="center"><input type="submit" value="JoinUs" class="button fit"></td>
 									</tr>
 									<tr>
-										<td><input type="text"  name="SNSIns" placeholder="인스타그램아이디를 입력하세요"></td>
+										<td><input type="text"  name="SNSIns" placeholder="인스타그램 아이디를 입력하세요"></td>
 									</tr>
 								</table>
 							</form>
