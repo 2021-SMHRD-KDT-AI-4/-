@@ -130,10 +130,11 @@
 										<td colspan="2"> 
 										<!-- 
 										by.창현	
-										button 으로 삭제 단 작성자만 삭제할 수 있음 
+										submit 으로 삭제!!  작성자만 삭제할 수 있음 
 										작성자가 본인이 아닐때 빈페이지 나오니까 alert 로 자기가 쓴 게시물 아니라는걸 알려줘야함!
 										 -->
-											<button type="button" onclick="location.href='BoardDeleteService?num=<%= dto.getNum() %>&writer=<%=dto.getWriter() %>'">게시물삭제</button>
+											<input type="submit" value = "게시물삭제">
+											
 										</td>
 									</tr>
 								</table>
