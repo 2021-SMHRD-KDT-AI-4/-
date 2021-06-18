@@ -35,6 +35,9 @@
 	   table {font-size: 15pt;
 	         
 	         margin:auto;}
+	   .hero-wrap {
+	   		background-size:1920px 1080px;
+	   	} 
 	 </STYLE>
 	
     <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
@@ -83,7 +86,7 @@
 		</aside> <!-- END COLORLIB-ASIDE -->
 		
 		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
+			<div class="hero-wrap" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
@@ -97,7 +100,7 @@
 									</tr>
 									<tr>
 										<td><input id="input_id" type="text" name="email" placeholder="이메일을 입력하세요"></td>
-										<td><input type="button" value="ID중복체크" onclick="idcheck()">
+										<td><input type="button" value="중복확인" onclick="idcheck()">
 											<span id="sp"></span></td>
 									</tr>
 									<tr>
@@ -107,7 +110,11 @@
 									<tr>
 										<td><input type="text"  name="SNSIns" placeholder="인스타그램 아이디를 입력하세요"></td>
 									</tr>
-								</table>
+								</table><br>
+								<div class="img-md-8 text text-center">
+									<div class="img mb-d" style="background-image: url(images/author.jpg);"></div>
+								</div>
+								
 							</form>
 						</div>
 					</div>
