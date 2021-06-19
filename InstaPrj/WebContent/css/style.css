@@ -7571,7 +7571,7 @@ h1, h2, h3, h4, h5,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .7;
+    opacity: .2;
     background: #fff;
     z-index: 0; }
   .hero-wrap.hero-wrap-2 .overlay {

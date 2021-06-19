@@ -33,11 +33,11 @@
 	 
 	 <STYLE>
 	   table {font-size: 15pt;
-	         
-	         margin:auto;}
+	         margin:auto;
+	         }
 	   .hero-wrap {
 	   		background-size:1920px 1080px;
-	   	} 
+	   	} 	   
 	 </STYLE>
 	
     <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
@@ -94,25 +94,29 @@
 							<h2 class="subheading"></h2>
 							<!-- 로그인창 -->
 							<form action="JoinService" method="post">
-								<table>
+								<table >
 									<tr>
-										<td><h3>회원가입</h3></td>
+										<td><h3 color=white>회원가입</h3></td><br>
 									</tr>
 									<tr>
-										<td><input id="input_id" type="text" name="email" placeholder="이메일을 입력하세요"></td>
+										
+										<td><input id="input_id" type="text" size="30" name="email" placeholder="이메일을 입력하세요"></td>
 										<td><input type="button" value="중복확인" onclick="idcheck()">
 											<span id="sp"></span></td>
 									</tr>
 									<tr>
-										<td><input type="password" name="pw" placeholder="비밀번호를 입력하세요"></td>
-										<td align="center"><input type="submit" value="JoinUs" class="button fit"></td>
+										<td><input type="password"size="30"  name="pw" placeholder="비밀번호를 입력하세요"></td>
+										<!--  <td align="center"><input type="submit" value="JoinUs" class="button fit"></td>-->
 									</tr>
 									<tr>
-										<td><input type="text"  name="SNSIns" placeholder="인스타그램 아이디를 입력하세요"></td>
+										<td><input type="text"  size="30" name="SNSIns" placeholder="인스타그램 아이디를 입력하세요"></td>
+										<td><input type="button" value="확인" onclick="instaidcheck()">
+											<span id="sp"></span></td>
 									</tr>
 								</table><br>
 								<div class="img-md-8 text text-center">
-									<div class="img mb-d" style="background-image: url(images/author.jpg);"></div>
+									<div class="img mb-d" style="background-image: url(images/author.jpg);"></div><br>
+									<input type="submit" value="가입하기" class="button fit">
 								</div>
 								
 							</form>

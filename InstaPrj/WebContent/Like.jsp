@@ -33,9 +33,25 @@
     <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
     <STYLE>
-	   table {font-size: 15pt;
-	         
-	         margin:auto;}
+	table {font-size: 15pt;
+	         margin:auto;
+	        }
+	h2{
+	    text-align: center;
+	    padding:10% 0% 0% 0%;}	
+	 .hero-wrap {
+	 background-size:1920px 1080px;} 
+	 input {
+ 	 width:200px;
+	 height:35px;
+ 	 font-size:17px;}
+	 .imege{
+	 padding:20% 0% 0% 30%;
+	 }
+	 .col-md-8{
+	 text-align: center;
+	  padding:0% 0% 15% 0%;
+	 }
 	 </STYLE>
   </head>
   <body>
@@ -94,28 +110,39 @@
 		</aside> <!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
 			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">
+					<h2>좋아요 예측</h2>
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
-					<div class="col-md-8 text text-center">
+					<div class="col-md-8">
 						<div class="desc">
 							<!-- 이미지파일 업로드 form -->
 							<form action="LikeResult.jsp" method="post">
-								<table>
-									<tr>
-										<td colspan="2"><input type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/>
+							</div ><input style="height:200px;" type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/>
 											<div id="image_container"></div>
-										</td>
-									</tr>
+								<table>
 									<tr>
 										<td>날짜</td>
 										<td><input type="date" id="updateDate" name="date"></td>
 									</tr>
 									<tr>
-										<td>해시태그</td>
-										<td><input type="text" id="Hashtag" name="Hashtag"></td>
+										<td>시간</td>
+										<td><input type="time" value="xxx" min="yyy" max="zzz"></td>
 									</tr>
 									<tr>
-										<td colspan="2"><input type="submit" value="좋아요 수 미리알아보기"></td>
+										<td>해시태그</td>
+										<td><input type="text" id="Hashtag" name="Hashtag" placeholder="#인포럼"></td>
+									</tr>
+									<tr>
+										<td>계정 태그 수</td>
+										<td><input type="number" value="2" min="0" max="20"></td>
+									</tr>
+									<tr>
+										<td>장소 태그</td>
+										<td><input style="width:20px;" type="radio" name="placetag" value="placetag" checked="checked">있음</td>
+										<td><input  style="width:20px;"type="radio" name="placetag" value="placetag">없음</td>
+									</tr>
+									<tr>
+										<td colspan="2"><input type="submit" value="예측하기"></td>
 									</tr>
 								</table>
 							</form>
