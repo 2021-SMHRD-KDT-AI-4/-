@@ -52,7 +52,7 @@ public class BoardWriteService extends HttpServlet {
 			response.sendRedirect("BoardList.jsp");
 		}else {
 			System.out.println("게시물작성실패");
-			response.sendRedirect("WriteBoard");
+			response.sendRedirect("WriteBoard.jsp");
 		}
 		
 	}
