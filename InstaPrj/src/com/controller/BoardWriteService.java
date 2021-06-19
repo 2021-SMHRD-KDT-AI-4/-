@@ -8,9 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.model.BoardDAO;
 import com.model.BoardDTO;
+import com.model.MemberDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
  
@@ -29,14 +31,13 @@ public class BoardWriteService extends HttpServlet {
 		int maxSize = 5*500*500;
 		
 		String encoding = "EUC-KR";
-		
+		HttpSession session = request.getSession();
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
-		
 		String title = multi.getParameter("title");
-//		String writer = multi.getParameter("writer");
 		String filename = URLEncoder.encode(multi.getFilesystemName("filename"), "EUC-KR");
+		String writer = info.getUSER_ID();
 		String content = multi.getParameter("content");
-		String writer = "test2";
 		System.out.println("title : " + title);
 		System.out.println("writer : " + writer);
 		System.out.println("filename : " + filename);
@@ -51,7 +52,7 @@ public class BoardWriteService extends HttpServlet {
 			response.sendRedirect("BoardList.jsp");
 		}else {
 			System.out.println("게시물작성실패");
-			response.sendRedirect("WriteBoard");
+			response.sendRedirect("WriteBoard.jsp");
 		}
 		
 	}

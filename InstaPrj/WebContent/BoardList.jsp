@@ -142,7 +142,7 @@
 					<div class="col-md-8 text text-center">
 						<div class="desc">
 							<h1>인스타그램 홍보 게시판</h1> 
-				            <button type="button" onclick="location.href='BoardWrite.html'">글쓰기</button><br>
+				            <button type="button" onclick="location.href='BoardWrite.jsp'">글쓰기</button><br>
 				            <table class="instatable">
 							     <thead>
 							     <tr>

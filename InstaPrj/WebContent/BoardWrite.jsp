@@ -50,9 +50,9 @@
 	</style>
   </head>
   <body>
+ 
   <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
    
-  <% String writer = "test2"; %>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
@@ -107,7 +107,7 @@
 						                  <td><input type="text" name="title" placeholder="제목" size="20" style="width:100%; border: 0;"></td>
 						               </tr>
 						               <tr>
-						                  <td><%= writer %></td>
+						                  <td><p name="writer"><%= info.getUSER_ID() %></p></td>
 						               </tr>
 						               <tr>
 						               <td><textarea name="content" rows="13" placeholder="내용" style="width:100%; border: 0;"></textarea></textarea></td>

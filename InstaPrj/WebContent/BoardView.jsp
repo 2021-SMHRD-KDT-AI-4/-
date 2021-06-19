@@ -128,8 +128,13 @@
 									</tr>
 									<tr>
 										<td colspan="2"> 
-											 <input type="submit" value="수정">
-											 <input type="button" value="삭제" name="delete">
+										<!-- 
+										by.창현	
+										submit 으로 삭제!!  작성자만 삭제할 수 있음 
+										작성자가 본인이 아닐때 빈페이지 나오니까 alert 로 자기가 쓴 게시물 아니라는걸 알려줘야함!
+										 -->
+											<input type="submit" value = "게시물삭제">
+											
 										</td>
 									</tr>
 								</table>

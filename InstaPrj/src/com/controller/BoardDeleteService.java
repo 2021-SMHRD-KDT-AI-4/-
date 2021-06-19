@@ -6,9 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.model.BoardDAO;
 import com.model.BoardDTO;
+import com.model.MemberDTO;
 
 /**
  * Servlet implementation class BoardDeleteService
@@ -23,8 +25,11 @@ public class BoardDeleteService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		String writer = "test2";
+		HttpSession session = request.getSession();
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		int num = Integer.parseInt(request.getParameter("num"));
-		String writer = request.getParameter("writer");
+		String writer = (String)info.getUSER_ID();
+		System.out.println(writer);
 		System.out.println(num);
 		System.out.println(writer);
 		BoardDTO dto = new BoardDTO(num, writer);
@@ -36,6 +41,7 @@ public class BoardDeleteService extends HttpServlet {
 			response.sendRedirect("BoardList.jsp");
 		}else {
 			System.out.println("게시글삭제실패");
+			response.sendRedirect("BoardList.jsp");
 		}
 	}
 
