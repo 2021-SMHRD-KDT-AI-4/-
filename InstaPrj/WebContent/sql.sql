@@ -51,13 +51,6 @@ create table BOARD(
     constraint BOARD_BOARD_USER_ID_FK foreign key(BOARD_USER_ID) references USER_TB(USER_ID)
 );
 
--- NOW_F4F 테이블
-create table NOW_F4F(
-    NOW_USER_ID varchar2(100) NOT NULL,
-    NOW_F4F_ID varchar2(100) NOT NULL,
-    NOW_DATE date default sysdate NOT NULL,
-    constraint NOW_F4F_NOW_USER_ID_FK foreign key(NOW_USER_ID) references USER_TB(USER_ID)
-);
 
 -- PAST_F4F 테이블
 create table PAST_F4F(
@@ -74,3 +67,4 @@ create sequence PRED_LIKE_NUM_SEQ start with 1 increment by 1;
 commit
 
 select * from USER_TB;
+select * from PAST_F4F;

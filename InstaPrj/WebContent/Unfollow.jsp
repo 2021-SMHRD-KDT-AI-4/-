@@ -91,17 +91,24 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
+							<% if(info != null) {
+							String insta_id = info.getINSTA_ID();%>
+							
 								<table>
 									<tr>
-										<td>ㅇㅇ님ㅇㄹ 언팔한 계정</td>
+										<td>@<%=insta_id %>님의 언팔로우 분석</td>
 									</tr>
 									<tr>
 										<td>서비스 설명</td>
 									</tr>
 									<tr>
-										<td><button onclick="location.href = 'UnfollowList.html'">확인하기</button></td>
+										<td><button onclick="location.href = 'http://localhost:9000/inforum/Unfollow?insta_id=<%= insta_id%>'">분석하기</button></td>
 									</tr>
 								</table>
+							
+							<%} else{ %>
+								<h3>로그인을 먼저 진행한 후 이용해주세요</h3>
+							<%} %>
 						</div>
 					</div>
 				</div>
