@@ -29,11 +29,11 @@
         <div id="sidebar"></div>
         <!-- 메인 -->
         <div class="main">
-            <div style="height: 7.5rem;"></div>
+            <div style="height: 2rem;"></div>
             <div class="logoDiv">
-            	<img src="./img/logo.png" height="100%">
+            	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
             </div>
-            <div style="height: 1.25rem;"></div>
+            <div style="height: 2rem;"></div>
             <!-- 페이지 제목 -->
             <div class="titleDiv">회원가입</div>
             <div style="height: 3.75rem;"></div>

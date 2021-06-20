@@ -30,7 +30,7 @@
     <div class="container">
         <!-- 사이드바 -->
         <div class="sidebar">
-            <div style="height: 12rem;"></div>
+            <div style="height: 2rem;"></div>
             <div id="loginDiv">
                 <div id="loginInputDiv">
                     <!-- ID / PW 로그인창 -->
@@ -60,11 +60,11 @@
         </div>
         <!-- 메인 -->
         <div class="main">
-            <div style="height: 7.5rem;"></div>
+            <div style="height: 2rem;"></div>
             <div class="logoDiv">
-            	<img src="./img/logo.png" height="100%">
+            	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
             </div>
-            <div style="height: 1.25rem;"></div>
+            <div style="height: 2rem;"></div>
             <!-- 페이지 제목 -->
             <div class="titleDiv">Forum List</div>
             <div style="height: 2.5rem;"></div>

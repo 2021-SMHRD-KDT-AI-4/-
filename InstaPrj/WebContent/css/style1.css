@@ -25,6 +25,13 @@ body {
     margin: 1.6rem 0.8rem;
     text-align: center;
 }
+a {
+	text-decoration:none;
+	text-decoration-color: none;
+}
+a:link { color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+a:hover { color: black; text-decoration: underline;}
 
 /* main 설정 */
 .main {
@@ -63,22 +70,25 @@ body {
 	text-align: center;
 }
 #loginDiv {
-	height: 5rem; width: 17.5rem; display: inline-block;
+	height: 6rem; width: 17.5rem; display: flex; justify-content: space-between; margin: auto;
 }
 #loginInputDiv {
-	height: 5rem; width: 12.5rem; float: left;
+	height: 6rem; width: 12.5rem; display: flex; flex-direction: column; justify-content: space-between;
+}
+#loginInputDiv2 {
+	height: 3rem;
 }
 #loginBtnDiv {
-	height: 5rem; width: 4.5rem; float: right;
+	height: 6rem; width: 4.5rem;
 }
 .inputUserIdPw {
-	height: 2.25rem; width: 12.5rem; border: 1px solid #707070;
+	height: 2.75rem; width: 12.5rem; border: 0.0625rem solid #707070;
 }
 #loginBtn {
-	height: 5rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 1px solid #707070;
+	height: 6rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 0.0625rem solid #707070; font-size: 1rem;
 }
 #logoutBtn {
-	height: 2rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 1px solid #707070;
+	height: 2rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 0.0625rem solid #707070;
 }
 
 /* join */
@@ -260,10 +270,16 @@ body {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     html {
         font-size: 62.5%;
     }
+	.inputUserIdPw {
+		height: 2.6rem; width: 12.5rem; border: 0.0625rem solid #707070;
+	}
+	.logoDiv {
+		text-align: center; margin-left: 0rem;
+	}
 	/* 메뉴 사이드바 CSS */
 	input[id="menuicon"] {display:none;}
 	input[id="menuicon"] + label {display:block;margin:4rem;width:4rem;height:4rem;position:relative;cursor:pointer;}
@@ -286,18 +302,24 @@ body {
     html {
         font-size: 50%;
     }
+	.inputUserIdPw {
+		height: 2.5rem; width: 12.5rem; border: 0.0625rem solid #707070;
+	}
+	.logoDiv {
+		text-align: center; margin-left: 0rem;
+	}
 	/* 메뉴 사이드바 CSS */
 	input[id="menuicon"] {display:none;}
-	input[id="menuicon"] + label {display:block;margin:4rem;width:4rem;height:4rem;position:relative;cursor:pointer;}
+	input[id="menuicon"] + label {display:block;margin:2rem;width:2rem;height:2rem;position:relative;cursor:pointer;}
 	input[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:0.25rem;border-radius:30px;background:#000;transition:all .35s;}
 	input[id="menuicon"] + label span:nth-child(1) {top:0;z-index:2;}
 	input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);z-index:2;} /* 비슷하게 사용할 수 있는 style top:calc(50% - 2.5px); margin-top:-2.5px;*/
 	input[id="menuicon"] + label span:nth-child(3) {bottom:0;z-index:2;}
 	input[id="menuicon"]:checked + label {z-index:2;}
 	input[id="menuicon"]:checked + label span {background:#000;}
-	input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+	input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);left:30rem;}
 	input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
-	input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
+	input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);left:30rem;}
 	div[class="sidebar"] {width:30rem;height:100%;position:fixed;top:0;left:-30rem;z-index:1;transition:all .35s;}
 	div[class="main"] {position:fixed;top:0;left:0px;z-index:1;transition:all .35s;}
 	input[id="menuicon"]:checked + label + div div.sidebar {left:0;background-color: #f5f5f5;}

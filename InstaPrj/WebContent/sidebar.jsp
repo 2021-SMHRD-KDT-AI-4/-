@@ -16,7 +16,7 @@
 <% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
         <!-- 사이드바 -->
         <div class="sidebar">
-            <div style="height: 12rem;"></div>
+            <div style="height: 4rem;"></div>
             
             <!-- ID / PW 로그인창 -->
             <!-- 로그인 안했을시 -->
@@ -24,16 +24,17 @@
             <div id="loginDiv">
                 <!-- 로그인 Form -->
                 <form action="LoginService" method="post">
-                    <div id="loginInputDiv">
-                        <input class="inputUserIdPw" name= "user_id" type="text" placeholder="아이디를 입력해주세요.">
-                        <input class="inputUserIdPw" name="user_pw" type="password" placeholder="비밀번호를 입력해주세요.">
-                    </div>
-                    <!-- 로그인 버튼 -->
-                    <div id="loginBtnDiv">
-                        <input id="loginBtn" type="submit" value="LOGIN">
-                    </div>
+                	<div id="loginContainer">
+	                    <div id="loginInputDiv">
+	                        <input class="inputUserIdPw" name= "user_id" type="text" placeholder="아이디">
+	                        <input class="inputUserIdPw" name="user_pw" type="password" placeholder="비밀번호">
+	                    </div>
+	                    <!-- 로그인 버튼 -->
+	                    <div id="loginBtnDiv">
+	                        <input id="loginBtn" type="submit" value="LOGIN">
+	                    </div>
+                	</div>
                 </form>
-                
             </div>
             <!-- 회원가입 버튼 -->
             <div style="height: 2rem; font-size: 1rem;">
@@ -54,10 +55,10 @@
             
             <!-- 메뉴 리스트 -->
             <div class="menuListDiv">
-                <div class="menuList"><i class="fas fa-home"></i> HOME</div>
-                <div class="menuList"><i class="fas fa-heart"></i> LIKE</div>
-                <div class="menuList"><i class="fas fa-heartbeat"></i> LIKE RESULT</div>
-                <div class="menuList"><i class="fas fa-heart-broken"></i> UNFOLLOW</div>
+                <div class="menuList"><i class="fas fa-home"></i><a href="main.jsp"> HOME</a></div>
+                <div class="menuList"><i class="fas fa-heart"></i><a href="like.jsp"> LIKE</a></div>
+                <div class="menuList"><i class="fas fa-heartbeat"></i><a href="likeResult.jsp"> LIKE RESULT</a></div>
+                <div class="menuList"><i class="fas fa-heart-broken"></i><a href="unfollow.jsp"> UNFOLLOW</a></div>
                 <div class="menuList"><i class="fas fa-comments"></i><a href="forumList.jsp"> FORUM</a></div>
             </div>
         </div>

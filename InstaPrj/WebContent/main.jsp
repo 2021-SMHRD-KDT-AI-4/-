@@ -31,12 +31,11 @@
         <div id="sidebar"></div>
         <!-- 메인 -->
         <div class="main">
-            <div style="height: 7.5rem;"></div>
-            <!-- 메인 로고 -->
+            <div style="height: 2rem;"></div>
             <div class="logoDiv">
-            	<img src="./img/logo.png" height="100%">
+            	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
             </div>
-            <div style="height: 8.25rem;"></div>
+            <div style="height: 8rem;"></div>
             <!-- 메인 프로필 이미지 -->
             <div style="height: 18.75rem;"><img id="mainImg" src="./img/sample.jpg"></div>
             <div style="height: 1.5rem;"></div>
