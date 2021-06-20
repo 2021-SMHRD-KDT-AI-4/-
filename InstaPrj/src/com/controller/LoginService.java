@@ -24,7 +24,7 @@ public class LoginService extends HttpServlet {
        
 	  PrintWriter out = response.getWriter();
 	   
-      String USER_ID  = request.getParameter("email");
+      String USER_ID  = request.getParameter("user_id");
       String USER_PW  = request.getParameter("pw");
    
       MemberDTO dto = new MemberDTO(USER_ID, USER_PW );

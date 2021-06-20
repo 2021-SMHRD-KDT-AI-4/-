@@ -62,7 +62,7 @@
 				<form action="LoginService" method="post">
 					<table  id="login">
 						<tr>
-							<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
+							<td><input type="text" name="user_id" placeholder="ID를 입력하세요"></td>
 							<td rowspan="2" align="center">
 								<input type="submit" value="LogIn" class="button fit">
 							</td>

@@ -16,11 +16,11 @@ public class JoinService extends HttpServlet {
 
    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-      String email = request.getParameter("email");
+      String user_id = request.getParameter("user_id");
       String pw = request.getParameter("pw");
-      String SNSIns = request.getParameter("SNSIns");
+      String insta_id = request.getParameter("insta_id");
    
-      MemberDTO dto = new MemberDTO(email, pw, SNSIns);
+      MemberDTO dto = new MemberDTO(user_id, pw, insta_id);
       MemberDAO dao = new MemberDAO();
       
       int cnt = dao.join(dto);

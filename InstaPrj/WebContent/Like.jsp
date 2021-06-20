@@ -52,6 +52,10 @@
 	 text-align: center;
 	  padding:0% 0% 15% 0%;
 	 }
+	h1 { font-size: 350%;
+	    text-align: center; 
+	    margin-top: 7%;
+	    }
 	 </STYLE>
   </head>
   <body>

@@ -33,9 +33,12 @@
   	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
     <STYLE>
-	   table {font-size: 15pt;
-	         
-	         margin:auto;}
+    	h1 { font-size: 350%;
+	    text-align: center; 
+	    margin-top: 7%;
+	    }
+	    table {font-size: 15pt;
+	           margin:auto;}
 	 </STYLE>
   </head>
   <body>
@@ -47,8 +50,8 @@
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 	          <!-- 로그인 안했을 때 -->
 			 <%if(info == null) {%>
-	            <h1 id="colorlib-logo"><a href="Login.html">로그인</a>
-	            <h1 id="colorlib-logo"><a href="Join.html">회원가입</a></h1>
+	            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
+	            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
 	         <% }else{ %>
 	            <!-- 로그인 했을때  -->
 	            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>

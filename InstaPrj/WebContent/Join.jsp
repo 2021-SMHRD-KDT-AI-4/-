@@ -49,7 +49,8 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="login.html">로그인<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="Login.jsp">로그인<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
 				<table  frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
@@ -100,7 +101,7 @@
 									</tr>
 									<tr>
 										
-										<td><input id="input_id" type="text" size="30" name="email" placeholder="이메일을 입력하세요"></td>
+										<td><input id="input_id" type="text" size="30" name="user_id" placeholder="ID를 입력하세요"></td>
 										<td><input type="button" value="중복확인" onclick="idcheck()">
 											<span id="sp"></span></td>
 									</tr>
@@ -109,7 +110,7 @@
 										<!--  <td align="center"><input type="submit" value="JoinUs" class="button fit"></td>-->
 									</tr>
 									<tr>
-										<td><input type="text"  size="30" name="SNSIns" placeholder="인스타그램 아이디를 입력하세요"></td>
+										<td><input type="text"  size="30" name="insta_id" placeholder="인스타그램 아이디를 입력하세요"></td>
 										<td><input type="button" value="확인" onclick="instaidcheck()">
 											<span id="sp"></span></td>
 									</tr>

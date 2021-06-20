@@ -47,7 +47,8 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="login.html">로그인<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="Login.jsp">로그인<span></span></a></h1>
+			<h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<table frame=void style='border-left:0;border-right:0;border-bottom:0;border-top:0'  >
                <tr>
@@ -96,7 +97,7 @@
 										<td><h3>로그인</h3></td>
 									</tr>
 									<tr>
-										<td><input type="text" name="email" placeholder="Email을 입력하세요"></td>
+										<td><input type="text" name="user_id" placeholder="ID를 입력하세요"></td>
 										<td rowspan="2" align="center">
 											<input type="submit" value="LogIn" class="button fit">
 										</td>
