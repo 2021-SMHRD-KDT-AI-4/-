@@ -21,21 +21,23 @@
             <!-- ID / PW 로그인창 -->
             <!-- 로그인 안했을시 -->
             <% if(info== null){ %>
-            <div id="loginDiv">
-                <!-- 로그인 Form -->
-                <form action="LoginService" method="post">
-                	<div id="loginContainer">
-	                    <div id="loginInputDiv">
-	                        <input class="inputUserIdPw" name= "user_id" type="text" placeholder="아이디">
-	                        <input class="inputUserIdPw" name="user_pw" type="password" placeholder="비밀번호">
-	                    </div>
-	                    <!-- 로그인 버튼 -->
-	                    <div id="loginBtnDiv">
-	                        <input id="loginBtn" type="submit" value="LOGIN">
-	                    </div>
-                	</div>
-                </form>
-            </div>
+            <!-- 로그인 Form -->
+            <form action="LoginService" method="post">
+	            <div id="loginDiv">
+	                <div id="loginInputDiv">
+                        <div id=loginInputDiv2>
+                            <input class="inputUserIdPw" name= "user_id" type="text" placeholder="아이디">
+                        </div>
+                        <div id=loginInputDiv2>
+                            <input class="inputUserIdPw" name="user_pw" type="password" placeholder="비밀번호">
+                        </div>
+	                </div>
+	                <!-- 로그인 버튼 -->
+	                <div id="loginBtnDiv">
+	                    <input id="loginBtn" type="submit" value="LOGIN">
+	                </div>
+            	</div>
+            </form>
             <!-- 회원가입 버튼 -->
             <div style="height: 2rem; font-size: 1rem;">
                 <a href="join.jsp">회원가입</a>

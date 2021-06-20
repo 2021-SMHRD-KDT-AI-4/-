@@ -298,7 +298,7 @@ a:hover { color: black; text-decoration: underline;}
 	input[id="menuicon"]:checked + label + div div.main {left:30rem;}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     html {
         font-size: 50%;
     }
