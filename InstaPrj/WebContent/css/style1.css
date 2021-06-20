@@ -8,89 +8,6 @@
 
 @font-face {
     font-family:'GmarketSansTTFBold';
-<<<<<<< HEAD
-    src: url("../font/GmarketSansTTFBold.ttf")
-}
-
-@font-face {
-    font-family:'GmarketSansTTFMedium';
-    src: url("../font/GmarketSansTTFMedium.ttf")
-}
-
-
-
-/* body 기본 설정 */
-body {
-    font-family: 'GmarketSansTTFMedium';
-    font-size: 1.6rem;
-    margin: 1.6rem 0.8rem;
-    text-align: center;
-}
-
-/* main 설정 */
-.main {
-	width: 100vw;
-	height: 100vh;
-	background: url("../img/background2.jpg");
-	background-size: 100vw 100vh;
-	color: white;
-}
-.logoDiv {
-	height: 4.5rem; text-align: left; margin-left: 3.5rem;
-}
-.titleDiv {
-	height: 2rem; text-align: center; font-size: 2rem; font-family: 'GmarketSansTTFBold';
-}
-
-/* sidebar 설정 */
-.menuListDiv {
-	text-align: center;
-}
-.menuList {
-	width: 13.25rem;
-	font-size: 1.5rem;
-	margin: 1rem auto;
-	text-align: left;
-}
-
-/* main 로그인 전 */
-.sidebar {
-	text-align: center;
-}
-#loginDiv {
-	height: 5rem; width: 17.5rem; display: inline-block;
-}
-#loginInputDiv {
-	height: 5rem; width: 12.5rem; float: left;
-}
-#loginBtnDiv {
-	height: 5rem; width: 4.5rem; float: right;
-}
-.inputUserIdPw {
-	height: 2.25rem; width: 12.5rem; border: 1px solid #707070;
-}
-#loginBtn {
-	height: 5rem; width: 4.5rem; background-color: #ffb472; color: white; border: 1px solid #707070;
-}
-
-/* forumList */
-.forumListContainer {
-	display: flex;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 1fr);
- 
-	
-}
-.forumListItem {
-	height: 22rem;
-	margin: 45px;
-}
-
-.forumListImg {
-	height: 13.5rem;
-	width: 13rem;
-	
-=======
     src: url("../font/GMARKETSANSTTFBOLD.TTF")
 }
 
@@ -183,16 +100,75 @@ body {
 
 /* like */
 .likeInputDiv {
-	margin-bottom: 0.5rem; height: 2.5rem; display: flex; justify-content: space-between; width: 22.5rem;
+	height: 2.5rem; display: flex; justify-content: space-between; width: 22.5rem; margin: 0 auto 0.5rem;
 }
 .likeInputDiv_1 {
-	width: 6.5rem; margin: auto 0; font-size: 1.25rem;
+	width: 6.5rem; margin: auto 0; font-size: 1.25rem; text-align: right;
 }
 .likeInputDiv_2 {
 	width: 15rem;
 }
 .likeInput {
 	width: 15rem; height: 100%; border: 1px solid #707070;
+}
+
+/* likeResult */
+#likeReultDiv {
+	display: flex; justify-content: left; height: 100%;
+}
+#likeResultDiv1 {
+	width: 45rem; height: 100%; display: flex; justify-content: center;
+}
+#likeResultImg {
+	width: 25rem; height: 25rem; border: 0.25rem solid #E95099;
+}
+#likeResultTxt {
+	width: 22.5rem; height: 100%; margin: auto; text-align: left; font-size: 1.5rem;
+}
+.likeResultListImg {
+	width: 12.5rem; height: 12.5rem;
+}
+.likeResultListTxt {
+	font-size: 1rem;
+}
+.txtPink {
+	color: #BA2D65;
+}
+.txtOrange {
+	color: #FFB47D;
+}
+#likeResultList {
+	width: 39.5rem; height: 46.5rem; display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	text-align: left;
+}
+.likeResultListItem {
+	height: 23.25rem;
+}
+.likeResultListItem:nth-child(1) {
+	grid-row: 1;
+	grid-column: 1;
+}
+.likeResultListItem:nth-child(2) {
+	grid-row: 1;
+	grid-column: 2;
+}
+.likeResultListItem:nth-child(3) {
+	grid-row: 1;
+	grid-column: 3;
+}
+.likeResultListItem:nth-child(4) {
+	grid-row: 2;
+	grid-column: 1;
+}
+.likeResultListItem:nth-child(5) {
+	grid-row: 2;
+	grid-column: 2;
+}
+.likeResultListItem:nth-child(6) {
+	grid-row: 2;
+	grid-column: 3;
 }
 
 /* forumList */
@@ -239,11 +215,35 @@ body {
 .forumListImg {
 	height: 12.5rem;
 	width: 12.5rem;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
 }
 .forumListTxt {
 	font-size: 1rem;
 }
+
+/* forumWrite */
+.forumInputDiv {
+	height: 2.5rem; display: flex; justify-content: space-between; width: 18.75rem; margin: 0 auto 0.5rem;
+}
+.forumInputDiv_1 {
+	width: 2.5rem; margin: auto 0; font-size: 1.25rem; text-align: right;
+}
+.forumInputDiv_2 {
+	width: 15rem;
+}
+.forumInput {
+	width: 15rem; height: 100%; border: 1px solid #707070;
+}
+.forumInputTADiv {
+	height: 12.5rem; display: flex; justify-content: space-between; width: 18.75rem; margin: 0 auto 0.5rem;
+}
+.forumInputTADiv_2 {
+	width: 15rem;
+	height: 12.5rem;
+}
+.forumInputTA {
+	width: 15rem; height: 100%; border: 1px solid #707070;
+}
+
 
 
 /* 반응형 폰트 크기 조절 */
