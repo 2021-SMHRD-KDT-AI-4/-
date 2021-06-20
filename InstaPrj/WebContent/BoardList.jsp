@@ -157,6 +157,7 @@
 							  <tr>
 							    <th scope="row"><%= i+1 %></th>
 							    <td><a href="BoardView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a></td>
+							    <td><img src="<%=list.get(i).getFilename()%>"></td>
 							    <td><%= list.get(i).getWriter()%></td>
 							    <td><%= list.get(i).getDay() %>~</td>
 							    <%} %>

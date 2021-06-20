@@ -109,7 +109,7 @@
                </tr>
                <tr>
                    <td><i class="fas fa-comment-alt fa-2x"></i> </td>
-                   <td><a href="BoardList.jsp">FORUM</a></td>
+                   <td><a href="forumList.jsp">FORUM</a></td>
                </tr>
            </table>
          </nav>

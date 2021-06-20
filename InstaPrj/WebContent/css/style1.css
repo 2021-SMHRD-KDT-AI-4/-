@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+/* 폰트 설정 */
+@font-face {
+    font-family:'GmarketSansTTFLight';
+    src: url("../font/GmarketSansTTFLight.ttf")
+}
+
+@font-face {
+    font-family:'GmarketSansTTFBold';
+    src: url("../font/GmarketSansTTFBold.ttf")
+}
+
+@font-face {
+    font-family:'GmarketSansTTFMedium';
+    src: url("../font/GmarketSansTTFMedium.ttf")
+}
+
+
+
+/* body 기본 설정 */
+body {
+    font-family: 'GmarketSansTTFMedium';
+    font-size: 1.6rem;
+    margin: 1.6rem 0.8rem;
+    text-align: center;
+}
+
+/* main 설정 */
+.main {
+	width: 100vw;
+	height: 100vh;
+	background: url("../img/background2.jpg");
+	background-size: 100vw 100vh;
+	color: white;
+}
+.logoDiv {
+	height: 4.5rem; text-align: left; margin-left: 3.5rem;
+}
+.titleDiv {
+	height: 2rem; text-align: center; font-size: 2rem; font-family: 'GmarketSansTTFBold';
+}
+
+/* sidebar 설정 */
+.menuListDiv {
+	text-align: center;
+}
+.menuList {
+	width: 13.25rem;
+	font-size: 1.5rem;
+	margin: 1rem auto;
+	text-align: left;
+}
+
+/* main 로그인 전 */
+.sidebar {
+	text-align: center;
+}
+#loginDiv {
+	height: 5rem; width: 17.5rem; display: inline-block;
+}
+#loginInputDiv {
+	height: 5rem; width: 12.5rem; float: left;
+}
+#loginBtnDiv {
+	height: 5rem; width: 4.5rem; float: right;
+}
+.inputUserIdPw {
+	height: 2.25rem; width: 12.5rem; border: 1px solid #707070;
+}
+#loginBtn {
+	height: 5rem; width: 4.5rem; background-color: #ffb472; color: white; border: 1px solid #707070;
+}
+
+/* forumList */
+.forumListContainer {
+	display: flex;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+ 
+	
+}
+.forumListItem {
+	height: 22rem;
+	margin: 45px;
+}
+
+.forumListImg {
+	height: 13.5rem;
+	width: 13rem;
+	
+}
+.forumListTxt {
+	font-size: 1rem;
+}
+
+
+/* 반응형 폰트 크기 조절 */
+@media (min-width: 1024px) {
+    html {
+        font-size: 100%;
+    }
+    div[class="sidebar"] {width:30rem;height:100%;position:fixed;top:0;left:-30rem;z-index:1;transition:all .35s;}
+	div[class="main"] {position:fixed;top:0;left:0px;z-index:1;transition:all .35s;}
+	div.sidebar {left:0;background-color: #f5f5f5;}
+	div.main {left:30rem;}
+	.main {
+		width: 75vw;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 62.5%;
+    }
+	/* 메뉴 사이드바 CSS */
+	input[id="menuicon"] {display:none;}
+	input[id="menuicon"] + label {display:block;margin:4rem;width:4rem;height:4rem;position:relative;cursor:pointer;}
+	input[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:0.25rem;border-radius:30px;background:#000;transition:all .35s;}
+	input[id="menuicon"] + label span:nth-child(1) {top:0;z-index:2;}
+	input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);z-index:2;} /* 비슷하게 사용할 수 있는 style top:calc(50% - 2.5px); margin-top:-2.5px;*/
+	input[id="menuicon"] + label span:nth-child(3) {bottom:0;z-index:2;}
+	input[id="menuicon"]:checked + label {z-index:2;}
+	input[id="menuicon"]:checked + label span {background:#000;}
+	input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);left:30rem;}
+	input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;left:30rem;}
+	input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);left:30rem;}
+	div[class="sidebar"] {width:30rem;height:100%;position:fixed;top:0;left:-30rem;z-index:1;transition:all .35s;}
+	div[class="main"] {position:fixed;top:0;left:0px;z-index:1;transition:all .35s;}
+	input[id="menuicon"]:checked + label + div div.sidebar {left:0;background-color: #f5f5f5;}
+	input[id="menuicon"]:checked + label + div div.main {left:30rem;}
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+	/* 메뉴 사이드바 CSS */
+	input[id="menuicon"] {display:none;}
+	input[id="menuicon"] + label {display:block;margin:4rem;width:4rem;height:4rem;position:relative;cursor:pointer;}
+	input[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:0.25rem;border-radius:30px;background:#000;transition:all .35s;}
+	input[id="menuicon"] + label span:nth-child(1) {top:0;z-index:2;}
+	input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);z-index:2;} /* 비슷하게 사용할 수 있는 style top:calc(50% - 2.5px); margin-top:-2.5px;*/
+	input[id="menuicon"] + label span:nth-child(3) {bottom:0;z-index:2;}
+	input[id="menuicon"]:checked + label {z-index:2;}
+	input[id="menuicon"]:checked + label span {background:#000;}
+	input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+	input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
+	input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
+	div[class="sidebar"] {width:30rem;height:100%;position:fixed;top:0;left:-30rem;z-index:1;transition:all .35s;}
+	div[class="main"] {position:fixed;top:0;left:0px;z-index:1;transition:all .35s;}
+	input[id="menuicon"]:checked + label + div div.sidebar {left:0;background-color: #f5f5f5;}
+	input[id="menuicon"]:checked + label + div div.main {left:30rem;}
+}
+
+
