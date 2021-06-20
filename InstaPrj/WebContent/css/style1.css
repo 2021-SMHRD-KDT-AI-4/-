@@ -99,7 +99,18 @@ body {
 }
 
 /* like */
-
+.likeInputDiv {
+	margin-bottom: 0.5rem; height: 2.5rem; display: flex; justify-content: space-between; width: 22.5rem;
+}
+.likeInputDiv_1 {
+	width: 6.5rem; margin: auto 0; font-size: 1.25rem;
+}
+.likeInputDiv_2 {
+	width: 15rem;
+}
+.likeInput {
+	width: 15rem; height: 100%; border: 1px solid #707070;
+}
 
 /* forumList */
 .forumListContainer {
