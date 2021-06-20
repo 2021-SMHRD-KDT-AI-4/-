@@ -24,10 +24,12 @@ public class LoginService extends HttpServlet {
        
 	  PrintWriter out = response.getWriter();
 	   
-      String USER_ID  = request.getParameter("email");
-      String USER_PW  = request.getParameter("pw");
+      String user_id  = request.getParameter("user_id");
+      String user_pw  = request.getParameter("user_pw");
+      System.out.println(user_id);
+      System.out.println(user_pw);
    
-      MemberDTO dto = new MemberDTO(USER_ID, USER_PW );
+      MemberDTO dto = new MemberDTO(user_id, user_pw );
       MemberDAO dao = new MemberDAO();
       
       MemberDTO info = dao.login(dto);
@@ -45,7 +47,7 @@ public class LoginService extends HttpServlet {
          out.close();
          
       }    
-      response.sendRedirect("Main.jsp");
+      response.sendRedirect("main.jsp");
       
  
    }

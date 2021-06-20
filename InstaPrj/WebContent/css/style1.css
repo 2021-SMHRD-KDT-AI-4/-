@@ -8,6 +8,7 @@
 
 @font-face {
     font-family:'GmarketSansTTFBold';
+<<<<<<< HEAD
     src: url("../font/GmarketSansTTFBold.ttf")
 }
 
@@ -89,6 +90,156 @@ body {
 	height: 13.5rem;
 	width: 13rem;
 	
+=======
+    src: url("../font/GMARKETSANSTTFBOLD.TTF")
+}
+
+@font-face {
+    font-family:'GmarketSansTTFMedium';
+    src: url("../font/GmarketSansTTFMedium.ttf")
+}
+
+
+
+/* body 기본 설정 */
+body {
+    font-family: 'GmarketSansTTFMedium';
+    font-size: 1.6rem;
+    margin: 1.6rem 0.8rem;
+    text-align: center;
+}
+
+/* main 설정 */
+.main {
+	width: 100vw;
+	height: 100vh;
+	background: url("../img/background2.jpg");
+	background-size: 100vw 100vh;
+	color: white;
+}
+.logoDiv {
+	height: 4.5rem; text-align: left; margin-left: 3.5rem;
+}
+.titleDiv {
+	height: 2rem; text-align: center; font-size: 2rem; font-family: 'GmarketSansTTFBold';
+}
+.inputBtn {
+	width: 5.5rem; height: 100%; background-color: #ffb47D; border: 1px solid #707070; color: white; font-size: 1rem;
+}
+#mainImg, #joinImg {
+	height: 18.75rem; width: 18.75rem;border-radius: 70%; overflow: hidden; border: 1px solid #707070;
+}
+
+/* sidebar 설정 */
+.menuListDiv {
+	text-align: center;
+}
+.menuList {
+	width: 13.25rem;
+	font-size: 1.5rem;
+	margin: 1rem auto;
+	text-align: left;
+}
+
+/* main 로그인 전 */
+.sidebar {
+	text-align: center;
+}
+#loginDiv {
+	height: 5rem; width: 17.5rem; display: inline-block;
+}
+#loginInputDiv {
+	height: 5rem; width: 12.5rem; float: left;
+}
+#loginBtnDiv {
+	height: 5rem; width: 4.5rem; float: right;
+}
+.inputUserIdPw {
+	height: 2.25rem; width: 12.5rem; border: 1px solid #707070;
+}
+#loginBtn {
+	height: 5rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 1px solid #707070;
+}
+#logoutBtn {
+	height: 2rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 1px solid #707070;
+}
+
+/* join */
+.joinInputDiv {
+	margin-bottom: 0.5rem; height: 2.5rem; display: flex; justify-content: space-between; width: 37.5rem;
+}
+.joinInputDiv_1 {
+	width: 6.5rem; margin: auto 0; font-size: 1.25rem;
+}
+.joinInputDiv_2 {
+	width: 22.5rem;
+}
+.joinInputDiv_3 {
+	width: 6.5rem;
+}
+.joinInput {
+	width: 22.5rem; height: 100%; border: 1px solid #707070;
+}
+
+/* like */
+.likeInputDiv {
+	margin-bottom: 0.5rem; height: 2.5rem; display: flex; justify-content: space-between; width: 22.5rem;
+}
+.likeInputDiv_1 {
+	width: 6.5rem; margin: auto 0; font-size: 1.25rem;
+}
+.likeInputDiv_2 {
+	width: 15rem;
+}
+.likeInput {
+	width: 15rem; height: 100%; border: 1px solid #707070;
+}
+
+/* forumList */
+.forumListContainer {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+.forumListItem {
+	height: 22rem;
+}
+.forumListItem:nth-child(1) {
+	grid-row: 1;
+	grid-column: 1;
+}
+.forumListItem:nth-child(2) {
+	grid-row: 1;
+	grid-column: 2;
+}
+.forumListItem:nth-child(3) {
+	grid-row: 1;
+	grid-column: 3;
+}
+.forumListItem:nth-child(4) {
+	grid-row: 1;
+	grid-column: 4;
+}
+.forumListItem:nth-child(5) {
+	grid-row: 2;
+	grid-column: 1;
+}
+.forumListItem:nth-child(6) {
+	grid-row: 2;
+	grid-column: 2;
+}
+.forumListItem:nth-child(7) {
+	grid-row: 2;
+	grid-column: 3;
+}
+.forumListItem:nth-child(8) {
+	grid-row: 2;
+	grid-column: 4;
+}
+.forumListImg {
+	height: 12.5rem;
+	width: 12.5rem;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-4/-.git
 }
 .forumListTxt {
 	font-size: 1rem;

@@ -90,14 +90,11 @@
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<!-- 로그인 안했을 때 -->
-            <%if(info == null) {
-            	System.out.println("로그인 안했을 때");%>
+            <%if(info == null) {%>
             
             <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
             <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
-         <% }else{  
-	         System.out.println("로그인 안했을 때");%>
-            <!-- 로그인 했을때  -->
+         <% }else{  %>
             <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
             <a href="LogoutService">로그아웃</a>
          <% } %>

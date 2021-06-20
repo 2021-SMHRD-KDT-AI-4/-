@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>sidebar</title>
+    <link rel="stylesheet" href="./css/style1.css" />
+    <script src="https://kit.fontawesome.com/3e7e31d983.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <div style="height: 12rem;"></div>
+            
+            <!-- ID / PW 로그인창 -->
+            <!-- 로그인 안했을시 -->
+            <div id="loginDiv">
+                <!-- 로그인 Form -->
+                <form action="LoginService" method="post">
+                    <div id="loginInputDiv">
+                        <input class="inputUserIdPw" name= "user_id" type="text" placeholder="아이디를 입력해주세요.">
+                        <input class="inputUserIdPw" name="user_pw" type="password" placeholder="비밀번호를 입력해주세요.">
+                    </div>
+                    <!-- 로그인 버튼 -->
+                    <div id="loginBtnDiv">
+                        <input id="loginBtn" type="submit" value="LOGIN">
+                    </div>
+                </form>
+            </div>
+            <!-- 회원가입 버튼 -->
+            <div style="height: 2rem; font-size: 1rem;">
+                <a href="">회원가입</a>
+            </div>
+            
+            <!-- 로그인 했을시 -->
+            <div id="loginDiv"><div style="height: 2rm;"><br></div>
+                <a id="">@kingGodGeneral</a></div>
+            <div style="height: 2rem; font-size: 1rem;">
+                <input id="logoutBtn" type="button" value="LOGOUT">
+            </div>
+
+            <div style="height: 3rem;"></div>
+            <div style="height: 2.5rem; font-size: 1.75rem; font-family: 'GmarketSansTTFBold';"><u>MENU</u></div>
+            <div style="height: 3.25rem;"></div>
+            
+            <!-- 메뉴 리스트 -->
+            <div class="menuListDiv">
+                <div class="menuList"><i class="fas fa-home"></i> HOME </div>
+                <div class="menuList"><i class="fas fa-heart"></i> LIKE</div>
+                <div class="menuList"><i class="fas fa-heartbeat"></i> LIKE RESULT</div>
+                <div class="menuList"><i class="fas fa-heart-broken"></i> UNFOLLOW</div>
+                <div class="menuList"><i class="fas fa-comments"></i> <a href="forumlist">FORUM</a></div>
+            </div>
+        </div>
+
+</body>
+</html>

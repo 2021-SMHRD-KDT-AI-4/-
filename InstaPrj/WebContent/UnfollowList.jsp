@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<%@page import="java.util.stream.Collectors"%>
+<%@page import="com.model.UnfollowDTO"%>
+<%@page import="com.model.UnfollowDAO"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.List"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -33,14 +38,14 @@
   	 <script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
     <STYLE>
-	   table {font-size: 15pt;
+	   table {font-size: 10pt;
 	         
 	         margin:auto;}
 	 </STYLE>
   </head>
   <body>
 	<% MemberDTO info = (MemberDTO)session.getAttribute("info");
-  System.out.println(info);
+	
   	%>
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
@@ -96,58 +101,87 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
-							<!-- 흠.... 언팔한 사람 보기...테이블로.. -->
+							<% if(info != null) {
+								String insta_id = info.getINSTA_ID();
+								String user_id = info.getUSER_ID();
+								
+								UnfollowDAO dao = new UnfollowDAO();
+								
+								String f4f_ID = request.getParameter("f4fID");
+								
+								List<String> now_f4f_list = Arrays.asList(f4f_ID.split(" "));
+								List<String> past_f4f_list = dao.select(user_id);
+								
+								int size_date = past_f4f_list.size()-1;
+								
+								String past_date = past_f4f_list.get(size_date);
+								
+								if(past_f4f_list != null) {
+									System.out.println(user_id+"님의 이전 맞팔 리스트 불러오기 성공");
+	
+								}
+								// 이전 맞팔리스트와 현재 맞팔리스트 비교
+								past_f4f_list.removeAll(now_f4f_list);
+								past_f4f_list.remove(past_date);
+							%>
 					              <div class="card">
 					                <div class="card-body">
-					                  <h4 class="card-title">언팔한 사람???</h4>
+					                  <h4 class="card-title">@<%=info.getINSTA_ID() %>님의 언팔로우 분석 결과</h4>
 					                  <p class="card-description">
-					                    Add class <code>.table</code>
+					                    <code><%= past_date.split(" ")[0]%></code>와 비교 했을 때
 					                  </p>
+					                  
 					                  <table class="table">
-					                    <thead>
-					                      <tr>
-					                        <th>name</th>
-					                        <th>date</th>
-					                        <th>Created</th>
-					                        <th>Status</th>
-					                      </tr>
-					                    </thead>
 					                    <tbody>
+					                    <% for(int i = 0; i<past_f4f_list.size(); i++) { %>
 					                      <tr>
-					                        <td>Jacob</td>
-					                        <td>53275531</td>
-					                        <td>12 May 2017</td>
-					                        <td><label class="badge badge-danger">Pending</label></td>
+					                        <td><%=past_f4f_list.get(i) %></td>
 					                      </tr>
-					                      <tr>
-					                        <td>Messsy</td>
-					                        <td>53275532</td>
-					                        <td>15 May 2017</td>
-					                        <td><label class="badge badge-warning">In progress</label></td>
-					                      </tr>
-					                      <tr>
-					                        <td>John</td>
-					                        <td>53275533</td>
-					                        <td>14 May 2017</td>
-					                        <td><label class="badge badge-info">Fixed</label></td>
-					                      </tr>
-					                      <tr>
-					                        <td>Peter</td>
-					                        <td>53275534</td>
-					                        <td>16 May 2017</td>
-					                        <td><label class="badge badge-success">Completed</label></td>
-					                      </tr>
-					                      <tr>
-					                        <td>Dave</td>
-					                        <td>53275535</td>
-					                        <td>20 May 2017</td>
-					                        <td><label class="badge badge-warning">In progress</label></td>
-					                      </tr>
+					                    <% } %>
 					                    </tbody>
 					                  </table>
+					                  
+					                  <p class="card-description">
+					                  
+					                  	<% if(!past_f4f_list.isEmpty()) { %>
+					                  	위의 계정이 @<%=info.getINSTA_ID() %> 님을 <br>
+					                  	언팔로우 했습니다.
+					                  	<%} else{ %>
+					                  	@<%=info.getINSTA_ID() %> 님을 <br>
+					                  	언팔로우 한 계정이 없습니다.
+					                  	<%}%>
+					                  	
+					                  </p>
+					                  
+					                  <button onclick="location.href = 'Main.jsp'">HOME</button>
 					                </div>
 					              </div>
-					            </div>
+					        <%
+					        	// 출력한 후 값들은 새로운 맞팔 목록들은 insert에 넣는다
+					        	UnfollowDTO dto = new UnfollowDTO(user_id,now_f4f_list);
+						        
+					        	// DB에 저장되어있던 과거 맞팔 리스트를 delete
+					        	int delete_cnt = dao.delete(user_id);
+					        	if(delete_cnt>0){
+					        		System.out.println(user_id+"의 이전 맞팔 DELETE 성공!");
+					        	}else{
+					        		System.out.println(user_id+"의 이전 맞팔 DELETE 실패!");
+					        	}
+					        
+					        	// 크롤링한 현재 맞팔 리스트를 insert
+					        	int insert_cnt = dao.insert(dto);
+					        	
+								if(insert_cnt>0){
+									System.out.println(user_id+"의 새로운 맞팔 INSERT 성공!");
+								} else{
+									System.out.println(user_id+"의 새로운 맞팔 INSERT 실패!");
+								}
+								
+								
+							} else{ %>
+								<h3>로그인을 먼저 진행한 후 이용해주세요</h3>
+							<%} %>
+					        </div>
 						</div>
 					</div>
 				</div>

@@ -33,9 +33,12 @@
   	<script src="https://kit.fontawesome.com/d999958cb1.js" crossorigin="anonymous"></script>
     
     <STYLE>
-	   table {font-size: 15pt;
-	         
-	         margin:auto;}
+    	h1 { font-size: 350%;
+	    text-align: center; 
+	    margin-top: 7%;
+	    }
+	    table {font-size: 15pt;
+	           margin:auto;}
 	 </STYLE>
   </head>
   <body>
@@ -47,8 +50,8 @@
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 	          <!-- 로그인 안했을 때 -->
 			 <%if(info == null) {%>
-	            <h1 id="colorlib-logo"><a href="Login.html">로그인</a>
-	            <h1 id="colorlib-logo"><a href="Join.html">회원가입</a></h1>
+	            <h1 id="colorlib-logo"><a href="Login.jsp">로그인</a>
+	            <h1 id="colorlib-logo"><a href="Join.jsp">회원가입</a></h1>
 	         <% }else{ %>
 	            <!-- 로그인 했을때  -->
 	            <h1 class="mb-4"><%= info.getINSTA_ID() %></h1>
@@ -91,17 +94,24 @@
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
 						<div class="desc">
+							<% if(info != null) {
+							String insta_id = info.getINSTA_ID();%>
+							
 								<table>
 									<tr>
-										<td>ㅇㅇ님ㅇㄹ 언팔한 계정</td>
+										<td>@<%=insta_id %>님의 언팔로우 분석</td>
 									</tr>
 									<tr>
 										<td>서비스 설명</td>
 									</tr>
 									<tr>
-										<td><button onclick="location.href = 'UnfollowList.html'">확인하기</button></td>
+										<td><button onclick="location.href = 'http://localhost:9000/inforum/Unfollow?insta_id=<%= insta_id%>'">분석하기</button></td>
 									</tr>
 								</table>
+							
+							<%} else{ %>
+								<h3>로그인을 먼저 진행한 후 이용해주세요</h3>
+							<%} %>
 						</div>
 					</div>
 				</div>
