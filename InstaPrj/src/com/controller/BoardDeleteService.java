@@ -27,21 +27,21 @@ public class BoardDeleteService extends HttpServlet {
 //		String writer = "test2";
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
-		int num = Integer.parseInt(request.getParameter("num"));
+		//int num = Integer.parseInt(request.getParameter("num"));
 		String writer = (String)info.getUSER_ID();
 		System.out.println(writer);
-		System.out.println(num);
+		//System.out.println(num);
 		System.out.println(writer);
-		BoardDTO dto = new BoardDTO(num, writer);
+		BoardDTO dto = new BoardDTO(writer);
 		BoardDAO dao = new BoardDAO();
 		int cnt = dao.delete(dto);
 		
 		if (cnt > 0) {
 			System.out.println("게시글삭제완료");
-			response.sendRedirect("BoardList.jsp");
+			response.sendRedirect("forumList.jsp");
 		}else {
 			System.out.println("게시글삭제실패");
-			response.sendRedirect("BoardList.jsp");
+			response.sendRedirect("forumList.jsp");
 		}
 	}
 

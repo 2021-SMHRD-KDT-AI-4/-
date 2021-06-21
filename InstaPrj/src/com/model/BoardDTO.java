@@ -67,9 +67,8 @@ public class BoardDTO {
 		this.day = day;
 	}
 
-	public BoardDTO(int num, String writer) {
+	public BoardDTO(String writer) {
 		super();
-		this.num = num;
 		this.writer = writer;
 	}
 
