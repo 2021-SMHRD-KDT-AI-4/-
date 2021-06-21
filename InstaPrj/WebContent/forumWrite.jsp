@@ -30,7 +30,7 @@
         <!-- 사이드바 -->
         <div id="sidebar"></div>
         <!-- 메인 -->
-        <div class="main" >
+        <div class="main">
             <div style="height: 2rem;"></div>
             <div class="logoDiv">
             	<a href="main.html"><img src="./img/logo.png" height="100%"></a>

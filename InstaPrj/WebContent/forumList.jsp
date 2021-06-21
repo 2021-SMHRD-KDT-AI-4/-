@@ -27,7 +27,7 @@
   BoardDAO dao = new BoardDAO();
   ArrayList<BoardDTO> list = dao.showBoard();
   %>
-    <!-- 메뉴 사이드바 버튼 표시 -->
+    <!-- 메뉴 사이드바 버튼 표시 --> 
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
         <span></span>

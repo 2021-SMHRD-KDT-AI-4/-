@@ -31,8 +31,8 @@
         <span></span>
         <span></span>
     </label>
-    <div class="container">
-        <!-- 사이드바 -->
+    <div class="container"> 
+        <!-- 사이드바 --> 
         <div id="sidebar"></div>  
         <!-- 메인 -->
         <div class="main">

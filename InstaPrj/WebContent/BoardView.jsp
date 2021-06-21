@@ -38,7 +38,7 @@
 	   table {font-size: 15pt;
 	         
 	         margin:auto;}
-	 </STYLE>
+	 </STYLE> 
   </head>
   <body>
   <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
