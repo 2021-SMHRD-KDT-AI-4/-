@@ -35,7 +35,7 @@ public class BoardWriteService extends HttpServlet {
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 		String title = multi.getParameter("title");
-		String filename = URLEncoder.encode(multi.getFilesystemName("file_name"), "EUC-KR");
+		String filename = URLEncoder.encode(multi.getFilesystemName("filename"), "EUC-KR");
 		String writer = info.getUSER_ID();
 		String content = multi.getParameter("content");
 		System.out.println("title : " + title);

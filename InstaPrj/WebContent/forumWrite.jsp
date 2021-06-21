@@ -41,10 +41,10 @@
             <div style="height: 1rem;"></div>
             
             <!-- forumWrite form -->
-            <form action="BoardWriteService" method="post" style="width: 25rem; margin: 0 auto;">
+            <form action="BoardWriteService" method="post" style="width: 25rem; margin: 0 auto;" enctype = "multipart/form-data">
                 <!-- 이미지 업로드 및 미리보기 -->
                 <div style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099;">
-                    <input name="file_name"id="uploadImg" type="file" style="display: none;">
+                    <input name="filename"id="uploadImg" type="file" style="display: none;">
                     <label for="uploadImg">
                         <img src="./img/upload_image.jpg" id="previewImg" width="100%" height="100%">
                     </label>

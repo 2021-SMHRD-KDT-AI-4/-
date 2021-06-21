@@ -1,5 +1,4 @@
 <%@page import="com.model.BoardDTO"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.model.BoardDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -21,12 +20,10 @@
 	</script>
 </head>
 <body>
-<% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
-  
-  <% 
+<% MemberDTO info = (MemberDTO)session.getAttribute("info");
+ int num = Integer.parseInt(request.getParameter("num"));
   BoardDAO dao = new BoardDAO();
-  ArrayList<BoardDTO> list = dao.showBoard();
-  %>
+  BoardDTO dto = dao.showOne(num);%>
     <!-- 메뉴 사이드바 버튼 표시 -->
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
@@ -41,27 +38,25 @@
         <div class="main">
             <div style="height: 2rem;"></div>
             <div class="logoDiv">
-            	<a href="main.html"><img src="./img/logo.png" height="100%"></a>
+            	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
             </div>
             <div style="height: 2rem;"></div>
             <!-- 페이지 제목 -->
-            <div class="titleDiv">인스타그램 포럼</div> 
+            <div class="titleDiv"><%= dto.getTitle() %></div>
             <div style="height: 2.5rem;"></div>
-            <!-- 리스트 -->
-           <% for(int i=0; i<list.size(); i++){ %>
-            <div class="forumListContainer">
-                <div class="forumListItem">
-                    <img class="forumListImg" src="./img/<%=list.get(i).getFilename() %>"><br>
-                    <a  class="forumListTxt"href="forumView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a><br>
-                    <a class="forumListTxt"><%= list.get(i).getWriter() %></a>
-                </div>
-                <%} %>
+            <div style="width: 25rem; text-align: left; margin: 0 auto;">
+                <a style="font-size: 1rem;">
+                    작성일자 : <%= dto.getDay() %><br>
+                    작성자 : <%= dto.getWriter() %>
+                </a>
+                <img src="./img/sample.jpg" style="width: 25rem; height: 25rem;">
+                <div style="height: 2.5rem;"></div>
+                <a style="font-size: 1.5rem;">
+                   <%= dto.getContent() %>
+                </a>
             </div>
-            <div style="height: 2.5rem;">
-            	<a href="forumWrite.jsp"><input type="button" class="inputBtn" value="글쓰기"></a>
-            </div>
-            
         </div>
     </div>
 </body>
+<script type="text/javascript" src="./js/previewImg.js"></script>
 </html>
