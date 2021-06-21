@@ -27,12 +27,16 @@ public class JoinService extends HttpServlet {
       
       if(cnt>0){
          System.out.println("회원가입 성공");
+         response.sendRedirect("main?insta_id="+insta_id+".jsp");
       }else{
          System.out.println("회원가입실패");
+         response.sendRedirect("main.jsp");
          
       }
-      response.sendRedirect("main.jsp");
-            
+      
+      
+//      response.sendRedirect("http://localhost:9000/joinservice/crawling?insta_id='abcdef");
+      
    }
 
 }

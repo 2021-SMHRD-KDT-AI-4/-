@@ -27,7 +27,9 @@ create table PRED_LIKE(
     UPLOAD_TIME varchar2(100) NOT NULL,
     HASHTAG varchar2(500) NOT NULL,
     FILE_NAME varchar2(300) NOT NULL,
-    DATE_D date default sysdate NOT NULL,
+    ACCOUNT_TAG number(10) NOT NULL, 
+    PLACE_TAG number(10) NOT NULL,
+    PED_DATE date default sysdate NOT NULL,
     constraint PRED_LIKE_NUM_PK primary key(PRED_LIKE_NUM),
     constraint PRED_LIKE_PRED_INSTA_ID_FK foreign key(PRED_INSTA_ID) references USER_TB(INSTA_ID)
 );

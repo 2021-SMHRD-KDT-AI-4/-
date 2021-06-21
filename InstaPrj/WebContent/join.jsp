@@ -40,7 +40,7 @@
              
 
             <!-- 회원가입 form -->
-            <form action="JoinService" method="post" style="width: 37.5rem; margin: 0 auto;">
+            <form action="http://localhost:9000/joinservice/crawling" method="post" style="width: 37.5rem; margin: 0 auto;">
                 <!-- 이메일 -->
                 <div class="joinInputDiv">
                     <div class="joinInputDiv_1"><a>아이디</a></div>
@@ -130,6 +130,25 @@
 						alert("실패!");
 					}
 				});	
+			}
+			
+			function crwalingF4F(){
+				var insta_id = $('#insta_id').val();
+				alert("submit : "+input_id);
+				
+				$.ajax({
+					type : "get",
+					data : {"insta_id" : insta_id},
+					url : "http://localhost:9000/joinservice/crawling",
+					dataType : "text",
+					success: function(data) {
+						alert("성공!")
+					},
+					error:function(data){
+						alert("실패!")
+					}
+				});
+				
 			}
 				
 			
