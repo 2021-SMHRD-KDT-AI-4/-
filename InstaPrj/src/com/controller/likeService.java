@@ -44,8 +44,8 @@ public class likeService extends HttpServlet {
 		String upload_day = request.getParameter("upload_day");
 		String upload_time = request.getParameter("upload_time");
 		String hashtag = request.getParameter("hashtag");
-		String account_tag = request.getParameter("account_tag");
-		int place_tag = request.getParameter("place_tag");
+		int account_tag = Integer.parseInt( request.getParameter("account_tag"));
+		int place_tag = Integer.parseInt( request.getParameter("place_tag"));
 		
 		System.out.println("filename : " + file_name);
 		System.out.println("upload_day : " + upload_day);
