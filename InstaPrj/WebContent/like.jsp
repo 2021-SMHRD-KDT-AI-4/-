@@ -13,7 +13,7 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">   
 		$(document).ready(function() {
-			$("#sidebar").load("./sidebar.html");
+			$("#sidebar").load("./sidebar.jsp");
 		});
 	</script>
 </head>
@@ -45,7 +45,7 @@
             
          	<% } else { %>
 	            <!-- 좋아요 예측 form -->
-	            <form action="likeservice" method="post" enctype = "multipart/form-data" style="width: 22.5rem; margin: 0 auto;">
+	            <form action="likeService" method="post" enctype = "multipart/form-data" style="width: 22.5rem; margin: 0 auto;">
 	                <!-- 이미지 업로드 및 미리보기 -->
 	                <div style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099;">
 	                    <input id="uploadImg" name="file_name" type="file" style="display: none;">

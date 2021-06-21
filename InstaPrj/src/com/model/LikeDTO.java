@@ -10,7 +10,7 @@ public class LikeDTO {
 	private String file_name;
 	private int account_tag;
 	private int place_tag;
-	private String pred_date;
+	private int pred_date;
 	
 	
 	
@@ -110,13 +110,13 @@ public class LikeDTO {
 
 
 
-	public String getPred_date() {
+	public int getPred_date() {
 		return pred_date;
 	}
 
 
 
-	public void setPred_date(String pred_date) {
+	public void setPred_date(int pred_date) {
 		this.pred_date = pred_date;
 	}
 	

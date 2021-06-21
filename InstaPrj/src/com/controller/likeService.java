@@ -40,13 +40,22 @@ public class likeService extends HttpServlet {
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 		
 		String pred_insta_id = info.getINSTA_ID();
-		String file_name = multi.getParameter("file_name");
-		String upload_day = request.getParameter("upload_day");
-		String upload_time = request.getParameter("upload_time");
-		String hashtag = request.getParameter("hashtag");
-		int account_tag = Integer.parseInt( request.getParameter("account_tag"));
-		int place_tag = Integer.parseInt( request.getParameter("place_tag"));
+		String file_name = URLEncoder.encode(multi.getFilesystemName("file_name"), "EUC-KR");
+		String upload_day = multi.getParameter("upload_day");
+		String upload_time = multi.getParameter("upload_time");
+		String hashtag = multi.getParameter("hashtag");
+		String account_tag_ =  multi.getParameter("account_tag");
+		if (account_tag_==null) {
+			account_tag_="0";
+		}
+		int account_tag = Integer.parseInt(account_tag_);
+		String place_tag_ = request.getParameter("place_tag");
+		if ( place_tag_ == null) {
+			place_tag_ = "0";
+		}
+		int place_tag =Integer.parseInt(place_tag_);
 		
+		System.err.println("insta_id : "+ pred_insta_id);
 		System.out.println("filename : " + file_name);
 		System.out.println("upload_day : " + upload_day);
 		System.out.println("upload_time : " + upload_time);
@@ -59,11 +68,11 @@ public class likeService extends HttpServlet {
 		int cnt = dao.upload(dto);
 		
 		if(cnt > 0) {
-			System.out.println("게시물작성성공");
-			response.sendRedirect("forumList.jsp");
+			System.out.println("좋아요예측누름");
+			response.sendRedirect("likeResult.html");
 		}else {
-			System.out.println("게시물작성실패");
-			response.sendRedirect("forumWrite.jsp");
+			System.out.println("좋아요예측실패");
+			response.sendRedirect("main.jsp");
 		}
 		
 	}

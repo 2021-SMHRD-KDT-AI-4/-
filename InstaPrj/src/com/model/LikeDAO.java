@@ -45,14 +45,13 @@ public class LikeDAO {
 		String sql = "insert into PRED_LIKE values(PRED_LIKE_NUM_SEQ.nextval,?,?,?,?,?,?,?,SYSDATE)";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(2, dto.getPred_insta_id());
-			psmt.setString(3, dto.getUpload_day());
-			psmt.setString(4, dto.getUpload_time());
-			psmt.setString(5, dto.getHashtag());
-			psmt.setString(6, dto.getFile_name());
-			psmt.setInt(7, dto.getAccount_tag());
-			psmt.setInt(8, dto.getPlace_tag());
-			psmt.setString(9, dto.getPred_date());
+			psmt.setString(1, dto.getPred_insta_id());
+			psmt.setString(2, dto.getUpload_day());
+			psmt.setString(3, dto.getUpload_time());
+			psmt.setString(4, dto.getHashtag());
+			psmt.setString(5, dto.getFile_name());
+			psmt.setInt(6, dto.getAccount_tag());
+			psmt.setInt(7, dto.getPlace_tag());
 			
 			cnt = psmt.executeUpdate();
 		
