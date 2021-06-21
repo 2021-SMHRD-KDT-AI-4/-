@@ -55,6 +55,11 @@
                    <%= dto.getContent() %>
                 </a>
             </div>
+            <div style="height: 0.5rem;"></div>
+            <div style="height: 2.5rem;">
+                <a href="main.jsp"><input type="button" value="홈으로" class="inputBtn"></a>
+                <input type="button" value="삭제하기" class="inputBtn">
+            </div>
         </div>
     </div>
 </body>
