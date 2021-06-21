@@ -38,7 +38,11 @@
             </div>
             <div style="height: 8.25rem;"></div>
             <!-- 메인 프로필 이미지 -->
+            <% if (info == null){ %>
             <div style="height: 18.75rem;"><img id="mainImg" src="./img/sample.jpg"></div>
+            <%}else{ %>
+            <div style="height: 18.75rem;"><img id="mainImg" src="./profileImg/<%=info.getINSTA_ID() %>.png"></div>
+            <%} %>
             <div style="height: 1.5rem;"></div>
             <!-- 메인 인스타 아이디 -->
             <% if(info == null){ %>
