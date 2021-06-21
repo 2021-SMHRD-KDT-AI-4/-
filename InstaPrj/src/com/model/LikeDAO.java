@@ -41,8 +41,25 @@ public class LikeDAO {
 	}
 
 	public int upload(LikeDTO dto) {
-		// TODO Auto-generated method stub
-		return 0;
+		getConnection();
+		String sql = "insert into PRED_LIKE values(PRED_LIKE_NUM_SEQ.nextval,?,?,?,?,?,?,?,SYSDATE)";
+		try {
+			psmt = conn.prepareStatement(sql);
+//			psmt.setString(1, dto.get);
+//			psmt.setString(2, dto.getTitle());
+//			psmt.setString(3, dto.getContent());
+//			psmt.setString(4, dto.getFilename());
+			cnt = psmt.executeUpdate();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		return cnt;		
+
 	}
 	
 	
