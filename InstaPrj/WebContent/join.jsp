@@ -93,11 +93,11 @@
 					url : "IdCheckService", //서버 파일 이름
 					dataType : "text" , //응답 데이터 형식
 					success : function(data){
-						if(data=='true'){
-							alert("사용할 수 없는 id입니다");
+						if(data== 'true'){
+							alert("사용할 수 없는 ID입니다!");
 						}else{
 							console.log(data);
-							alert("사용 가능한 id입니다");
+							alert("사용 가능한 ID입니다!");
 						}
 					},
 					error : function(){
@@ -128,7 +128,7 @@
 						var imgsrc = './profileImg/'+insta_id+'.png';
 						$('#joinImg').attr('src','./profileImg/'+insta_id+'.png');
 						// 인스타그램 이름 띄우기
-						$('#welcomNick').html(nickname+"님_반갑습니다!");
+						$('#welcomNick').html("#"+nickname+"님_반갑습니다!");
 						$('#loading').hide();
 						
 					},
@@ -149,6 +149,7 @@
 					dataType : "text",
 					success: function(data) {
 						alert("성공!")
+						$('#loading').hide();
 					},
 					error:function(data){
 						alert("실패!")
