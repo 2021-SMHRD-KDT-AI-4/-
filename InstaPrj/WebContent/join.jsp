@@ -57,17 +57,18 @@
                 <!-- 인스타그램 아이디 -->
                 <div class="joinInputDiv">
                     <div class="joinInputDiv_1"><a>인스타그램 아이디</a></div>
-                    <div class="joinInputDiv_2"><input class="joinInput" name ="insta_id" type="text" placeholder="인스타그램 아이디를 입력하세요."></div>
-                    <div class="joinInputDiv_3"><input class="inputBtn" type="button" value="확인"></div>
+                    <div class="joinInputDiv_2"><input class="joinInput" id="insta_id" name ="insta_id" type="text" placeholder="인스타그램 아이디를 입력하세요."></div>
+                    <div class="joinInputDiv_3"><input class="inputBtn" type="button" value="확인"  onclick="crawlingNickImg()"></div>
                 </div>
                 <div style="height: 2rem;"></div>
                 <!-- 인스타그램 이미지 추출해서 가져오기 -->
-                <img src="./img/sample.jpg" id="joinImg">
+                <img src="./profileImg/noPhoto.png" id="joinImg">
+         
                 <!-- 인스타그램 이미지 이름 input -->
                 <input type="text" style="display: none;">
                 <div style="height: 1.25rem;"></div>
                 <!-- 인스타그램 이름 -->
-                <a id="" style="font-size: 1.25rem;">#kingGodGeneral_님_반가워요</a>
+                <a id="welcomNick" style="font-size: 1.25rem;">@inforum_가입을_환영합니다!</a>
                 <div style="height: 2rem;"></div>
                 <!-- form 제출 -->
                 <div style="height: 2.5rem;">
@@ -77,36 +78,60 @@
             
         </div>
     </div>
-    			<script>
-				function idCheck() {
-					var input = $('#join_id').val();
-					
-					$.ajax({
-						type : "post", // 데이터를 보내는 방식
-						data : {"join_id" : input},  // 서버를 보내는 데이터
-						url : "IdCheckService",  // 서버 파일 이름
-						dataType : "text",  // 응답 데이터 형식
-						success : function(data){
-							
-							if(data == true){
-								alert("사용불가")
-								
-							}else if(data == false){
-								alert("사용가능")
-							}else{
-								alert("모르겠다")
-							}
-							// data == true (값이 있는 경우)
-							// span(id = 'sp') =>'불가능한 id입니다.'
-							
-							// data == false (값이 없는 경우)
-							// span(id = 'sp') =>'가능한 id입니다.'
-						},
-						error : function(data){
-							alert("실패!");
+    	<script>
+			function idcheck(){
+				var input_id = $('#join_id').val();
+				
+				$.ajax({
+					type : "post",  //데이터 보내는 방식
+					data : {"USER_ID" : input_id}, //서버로 보내는 데이타
+					url : "IdCheckService", //서버 파일 이름
+					dataType : "text" , //응답 데이터 형식
+					success : function(data){
+						if(data=='true'){
+							alert("사용할 수 없는 id입니다");
+						}else{
+							console.log(data);
+							alert("사용 가능한 id입니다");
 						}
-					})
-				}
-			</script>
+					},
+					error : function(){
+						alert("실패!");
+					}
+				});
+				
+			}
+			
+			function crawlingNickImg(){
+				var insta_id = $('#insta_id').val();					
+				
+				$.ajax({
+					
+					type : "post",
+					// 인스타아이디를 플라스크서버에 전달
+					data : {"insta_id" : insta_id},
+					url : "http://localhost:9000/joinservice/flaskimgcrawling",
+					dataType : "text",
+					success: function(data) {
+						
+						var obj = JSON.parse(data);
+						console.log(obj);
+						var nickname = obj.nickname;
+						console.log("nickname : "+nickname);
+						// 프로필으로 사진 변경
+						var imgsrc = './profileImg/'+insta_id+'.png';
+						$('#joinImg').attr('src','./profileImg/'+insta_id+'.png');
+						// 인스타그램 이름 띄우기
+						$('#welcomNick').html(nickname+"님_반갑습니다!");
+						
+					},
+					error:function(data){
+						alert("실패!");
+					}
+				});	
+			}
+				
+			
+		</script>
 </body>
 </html>
