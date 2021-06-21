@@ -151,7 +151,10 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 .txtPink {
 	color: #BA2D65;
 }
-.txtOrange {
+.txtLike {
+	color: #FFB47D;
+}
+.txtHash {
 	color: #FFB47D;
 }
 #likeResultList {
@@ -309,7 +312,10 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	.txtPink {
 		color: #BA2D65;
 	}
-	.txtOrange {
+	.txtLike {
+		color: #FFB47D;
+	}
+	.txtHash {
 		color: #FFB47D;
 	}
 	#likeResultList {
@@ -446,7 +452,10 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	.txtPink {
 		color: #BA2D65;
 	}
-	.txtOrange {
+	.txtLike {
+		color: #FFB47D;
+	}
+	.txtHash {
 		color: #FFB47D;
 	}
 	#likeResultList {
