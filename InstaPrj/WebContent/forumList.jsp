@@ -33,7 +33,7 @@
         <span></span>
         <span></span>
         <span></span>
-    </label>
+    </label> 
     <div class="container">
         <!-- 사이드바 -->
         <div id="sidebar"></div>

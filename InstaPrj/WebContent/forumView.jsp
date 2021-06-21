@@ -33,7 +33,7 @@
     </label>
     <div class="container">
         <!-- 사이드바 -->
-        <div id="sidebar"></div>
+        <div id="sidebar"></div> 
         <!-- 메인 -->
         <div class="main">
             <div style="height: 2rem;"></div>

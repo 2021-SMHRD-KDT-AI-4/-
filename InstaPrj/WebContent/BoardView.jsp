@@ -43,7 +43,7 @@
   <body>
   <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
 
-<% 
+<%  
   int num = Integer.parseInt(request.getParameter("num"));
   BoardDAO dao = new BoardDAO();
   BoardDTO dto = dao.showOne(num);

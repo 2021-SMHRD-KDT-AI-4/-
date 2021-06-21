@@ -90,7 +90,7 @@
                </tr>
            </table>
            </nav>
-		</div>
+		</div> 
 		</aside> <!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
 			<div class="hero-wrap js-fullheight" style="background-image: url(images/background.jpeg);" data-stellar-background-ratio="0.5">

@@ -29,7 +29,7 @@ public class BoardWriteService extends HttpServlet {
 		System.out.println(savePath);
 		
 		int maxSize = 5*500*500;
-		
+		 
 		String encoding = "EUC-KR";
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
