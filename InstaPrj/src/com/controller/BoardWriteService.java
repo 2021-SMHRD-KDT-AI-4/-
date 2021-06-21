@@ -35,7 +35,7 @@ public class BoardWriteService extends HttpServlet {
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 		String title = multi.getParameter("title");
-		String filename = URLEncoder.encode(multi.getFilesystemName("filename"), "EUC-KR");
+		String filename = URLEncoder.encode(multi.getFilesystemName("file_name"), "EUC-KR");
 		String writer = info.getUSER_ID();
 		String content = multi.getParameter("content");
 		System.out.println("title : " + title);
@@ -49,10 +49,10 @@ public class BoardWriteService extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("게시물작성성공");
-			response.sendRedirect("BoardList.jsp");
+			response.sendRedirect("forumList.jsp");
 		}else {
 			System.out.println("게시물작성실패");
-			response.sendRedirect("WriteBoard.jsp");
+			response.sendRedirect("forumWrite.jsp");
 		}
 		
 	}

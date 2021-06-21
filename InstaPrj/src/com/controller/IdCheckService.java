@@ -24,7 +24,11 @@ public class IdCheckService extends HttpServlet {
 	      boolean check = dao.idCheck(user_id);
 	      
 	      PrintWriter out = response.getWriter();
-	      
+	      if (check==true) {
+	    	  out.println("<script>alert('있는아이디임다!');history.go(-1);</script>");
+	      }else {
+	    	  out.println("<script>alert('없는아이디임다!');history.go(-1);</script>");
+	      }
 	      out.print(check);
 	   
 	   }

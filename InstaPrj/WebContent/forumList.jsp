@@ -10,11 +10,18 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>main</title>
+	<title>forumList</title>
     <link rel="stylesheet" href="./css/style1.css">
+    <script src="https://kit.fontawesome.com/3e7e31d983.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">   
+		$(document).ready(function() {
+			$("#sidebar").load("./sidebar.jsp");
+		});
+	</script>
 </head>
 <body>
- <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+<% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
   
   <% 
   BoardDAO dao = new BoardDAO();
@@ -29,47 +36,19 @@
     </label>
     <div class="container">
         <!-- 사이드바 -->
-        <div class="sidebar">
-            <div style="height: 2rem;"></div>
-            <div id="loginDiv">
-                <div id="loginInputDiv">
-                    <!-- ID / PW 로그인창 -->
-                    <input class="inputUserIdPw" type="text" placeholder="이메일을 입력해주세요.">
-                    <input class="inputUserIdPw" type="password" placeholder="비밀번호를 입력해주세요.">
-                </div>
-                <div id="loginBtnDiv">
-                    <!-- 로그인 버튼 -->
-                    <input id="loginBtn" type="submit" value="LOGIN">
-                </div>
-            </div>
-            <!-- 회원가입 버튼 -->
-            <div style="height: 2rem; font-size: 1rem;">
-                <a href="">회원가입</a>
-            </div>
-            <div style="height: 3rem;"></div>
-            <div style="height: 2.5rem; font-size: 1.75rem; font-family: 'GmarketSansTTFBold';"><u>MENU</u></div>
-            <div style="height: 3.25rem;"></div>
-            <!-- 메뉴 리스트 -->
-            <div class="menuListDiv">
-                <div class="menuList">HOME</div>
-                <div class="menuList">LIKE</div>
-                <div class="menuList">LIKE RESULT</div>
-                <div class="menuList">UNFOLLOW</div>
-                <div class="menuList">FORUM</div>
-            </div>
-        </div>
+        <div id="sidebar"></div>
         <!-- 메인 -->
         <div class="main">
             <div style="height: 2rem;"></div>
             <div class="logoDiv">
-            	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
+            	<a href="main.html"><img src="./img/logo.png" height="100%"></a>
             </div>
             <div style="height: 2rem;"></div>
             <!-- 페이지 제목 -->
-            <div class="titleDiv">Forum List</div>
+            <div class="titleDiv">인스타그램 포럼</div>
             <div style="height: 2.5rem;"></div>
             <!-- 리스트 -->
-            <% for(int i=0; i<list.size(); i++){ %>
+           <% for(int i=0; i<list.size(); i++){ %>
             <div class="forumListContainer">
                 <div class="forumListItem">
                     <img class="forumListImg" src="./img/<%=list.get(i).getFilename() %>"><br>
@@ -77,10 +56,8 @@
                     <a class="forumListTxt"><%= list.get(i).getWriter() %></a>
                 </div>
                 <%} %>
-                
             </div>
-            
-        </div><input type="submit">
+        </div>
     </div>
 </body>
 </html>

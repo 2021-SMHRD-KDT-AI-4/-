@@ -1,3 +1,6 @@
+<%@page import="com.model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -15,7 +18,8 @@
 	</script>
 </head>
 <body>
-    <!-- ë©”ë‰´ ì‚¬ì´ë“œë°” ë²„íŠ¼ í‘œì‹œ -->
+<% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+    <!-- ¸Þ´º »çÀÌµå¹Ù ¹öÆ° Ç¥½Ã -->
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
         <span></span>
@@ -23,43 +27,43 @@
         <span></span>
     </label>
     <div class="container">
-        <!-- ì‚¬ì´ë“œë°” -->
+        <!-- »çÀÌµå¹Ù -->
         <div id="sidebar"></div>
-        <!-- ë©”ì¸ -->
+        <!-- ¸ÞÀÎ -->
         <div class="main">
             <div style="height: 2rem;"></div>
             <div class="logoDiv">
             	<a href="main.html"><img src="./img/logo.png" height="100%"></a>
             </div>
             <div style="height: 2rem;"></div>
-            <!-- íŽ˜ì´ì§€ ì œëª© -->
-            <div class="titleDiv">ê²Œì‹œë¬¼ ìž‘ì„±</div>
+            <!-- ÆäÀÌÁö Á¦¸ñ -->
+            <div class="titleDiv">°Ô½Ã¹° ÀÛ¼º</div>
             <div style="height: 1rem;"></div>
             
             <!-- forumWrite form -->
-            <form action="" method="" style="width: 25rem; margin: 0 auto;">
-                <!-- ì´ë¯¸ì§€ ì—…ë¡œë“œ ë° ë¯¸ë¦¬ë³´ê¸° -->
+            <form action="BoardWriteService" method="post" style="width: 25rem; margin: 0 auto;">
+                <!-- ÀÌ¹ÌÁö ¾÷·Îµå ¹× ¹Ì¸®º¸±â -->
                 <div style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099;">
-                    <input id="uploadImg" type="file" style="display: none;">
+                    <input name="file_name"id="uploadImg" type="file" style="display: none;">
                     <label for="uploadImg">
                         <img src="./img/upload_image.jpg" id="previewImg" width="100%" height="100%">
                     </label>
                 </div>
                 <div style="height: 1.25rem;"></div>
-                <!-- ì œëª© -->
+                <!-- Á¦¸ñ -->
                 <div class="forumInputDiv">
-                    <div class="forumInputDiv_1"><a>ì œëª©</a></div>
-                    <div class="forumInputDiv_2"><input class="forumInput" type="text"></div>
+                    <div class="forumInputDiv_1"><a>Á¦¸ñ</a></div>
+                    <div class="forumInputDiv_2"><input name="title" class="forumInput" type="text"></div>
                 </div>
-                <!-- ë‚´ìš© -->
+                <!-- ³»¿ë -->
                 <div class="forumInputTADiv">
-                    <div class="forumInputDiv_1"><a>ë‚´ìš©</a></div>
-                    <div class="forumInputTADiv_2"><textarea class="forumInputTA" rows="12.5rem" cols="15rem"></textarea></div>
+                    <div class="forumInputDiv_1"><a>³»¿ë</a></div>
+                    <div class="forumInputTADiv_2"><textarea name="content" class="forumInputTA" rows="12.5rem" cols="15rem"></textarea></div>
                 </div>
                 <div style="height: 1.25rem;"></div>
-                <!-- form ì œì¶œ -->
+                <!-- form Á¦Ãâ -->
                 <div style="height: 2.5rem;">
-                    <input class="inputBtn" type="submit" value="ë“±ë¡í•˜ê¸°">
+                    <input class="inputBtn" type="submit" value="µî·ÏÇÏ±â">
                 </div>
             </form>
 

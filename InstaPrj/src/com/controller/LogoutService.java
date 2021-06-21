@@ -19,7 +19,7 @@ public class LogoutService extends HttpServlet {
       session.removeAttribute("info");
       
 
-      response.sendRedirect("join.jsp");
+      response.sendRedirect("main.jsp");
       
    }
 
