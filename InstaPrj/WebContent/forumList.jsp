@@ -57,6 +57,10 @@
                 </div>
                 <%} %>
             </div>
+            <div style="height: 2.5rem;">
+            	<a href="forumWrite.jsp"><input type="button" class="inputBtn" value="±Û¾²±â"></a>
+            </div>
+            
         </div>
     </div>
 </body>

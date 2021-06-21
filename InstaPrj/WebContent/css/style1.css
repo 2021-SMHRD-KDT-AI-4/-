@@ -94,7 +94,6 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	height: 2rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 0.0625rem solid #707070;
 }
 #loginBtn:hover, #logoutBtn:hover {
-
 	cursor: pointer;
 }
 
@@ -264,7 +263,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 
 
 /* 반응형 폰트 크기 조절 */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     html {
         font-size: 100%;
     }
@@ -277,7 +276,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     html {
         font-size: 62.5%;
     }
@@ -287,6 +286,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	.logoDiv {
 		text-align: center; margin-left: 0rem;
 	}
+	
 	/* 메뉴 사이드바 CSS */
 	input[id="menuicon"] {display:none;}
 	input[id="menuicon"] + label {display:block;margin:4rem;width:4rem;height:4rem;position:relative;cursor:pointer;}
@@ -305,7 +305,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	input[id="menuicon"]:checked + label + div div.main {left:30rem;}
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     html {
         font-size: 50%;
     }
@@ -314,6 +314,54 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	}
 	.logoDiv {
 		text-align: center; margin-left: 0rem;
+	}
+	/* forumList */
+	.forumListContainer {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+	}
+	.forumListItem {
+		height: 26rem;
+	}
+	.forumListItem:nth-child(1) {
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.forumListItem:nth-child(2) {
+		grid-row: 1;
+		grid-column: 2;
+	}
+	.forumListItem:nth-child(3) {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.forumListItem:nth-child(4) {
+		grid-row: 2;
+		grid-column: 2;
+	}
+	.forumListItem:nth-child(5) {
+		grid-row: 3;
+		grid-column: 1;
+	}
+	.forumListItem:nth-child(6) {
+		grid-row: 3;
+		grid-column: 2;
+	}
+	.forumListItem:nth-child(7) {
+		grid-row: 4;
+		grid-column: 1;
+	}
+	.forumListItem:nth-child(8) {
+		grid-row: 4;
+		grid-column: 2;
+	}
+	.forumListImg {
+		height: 20rem;
+		width: 20rem;
+	}
+	.forumListTxt {
+		font-size: 1rem;
 	}
 	/* 메뉴 사이드바 CSS */
 	input[id="menuicon"] {display:none;}
