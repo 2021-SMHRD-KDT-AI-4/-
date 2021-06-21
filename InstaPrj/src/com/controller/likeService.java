@@ -39,12 +39,13 @@ public class likeService extends HttpServlet {
 		
 		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
 		
+		String pred_insta_id = info.getINSTA_ID();
 		String file_name = multi.getParameter("file_name");
-		String upload_day = multi.getParameter("upload_day");
-		String upload_time = multi.getParameter("upload_time");
-		String hashtag = multi.getParameter("hashtag");
-		String account_tag = multi.getParameter("account_tag");
-		String place_tag = multi.getParameter("place_tag");
+		String upload_day = request.getParameter("upload_day");
+		String upload_time = request.getParameter("upload_time");
+		String hashtag = request.getParameter("hashtag");
+		String account_tag = request.getParameter("account_tag");
+		int place_tag = request.getParameter("place_tag");
 		
 		System.out.println("filename : " + file_name);
 		System.out.println("upload_day : " + upload_day);
@@ -53,7 +54,7 @@ public class likeService extends HttpServlet {
 		System.out.println("account_tag : " + account_tag);  
 		System.out.println("place_tag : " + place_tag);  
 		
-		LikeDTO dto = new LikeDTO(upload_day, upload_time, hashtag, file_name, account_tag, place_tag);
+		LikeDTO dto = new LikeDTO(pred_insta_id, upload_day, upload_time, hashtag, file_name, account_tag, place_tag);
 		LikeDAO dao = new LikeDAO();
 		int cnt = dao.upload(dto);
 		
