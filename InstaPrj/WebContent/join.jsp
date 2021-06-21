@@ -79,12 +79,13 @@
         </div>
     </div>
     	<script>
-			function idcheck(){
-				var input_id = $('#join_id').val();
+			function idCheck(){
+				var join_id = $('#join_id').val();
+				console.log(join_id);
 				
 				$.ajax({
 					type : "post",  //데이터 보내는 방식
-					data : {"USER_ID" : input_id}, //서버로 보내는 데이타
+					data : {"join_id" : join_id}, //서버로 보내는 데이타
 					url : "IdCheckService", //서버 파일 이름
 					dataType : "text" , //응답 데이터 형식
 					success : function(data){
