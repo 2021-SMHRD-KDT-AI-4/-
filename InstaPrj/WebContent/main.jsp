@@ -3,19 +3,19 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>main</title>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>main</title>
     <link rel="stylesheet" href="./css/style1.css" />
     <script src="https://kit.fontawesome.com/3e7e31d983.js" crossorigin="anonymous"></script>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">   
-		$(document).ready(function() {
-			$("#sidebar").load("./sidebar.jsp");
-		});
-	</script>
+      $(document).ready(function() {
+         $("#sidebar").load("./sidebar.jsp");
+      });
+   </script>
 </head>
 <body>
 <% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
@@ -31,11 +31,12 @@
         <div id="sidebar"></div>
         <!-- 메인 -->
         <div class="main">
-            <div style="height: 2rem;"></div>
+            <div style="height: 7.5rem;"></div>
+            <!-- 메인 로고 -->
             <div class="logoDiv">
-            	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
+               <img src="./img/logo.png" height="100%">
             </div>
-            <div style="height: 8rem;"></div>
+            <div style="height: 8.25rem;"></div>
             <!-- 메인 프로필 이미지 -->
             <div style="height: 18.75rem;"><img id="mainImg" src="./img/sample.jpg"></div>
             <div style="height: 1.5rem;"></div>
