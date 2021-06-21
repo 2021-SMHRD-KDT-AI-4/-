@@ -18,7 +18,7 @@ public class BoardViewService extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public BoardViewService() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 

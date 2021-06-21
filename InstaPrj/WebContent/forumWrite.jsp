@@ -49,7 +49,7 @@
                         <img src="./img/upload_image.jpg" id="previewImg" width="100%" height="100%">
                     </label>
                 </div>
-                <div style="height: 1.25rem;"></div>
+                <div style="height: 1.25rem;"></div> 
                 <!-- 力格 -->
                 <div class="forumInputDiv">
                     <div class="forumInputDiv_1"><a>力格</a></div>

@@ -45,7 +45,7 @@
             <div class="titleDiv"><%= dto.getTitle() %></div>
             <div style="height: 2.5rem;"></div>
             <div style="width: 25rem; text-align: left; margin: 0 auto;">
-                <a style="font-size: 1rem;">
+                <a style="font-size: 1rem;"> 
                     작성일자 : <%= dto.getDay() %><br>
                     작성자 : <%= dto.getWriter() %>
                 </a>

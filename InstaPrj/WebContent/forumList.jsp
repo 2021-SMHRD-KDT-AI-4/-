@@ -49,7 +49,7 @@
             <div style="height: 2.5rem;"></div>
             <!-- ¸®½ºÆ® -->
            <% for(int i=0; i<list.size(); i++){ %>
-            <div class="forumListContainer">
+            <div class="forumListContainer"> 
                 <div class="forumListItem">
                     <img class="forumListImg" src="./img/<%=list.get(i).getFilename() %>"><br>
                     <a  class="forumListTxt"href="forumView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a><br>

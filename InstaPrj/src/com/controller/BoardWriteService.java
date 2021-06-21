@@ -41,7 +41,7 @@ public class BoardWriteService extends HttpServlet {
 		System.out.println("title : " + title);
 		System.out.println("writer : " + writer);
 		System.out.println("filename : " + filename);
-		System.out.println("content : " + content); 
+		System.out.println("content : " + content);  
 		
 		BoardDTO dto =  new BoardDTO(title, writer, filename, content);
 		BoardDAO dao = new BoardDAO();

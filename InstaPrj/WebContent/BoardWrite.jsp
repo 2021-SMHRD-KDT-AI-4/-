@@ -97,7 +97,7 @@
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
 					<div class="col-md-8 text text-center">
-						<div class="desc">
+						<div class="desc"> 
 		                         <h1>게시물 작성하기!</h1> 
 		                         <form action="BoardWriteService"  method="post" enctype = "multipart/form-data">
 						            <div class="write_title">
