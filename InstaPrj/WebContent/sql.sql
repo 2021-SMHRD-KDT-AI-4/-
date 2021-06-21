@@ -37,8 +37,8 @@ create table PRED_LIKE(
 -- RESULT Å×ÀÌºí
 create table RESULT_TB(
     RESULT_NUM number(10) NOT NULL,
-    LIKE_NUM number(10) NOT NULL,
     REC_HASHTAG varchar2(500) NOT NULL,
+    RESULT_LIKE number(10) NOT NULL,
     constraint RESULT_RESULT_NUM_FK foreign key(RESULT_NUM) references PRED_LIKE(PRED_LIKE_NUM)
 );
 
