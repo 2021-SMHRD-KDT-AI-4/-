@@ -58,8 +58,8 @@
             <!-- 메뉴 리스트 -->
             <div class="menuListDiv">
                 <div class="menuList"><i class="fas fa-home"></i><a href="main.jsp"> HOME</a></div>
-                <div class="menuList"><i class="fas fa-heart"></i><a href="like.jsp"> LIKE</a></div>
-                <div class="menuList"><i class="fas fa-heartbeat"></i><a href="likeResult.jsp"> LIKE RESULT</a></div>
+                <div class="menuList"><i class="fas fa-heart"></i><a href="like.html"> LIKE</a></div>
+                <div class="menuList"><i class="fas fa-heartbeat"></i><a href="likeResult.html"> LIKE RESULT</a></div>
                 <div class="menuList"><i class="fas fa-heart-broken"></i><a href="unfollow.jsp"> UNFOLLOW</a></div>
                 <div class="menuList"><i class="fas fa-comments"></i><a href="forumList.jsp"> FORUM</a></div>
             </div>

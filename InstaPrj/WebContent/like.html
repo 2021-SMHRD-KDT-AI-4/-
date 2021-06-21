@@ -10,7 +10,7 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">   
 		$(document).ready(function() {
-			$("#sidebar").load("./sidebar.html");
+			$("#sidebar").load("./sidebar.jsp");
 		});
 	</script>
 </head>
@@ -33,6 +33,7 @@
             </div>
             <!-- 페이지 제목 -->
             <div class="titleDiv">좋아요 예측</div>
+            <div class="pop"><input type="button" value="설명보기" onclick="showPopup()"></div>
             <div style="height: 2rem;"></div>
 
             <!-- 좋아요 예측 form -->
@@ -83,4 +84,6 @@
     </div>
 </body>
 <script type="text/javascript" src="./js/previewImg.js"></script>
+<script type="text/javascript">
+function showPopup() { window.open("pop.html", "a", "width=800, height=1000, left=100, top=50"); }</script>
 </html>

@@ -15,8 +15,12 @@
 			$("#sidebar").load("./sidebar.html");
 		});
 	</script>
+	<style> #loading { width: 100%; height: 100%; top: 0px; left: 0px; position: fixed; display: block; opacity: 0.7; background-color: #fff; z-index: 99; text-align: center; } #loading-image { position: absolute; top: 50%; left: 50%; z-index: 100; } </style>
+
 </head>
 <body>
+<div id="loading" style="display:none"><img id="loading-image" src="./img/sample.jpg" alt="Loading..." /></div>
+
     <!-- 메뉴 사이드바 버튼 표시 -->
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
@@ -104,7 +108,8 @@
 			}
 			
 			function crawlingNickImg(){
-				var insta_id = $('#insta_id').val();					
+				var insta_id = $('#insta_id').val();
+				$('#loading').show();
 				
 				$.ajax({
 					
@@ -124,6 +129,7 @@
 						$('#joinImg').attr('src','./profileImg/'+insta_id+'.png');
 						// 인스타그램 이름 띄우기
 						$('#welcomNick').html(nickname+"님_반갑습니다!");
+						$('#loading').hide();
 						
 					},
 					error:function(data){
@@ -153,5 +159,6 @@
 				
 			
 		</script>
+
 </body>
 </html>
