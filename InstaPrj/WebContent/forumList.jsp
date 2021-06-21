@@ -45,7 +45,7 @@
             </div>
             <div style="height: 2rem;"></div>
             <!-- 페이지 제목 -->
-            <div class="titleDiv">인스타그램 포럼</div>
+            <div class="titleDiv">인스타그램 포럼</div> 
             <div style="height: 2.5rem;"></div>
             <!-- 리스트 -->
            <% for(int i=0; i<list.size(); i++){ %>

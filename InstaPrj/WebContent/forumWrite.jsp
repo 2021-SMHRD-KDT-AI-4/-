@@ -37,7 +37,7 @@
             </div>
             <div style="height: 2rem;"></div>
             <!-- 페이지 제목 -->
-            <div class="titleDiv">게시물 작성</div>
+            <div class="titleDiv">게시물 작성</div> 
             <div style="height: 1rem;"></div>
             
             <!-- forumWrite form -->
