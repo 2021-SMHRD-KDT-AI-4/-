@@ -66,7 +66,7 @@ create table PAST_F4F(
 create sequence BOARD_NUM_SEQ start with 1 increment by 1;
 create sequence PRED_LIKE_NUM_SEQ start with 1 increment by 1;
 
-insert into USER_TB values('lch8216','1234','lch.98');
+insert into USER_TB values('user01','1234','ljm8216');
 commit
 
 select * from USER_TB;

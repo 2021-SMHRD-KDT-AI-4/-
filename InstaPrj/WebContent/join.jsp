@@ -19,7 +19,7 @@
 
 </head>
 <body>
-<div id="loading" style="display:none"><img id="loading-image" src="./img/sample.jpg" alt="Loading..." /></div>
+
 
     <!-- 메뉴 사이드바 버튼 표시 -->
     <input type="checkbox" id="menuicon">
@@ -33,6 +33,7 @@
         <div id="sidebar"></div>
         <!-- 메인 -->
         <div class="main">
+        	<img id="loading" src="./img/loading.gif" alt="Loading..." style="display:none"/>
             <div style="height: 2rem;"></div>
             <div class="logoDiv">
             	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
