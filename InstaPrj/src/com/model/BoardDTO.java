@@ -11,6 +11,12 @@ public class BoardDTO {
 	
 	
 	
+	public BoardDTO(int num, String writer) {
+		super();
+		this.num = num;
+		this.writer = writer;
+	}
+
 	public int getNum() {
 		return num;
 	}

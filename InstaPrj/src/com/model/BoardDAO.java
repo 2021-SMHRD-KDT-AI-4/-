@@ -125,10 +125,11 @@ public class BoardDAO {
 
 	public int delete(BoardDTO dto) {
 		getConnection();
-		String sql = "delete from BOARD where BOARD_USER_ID =?";
+		String sql = "delete  from BOARD where BOARD_USER_ID =? and BOARD_NUM=? ";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getWriter());
+			psmt.setInt(2, dto.getNum());
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

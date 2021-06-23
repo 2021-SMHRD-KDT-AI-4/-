@@ -48,8 +48,9 @@
             <div class="titleDiv">인스타그램 포럼</div> 
             <div style="height: 2.5rem;"></div>
             <!-- 리스트 -->
-           <% for(int i=0; i<list.size(); i++){ %>
+           
             <div class="forumListContainer"> 
+            <% for(int i=0; i<list.size(); i++){ %>
                 <div class="forumListItem">
                     <img class="forumListImg" src="./img/<%=list.get(i).getFilename() %>"><br>
                     <a  class="forumListTxt"href="forumView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a><br>

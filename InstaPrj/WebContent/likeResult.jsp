@@ -1,3 +1,8 @@
+<%@page import="com.model.ResultDTO"%>
+<%@page import="com.model.ResultDAO"%>
+<%@page import="com.model.LikeDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.LikeDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -41,8 +46,18 @@
             	<h3>회원만 이용가능한 서비스입니다.<br> 로그인을 진행해주세요!</h3>
             
          	<% } else { 
+         		
+        		request.setCharacterEncoding("EUC-KR");
+        		String insta_id = info.getINSTA_ID();
+        		
+        		
+        		ResultDAO dao = new ResultDAO();
+        		ArrayList<ResultDTO> list = dao.view(insta_id);
+        		
+        		System.out.println(list.get(1).getFile_name());
+         		
          	String pred = request.getParameter("pred");%>
-            <div class="titleDiv">@<%= pred %>님의 좋아요 분석</div>
+            <div class="titleDiv">@<%= insta_id %> 님의 좋아요 분석</div>
             <div style="height: 1.25rem;"></div>
             <div id="likeReultDiv">
                 <div id="likeResultDiv1">
@@ -59,79 +74,21 @@
                     </div>
                 </div>
                 <div id="likeResultList">
+                <% for (int i = 0; i < list.size(); i++){ %>
                     <div class="likeResultListItem">
-                        <img id="img0" class="likeResultListImg" src="./img/iu1.jpg"><br>
+                        <img id="img<%= i %>" class="likeResultListImg" src="./likeimg/<%=list.get(i).getFile_name() %>"><br>
                         <div class="likeResultListTxt">
-                            날짜 : 21/06/20<br>
-                            시간 : 19:00<br>
-                            계정태그 : 2개<br>
-                            장소태그 : 있음<br>
+                            날짜 : <%=list.get(i).getUpload_day() %><br>
+                            시간 : <%=list.get(i).getUpload_time() %><br>
+                            계정태그 : <%=list.get(i).getAccount_tag() %><br>
+                            장소태그 : <%=list.get(i).getPlace_tag() %><br>
                             해시태그<br>
-                            <span id="txtHash0" class="txtHash">#조영택 #호구 #인증</span><br>
-                            좋아요 수 : <span id="txtLike0" class="txtLike">999개</span>
-                        </div>
-                    </div>
-                    <div class="likeResultListItem">
-                        <img id="img1" class="likeResultListImg" src="./img/iu2.jpg"><br>
-                        <div class="likeResultListTxt">
-                            날짜 : 21/06/20<br>
-                            시간 : 19:00<br>
-                            계정태그 : 2개<br>
-                            장소태그 : 있음<br>
-                            해시태그<br>
-                            <span id="txtHash1" class="txtHash">#전지전능 #전연지 #박진희 #조영택 #김세나 #이창현</span><br>
-                            좋아요 수 : <span id="txtLike1" class="txtLike">86개</span>
-                        </div>
-                    </div>
-                    <div class="likeResultListItem">
-                        <img id="img2" class="likeResultListImg" src="./img/iu3.jpg"><br>
-                        <div class="likeResultListTxt">
-                            날짜 : 21/06/20<br>
-                            시간 : 19:00<br>
-                            계정태그 : 2개<br>
-                            장소태그 : 있음<br>
-                            해시태그<br>
-                            <span id="txtHash2" class="txtHash">#아이유 #여신 #사랑해요</span><br>
-                            좋아요 수 : <span id="txtLike2" class="txtLike">1004개</span>
-                        </div>
-                    </div>
-                    <div class="likeResultListItem">
-                        <img id="img3" class="likeResultListImg" src="./img/iu4.jpg"><br>
-                        <div class="likeResultListTxt">
-                            날짜 : 21/06/20<br>
-                            시간 : 19:00<br>
-                            계정태그 : 2개<br>
-                            장소태그 : 있음<br>
-                            해시태그<br>
-                            <span id="txtHash3" class="txtHash">#하이 #하이 #이하이</span><br>
-                            좋아요 수 : <span id="txtLike3" class="txtLike">77개</span>
-                        </div>
-                    </div>
-                    <div class="likeResultListItem">
-                        <img id="img4" class="likeResultListImg" src="./img/iu5.jpg"><br>
-                        <div class="likeResultListTxt">
-                            날짜 : 21/06/20<br>
-                            시간 : 19:00<br>
-                            계정태그 : 2개<br>
-                            장소태그 : 있음<br>
-                            해시태그<br>
-                            <span id="txtHash4" class="txtHash">#일상 #일상스타그램 #셀카 #셀피</span><br>
-                            좋아요 수 : <span id="txtLike4" class="txtLike">1234개</span>
-                        </div>
-                    </div>
-                    <div class="likeResultListItem">
-                        <img id="img5" class="likeResultListImg" src="./img/iu6.jpg"><br>
-                        <div class="likeResultListTxt">
-                            날짜 : 21/06/20<br>
-                            시간 : 19:00<br>
-                            계정태그 : 2개<br>
-                            장소태그 : 있음<br>
-                            해시태그<br>
-                            <span id="txtHash5" class="txtHash">#전연지 #공차 #효과 #3분</span><br>
-                            좋아요 수 : <span id="txtLike5" class="txtLike">-9999개</span>
+                            <span id="txtHash<%= i %>" class="txtHash"><%= list.get(i).getRec_hash_tag() %></span><br>
+                            좋아요 수 : <span id="txtLike<%= i %>" class="txtLike"><%=list.get(i).getResult_like() %></span>
                         </div>
                     </div>
                     
+                    <%} %>
                     
                 </div>
             </div>

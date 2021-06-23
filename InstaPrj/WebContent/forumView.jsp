@@ -49,6 +49,7 @@
                     작성일자 : <%= dto.getDay() %><br>
                     작성자 : <%= dto.getWriter() %>
                 </a>
+                <br>
                 <img src="./img/<%= dto.getFilename() %>" style="width: 25rem; height: 25rem;">
                 <div style="height: 2.5rem;"></div>
                 <a style="font-size: 1.5rem;">
@@ -58,7 +59,7 @@
             <div style="height: 0.5rem;"></div>
             <div style="height: 2.5rem;">
                 <a href="main.jsp"><input type="button" value="홈으로" class="inputBtn"></a>
-                <input type="button" value="삭제하기" class="inputBtn" onclick="location.href='BoardDeleteService'">
+                <input type="button" value="삭제하기" class="inputBtn" onclick="location.href='BoardDeleteService?num=<%=num%>'">
             </div>
         </div>
     </div>
