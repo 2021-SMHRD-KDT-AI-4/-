@@ -45,7 +45,9 @@
             
          	<% } else { %>
 	            <!-- 좋아요 예측 form -->
-	            <form action="likeService" method="post" enctype = "multipart/form-data" style="width: 22.5rem; margin: 0 auto;">
+	            <!-- http://localhost:9000/likeresult/result -->
+	            <form action="likeService" method="post" enctype="multipart/form-data" style="width: 22.5rem; margin: 0 auto;">
+	         		<input type = "text" name="pred_insta_id" style="display: none;" value = "<%=info.getINSTA_ID() %>">
 	                <!-- 이미지 업로드 및 미리보기 -->
 	                <div style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099;">
 	                    <input id="uploadImg" name="file_name" type="file" style="display: none;">
@@ -57,22 +59,22 @@
 	                <!-- 날짜 -->
 	                <div class="likeInputDiv">
 	                    <div class="likeInputDiv_1"><a>날짜</a></div>
-	                    <div class="likeInputDiv_2"><input name="upload_day" class="likeInput" type="date"></div>
+	                    <div class="likeInputDiv_2"><input id="upload_day" name="upload_day" class="likeInput" type="date"></div>
 	                </div>
 	                <!-- 시간 -->
 	                <div class="likeInputDiv">
 	                    <div class="likeInputDiv_1"><a>시간</a></div>
-	                    <div class="likeInputDiv_2"><input name="upload_time" class="likeInput" type="time"></div>
+	                    <div class="likeInputDiv_2"><input id="upload_time" name="upload_time" class="likeInput" type="time"></div>
 	                </div>
 	                <!-- 해시태그 -->
 	                <div class="likeInputDiv">
 	                    <div class="likeInputDiv_1"><a>해시태그</a></div>
-	                    <div class="likeInputDiv_2"><input name="hashtag" lass="likeInput" type="text" placeholder="#인포럼스타그램"></div>
+	                    <div class="likeInputDiv_2"><input id="hashtag" name="hashtag" class="likeInput" type="text" placeholder="#인포럼스타그램"></div>
 	                </div>
 	                <!-- 계정태그 수 -->
 	                <div class="likeInputDiv">
 	                    <div class="likeInputDiv_1"><a>계정태그 수</a></div>
-	                    <div class="likeInputDiv_2"><input name="account_tag" class="likeInput" type="number" value="0"></div>
+	                    <div class="likeInputDiv_2"><input id="account_tag" name="account_tag" class="likeInput" type="number" value="0"></div>
 	                </div>
 	                <!-- 장소태그 -->
 	                <div class="likeInputDiv">
@@ -84,12 +86,62 @@
 	                </div>
 	                <!-- form 제출 -->
 	                <div style="height: 2.5rem;">
-	                    <input class="inputBtn" type="submit" value="예측하기">
+	                    <input class="inputBtn" type="submit" value="예측하기" >
 	                </div>
-	            </form>
+	             </form>
 			<% }%>
         </div>
     </div>
+    
+    <script>
+		function predict(){
+			var pred_insta_id = $('#pred_insta_id').val();
+			var file_name = $('#uploadImg').val();
+			var upload_day = $('#upload_day').val();
+			var upload_time = $('#upload_time').val();
+			var hashtag = $('#hashtag').val();
+			var account_tag = $('#account_tag').val();
+			var place_tag = $('input[name="place_tag"]:checked').val();
+			
+			
+			$('#loading').show();
+			
+			$.ajax({
+				
+				type : "post",
+
+				data : {"pred_insta_id" : pred_insta_id,
+					"file_name":file_name,
+					"upload_day":upload_day,
+					"upload_time":upload_time,
+					"hashtag":hashtag,
+					"account_tag":account_tag,
+					"place_tag":place_tag},
+					
+				url : "http://localhost:9000/likeresult/result",
+				dataType : "text",
+				success: function(data) {
+					
+					var obj = JSON.parse(data);
+					console.log(obj);
+					var file_name = obj.file_name;
+					console.log("file_name : "+nickname);
+					
+					
+					
+					
+				},
+				error:function(error){
+					
+					alert(error);
+				}
+			});	
+		}
+    
+    
+    
+    
+    </script>
 </body>
 <script type="text/javascript" src="./js/previewImg.js"></script>
 </html>

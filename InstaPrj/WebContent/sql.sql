@@ -71,3 +71,5 @@ commit
 
 select * from USER_TB;
 select * from PAST_F4F;
+select * from PRED_LIKE;
+select * from PRED_LIKE;

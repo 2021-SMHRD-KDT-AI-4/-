@@ -17,6 +17,7 @@ import com.model.LikeDTO;
 import com.model.MemberDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.sun.xml.internal.bind.v2.runtime.output.Encoded;
 
 /**
  * Servlet implementation class likeService
@@ -27,7 +28,7 @@ public class likeService extends HttpServlet {
     
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
-		String savePath = request.getServletContext().getRealPath("lijeimg");
+		String savePath = request.getServletContext().getRealPath("likeimg");
 		System.out.println(savePath);
 		
 		// 파일 크기 15MB로 제한
@@ -54,7 +55,6 @@ public class likeService extends HttpServlet {
 			place_tag_ = "0";
 		}
 		int place_tag =Integer.parseInt(place_tag_);
-		
 		System.err.println("insta_id : "+ pred_insta_id);
 		System.out.println("filename : " + file_name);
 		System.out.println("upload_day : " + upload_day);
@@ -69,7 +69,8 @@ public class likeService extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("좋아요예측누름");
-			response.sendRedirect("likeResult.html");
+			//response.sendRedirect("http://localhost:9000/likereult.jsp?file_name="+file_name);
+			response.sendRedirect("http://localhost:9000/like_result/result?file_name="+file_name+"&upload_day="+upload_day+"&upload_time="+upload_time+"&hashtag="+URLEncoder.encode(hashtag,"UTF-8")+"&account_tag="+account_tag+"&place_tag="+place_tag+"&pred_insta_id="+pred_insta_id);
 		}else {
 			System.out.println("좋아요예측실패");
 			response.sendRedirect("main.jsp");
