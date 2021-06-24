@@ -58,7 +58,7 @@
             <% for(int i=0; i<list.size(); i++){ %>
                 <div class="forumListItem">
                     <a href="forumView.jsp?num=<%=list.get(i).getNum()%>"><img class="forumListImg" src="./img/<%=list.get(i).getFilename() %>"></a><br>
-                    <a  class="forumListTxt"href="forumView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a><br>
+                    <a style="color:white;" class="forumListTxt"href="forumView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a><br>
                     <span class="forumListTxt"><%= list.get(i).getWriter() %></span>
                 </div>
                 <%} %>

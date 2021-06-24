@@ -87,7 +87,7 @@
 					style="height: 25rem; width: 25rem; margin: auto;">
 					<input id="uploadImg" name="file_name" type="file"
 						style="display: none;"> <label for="uploadImg"> <img
-						src="./img/upload_image.jpg" id="previewImg" style="max-width: 100%; height: 100%;  border: 0.25rem solid #E95099;">
+						src="./img/upload_image.jpg" id="previewImg" style="max-width: 100%; height: 100%;  border: 0.25rem solid #E95099; border-radius: 1rem;">
 					</label>
 				</div>
 				<div style="height: 1.25rem;"></div>
@@ -118,9 +118,10 @@
 					</div>
 					<div class="likeInputDiv_2">
 						<input id="hashtag" name="hashtag" class="likeInput" type="text"
-							placeholder="#인포럼스타그램">
+							placeholder="한 가지만 입력해 주세요.">
 					</div>
 				</div>
+				<div style="height: 0.125rem;"></div>
 				<!-- 계정태그 수 -->
 				<div class="likeInputDiv">
 					<div class="likeInputDiv_1">
@@ -136,13 +137,14 @@
 					<div class="likeInputDiv_1">
 						<span>장소태그</span>
 					</div>
-					<div class="likeInputDiv_2">
-						<label style="font-size: 1rem;"><input type="radio"
-							value="1" name="place_tag">있음</label> <label
-							style="font-size: 1rem;"><input type="radio" value="0"
-							name="place_tag">없음</label>
+					<div class="likeInputDiv_2" style="margin: 0.4rem auto;">
+						<label style="font-size: 1.2rem;"><input type="radio"
+							value="1" name="place_tag">있음</label>
+						<label style="font-size: 1.2rem;"><input type="radio" 
+							value="0" name="place_tag">없음</label>
 					</div>
 				</div>
+				<div style="height: 2.5rem;"></div>
 				<!-- form 제출 -->
 				<div style="height: 2.5rem;">
 					<input class="inputBtn" type="submit" value="예측하기">

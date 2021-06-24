@@ -64,7 +64,7 @@
                     <div style="width: 25rem;">
                         <!-- 결과 이미지 -->
                         <div id="likeResultImg">
-                            <img id="resultImg" src="./likeimg/<%=list.get(0).getFile_name() %>" width="100%" height="100%">
+                            <img id="resultImg" src="./likeimg/<%=list.get(0).getFile_name() %>" style="max-width: 100%; height: 100%; border: 0.25rem solid #E95099; border-radius: 1rem;">
                         </div>
                         <div style="height: 3rem;"></div>
                         <!-- 결과 글 -->
@@ -77,7 +77,9 @@
                 <div id="likeResultList">
                 <% for (int i = 0; i < list.size(); i++){ %>
                     <div class="likeResultListItem">
-                        <img id="img<%= i %>" class="likeResultListImg" src="./likeimg/<%=list.get(i).getFile_name() %>"><br>
+                    	<div style="text-align: center;">
+                        	<img id="img<%= i %>" class="likeResultListImg" src="./likeimg/<%=list.get(i).getFile_name() %>"><br>
+                    	</div>
                         <div class="likeResultListTxt">
                             날짜 : <%=list.get(i).getUpload_day() %><br>
                             시간 : <%=list.get(i).getUpload_time() %><br>

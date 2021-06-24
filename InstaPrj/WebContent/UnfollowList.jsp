@@ -71,7 +71,7 @@
             <!-- 비교 날짜 -->
             
             <!-- 언팔로우 결과 -->
-            <div style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099; background-color: rgba(255, 255, 255, 0.3);">
+            <div style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099; border-radius: 1rem; background-color: rgba(255, 255, 255, 0.3);">
                 <div style="height: 18.75rem; width: 18.75rem; margin: 3.125rem 3.125rem; font-size: 1.25rem; text-align: left;">
                     <% for(int i = 0; i<past_f4f_list.size(); i++) { %>
                     -@<%=past_f4f_list.get(i) %><br>
@@ -89,7 +89,7 @@
             </a>
             <div style="height: 5rem;"></div>
             <div style="height: 2.5rem;">
-                <a href="main.jsp"><input type="button" class="inputBtn" value="HOME"></a>
+                <a href="main.jsp"><input type="button" class="inputBtn" value="홈으로"></a>
             </div>
          <%// 출력한 후 값들은 새로운 맞팔 목록들은 insert에 넣는다
               UnfollowDTO dto = new UnfollowDTO(user_id,now_f4f_list);
