@@ -35,29 +35,30 @@
             <div class="logoDiv">
             	<a href="main.html"><img src="./img/logo.png" height="100%"></a>
             </div>
-            <div style="height: 2rem;"></div> 
+            <div style="height: 4rem;"></div> 
             <!-- 페이지 제목 -->
-            <div class="titleDiv">게시물 작성</div> 
+            <div class="titleDiv">[ 게시물 작성 ]</div> 
             <div style="height: 1rem;"></div>
             
             <!-- forumWrite form -->
             <form action="BoardWriteService" method="post" style="width: 25rem; margin: 0 auto;" enctype = "multipart/form-data">
                 <!-- 이미지 업로드 및 미리보기 -->
-                <div style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099;">
+                <div style="height: 25rem; width: 25rem; margin: auto;">
                     <input name="filename"id="uploadImg" type="file" style="display: none;">
                     <label for="uploadImg">
-                        <img src="./img/upload_image.jpg" id="previewImg" width="100%" height="100%">
+                        <img src="./img/upload_image.jpg" id="previewImg" style="max-width: 100%; height:100%; border: 0.25rem solid #E95099; border-radius: 1rem;">
                     </label>
                 </div>
                 <div style="height: 1.25rem;"></div> 
                 <!-- 제목 -->
                 <div class="forumInputDiv">
-                    <div class="forumInputDiv_1"><a>제목</a></div>
+                    <div class="forumInputDiv_1"><span>제목</span></div>
                     <div class="forumInputDiv_2"><input name="title" class="forumInput" type="text"></div>
                 </div>
+                <div style="height: 0.5rem;"></div> 
                 <!-- 내용 -->
                 <div class="forumInputTADiv">
-                    <div class="forumInputDiv_1"><a>내용</a></div>
+                    <div class="forumInputDiv_1"><span>내용</span></div>
                     <div class="forumInputTADiv_2"><textarea name="content" class="forumInputTA" rows="12.5rem" cols="15rem"></textarea></div>
                 </div>
                 <div style="height: 1.25rem;"></div>

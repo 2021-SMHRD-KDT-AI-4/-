@@ -59,6 +59,7 @@
 			<div class="logoDiv">
 				<a href="main.html"><img src="./img/logo.png" height="100%"></a>
 			</div>
+			<div style="height: 4rem;"></div>
 			<!-- 페이지 제목 -->
 			<div class="titleDiv">좋아요 예측</div>
 			<div style="height: 2rem;"></div>
@@ -78,16 +79,15 @@
 			<!-- http://localhost:9000/likeresult/result -->
 			<form id="trans" action="likeService" method="post"
 				enctype="multipart/form-data"
-				style="width: 22.5rem; margin: 0 auto;">
+				style="width: 28rem; margin: 0 auto;">
 				<input type="text" name="pred_insta_id" style="display: none;"
 					value="<%=info.getINSTA_ID()%>">
 				<!-- 이미지 업로드 및 미리보기 -->
 				<div
-					style="height: 25rem; width: 25rem; margin: auto; border: 0.25rem solid #E95099;">
+					style="height: 25rem; width: 25rem; margin: auto;">
 					<input id="uploadImg" name="file_name" type="file"
 						style="display: none;"> <label for="uploadImg"> <img
-						src="./img/upload_image.jpg" id="previewImg" width="100%"
-						height="100%">
+						src="./img/upload_image.jpg" id="previewImg" style="max-width: 100%; height: 100%;  border: 0.25rem solid #E95099;">
 					</label>
 				</div>
 				<div style="height: 1.25rem;"></div>

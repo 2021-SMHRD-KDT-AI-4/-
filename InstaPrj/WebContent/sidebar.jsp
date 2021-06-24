@@ -39,14 +39,18 @@
             	</div>
             </form>
             <!-- 회원가입 버튼 -->
+            <div style="height: 0.4rem;"></div>
             <div style="height: 2rem; font-size: 1rem;">
                 <a href="join.jsp">회원가입</a>
             </div>
             <% }else{ %>
             
             <!-- 로그인 했을시 -->
-            <div id="loginDiv"><div style="height: 2rm;"><br></div>
-                <a id="">@<%= info.getINSTA_ID()  %></a></div>
+            <div id="loginDiv">
+            	<div></div>
+            	<div style="height: 2rm; margin: auto;"><span id="">@<%= info.getINSTA_ID()  %></span></div>
+            	<div></div>
+            </div>
             <div style="height: 2rem; font-size: 1rem;">
                 <input id="logoutBtn" type="button" value="LOGOUT" onclick="location.href='LogoutService'">
             </div>

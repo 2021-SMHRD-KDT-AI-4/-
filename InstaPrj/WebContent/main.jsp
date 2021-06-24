@@ -31,7 +31,7 @@
         <div id="sidebar"></div>
         <!-- 메인 -->
         <div class="main">
-            <div style="height: 7.5rem;"></div>
+            <div style="height: 2rem;"></div>
             <!-- 메인 로고 -->
             <div class="logoDiv">
                <img src="./img/logo.png" height="100%">
@@ -46,17 +46,17 @@
             <div style="height: 1.5rem;"></div>
             <!-- 메인 인스타 아이디 -->
             <% if(info == null){ %>
-            <div style="height: 1.5rem; font-size: 1.5rem;"><sapn id="">로그인을해주세요~</sapn></div>
+            <div style="height: 1.6rem; font-size: 1.6rem;"><sapn id="">로그인을해주세요~</sapn></div>
             <div style="height: 2rem;"></div>
             <%}else{ %>
-            <div style="height: 1.5rem; font-size: 1.5rem;"><span id="">@<%=info.getINSTA_ID() %></span></div>
+            <div style="height: 1.6rem; font-size: 1.6rem;"><span id="">@<%=info.getINSTA_ID() %></span></div>
             <div style="height: 2rem;"></div>
             <%} %>
             <!-- 메인 인사글 -->
             <div style="height: 2.5rem; font-size: 2.5rem;">#인포럼에_오신_걸_환영합니다</div>
             <div style="height: 2.5rem;"></div>
             <!-- 메인 인사글2 -->
-            <div style="height: 1rem; font-size: 1rem; color: #cfcfcf;">즐거운 하루 보내세요</div>
+            <div style="height: 1.2rem; font-size: 1.2rem; color: #cfcfcf;">즐거운 하루 보내세요</div>
         </div>
     </div>
 </body>

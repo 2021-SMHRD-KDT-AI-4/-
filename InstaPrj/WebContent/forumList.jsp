@@ -43,23 +43,25 @@
             <div class="logoDiv">
             	<a href="main.html"><img src="./img/logo.png" height="100%"></a>
             </div>
-            <div style="height: 2rem;"></div>
+            <div style="height: 4rem;"></div>
             <!-- 페이지 제목 -->
-            <div class="titleDiv">인스타그램 포럼</div> 
+            <div class="titleDiv">[ 인스타그램 포럼 ]</div> 
             <div style="height: 2.5rem;"></div>
+            <div style="height: 3rem; text-align: right; margin-right: 5rem">
+            	<a href="forumWrite.jsp"><input type="button" class="inputBtn" value="글쓰기"></a>
+            </div>
+            <div style="height: 2.5rem;"></div>
+
             <!-- 리스트 -->
            
             <div class="forumListContainer"> 
             <% for(int i=0; i<list.size(); i++){ %>
                 <div class="forumListItem">
-                    <img class="forumListImg" src="./img/<%=list.get(i).getFilename() %>"><br>
+                    <a href="forumView.jsp?num=<%=list.get(i).getNum()%>"><img class="forumListImg" src="./img/<%=list.get(i).getFilename() %>"></a><br>
                     <a  class="forumListTxt"href="forumView.jsp?num=<%=list.get(i).getNum()%>"><%= list.get(i).getTitle() %></a><br>
-                    <a class="forumListTxt"><%= list.get(i).getWriter() %></a>
+                    <span class="forumListTxt"><%= list.get(i).getWriter() %></span>
                 </div>
                 <%} %>
-            </div>
-            <div style="height: 2.5rem;">
-            	<a href="forumWrite.jsp"><input type="button" class="inputBtn" value="글쓰기"></a>
             </div>
             
         </div>

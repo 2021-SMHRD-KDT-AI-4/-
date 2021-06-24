@@ -40,25 +40,27 @@
             <div class="logoDiv">
             	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
             </div>
-            <div style="height: 2rem;"></div>
+            <div style="height: 4rem;"></div>
             <!-- 페이지 제목 -->
             <div class="titleDiv"><%= dto.getTitle() %></div>
             <div style="height: 2.5rem;"></div>
             <div style="width: 25rem; text-align: left; margin: 0 auto;">
-                <a style="font-size: 1rem;"> 
+                <span style="font-size: 1.2rem;"> 
                     작성일자 : <%= dto.getDay() %><br>
                     작성자 : <%= dto.getWriter() %>
-                </a>
-                <br>
-                <img src="./img/<%= dto.getFilename() %>" style="width: 25rem; height: 25rem;">
-                <div style="height: 2.5rem;"></div>
-                <a style="font-size: 1.5rem;">
+                </span>
+                <div style="height: 1.5rem;"></div>
+                <div style="text-align: center">
+	                <img src="./img/<%= dto.getFilename() %>" style="max-width: 25rem; height: 25rem; border: 0.25rem solid #E95099; border-radius: 1rem;">
+                </div>
+                <div style="height: 1.0rem;"></div>
+                <span style="font-size: 1.5rem;">
                    <%= dto.getContent() %>
-                </a>
+                </span>
             </div>
-            <div style="height: 0.5rem;"></div>
+            <div style="height: 1.5rem;"></div>
             <div style="height: 2.5rem;">
-                <a href="forumList.jsp"><input type="button" value="홈으로" class="inputBtn"></a>
+                <a href="forumList.jsp"><input type="button" value="목록으로" class="inputBtn"></a>
                 <input type="button" value="삭제하기" class="inputBtn" onclick="location.href='BoardDeleteService?num=<%=num%>'">
             </div>
         </div>

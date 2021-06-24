@@ -49,7 +49,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	height: 2rem; text-align: center; font-size: 2rem; font-family: 'GmarketSansTTFBold';
 }
 .inputBtn {
-	width: 5.5rem; height: 100%; background-color: #ffb47D; border: 1px solid #707070; color: white; font-size: 1rem;
+	width: 7.3rem; height: 100%; background-color: #ffb47D; border: 0.0025rem solid #707070; color: white; font-size: 1.5rem; border-radius: 1rem;
 }
 .inputBtn:hover {
 	cursor: pointer;
@@ -74,7 +74,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	text-align: center;
 }
 #loginDiv {
-	height: 6rem; width: 17.5rem; display: flex; justify-content: space-between; margin: auto;
+	height: 6rem; width: 17.5rem; display: flex; justify-content: space-between; margin: auto auto;
 }
 #loginInputDiv {
 	height: 6rem; width: 12.5rem; display: flex; flex-direction: column; justify-content: space-between;
@@ -198,7 +198,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	grid-template-rows: repeat(2, 1fr);
 }
 .forumListItem {
-	height: 22rem;
+	height: 26rem;
 }
 .forumListItem:nth-child(1) {
 	grid-row: 1;
@@ -233,12 +233,15 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	grid-column: 4;
 }
 .forumListImg {
-	height: 12.5rem;
-	width: 12.5rem;
+	height: 18rem;
+	max-width: 18rem;
+	border: 0.25rem solid #E95099;
+	border-radius: 1rem;
 }
 .forumListTxt {
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
+
 
 /* forumWrite */
 .forumInputDiv {
@@ -251,7 +254,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	width: 15rem;
 }
 .forumInput {
-	width: 15rem; height: 100%; border: 1px solid #707070;
+	width: 15rem; height: 100%; border: 0.125rem solid #707070; border-radius: 1rem;
 }
 .forumInputTADiv {
 	height: 12.5rem; display: flex; justify-content: space-between; width: 18.75rem; margin: 0 auto 0.5rem;
@@ -261,7 +264,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	height: 12.5rem;
 }
 .forumInputTA {
-	width: 15rem; height: 100%; border: 1px solid #707070;
+	width: 15rem; height: 100%; border: 1px solid #707070; border-radius: 1rem;
 }
 
 
@@ -424,7 +427,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	}
 	.forumListImg {
 		height: 20rem;
-		width: 20rem;
+		max-width: 20rem;
 	}
 	.forumListTxt {
 		font-size: 1rem;
