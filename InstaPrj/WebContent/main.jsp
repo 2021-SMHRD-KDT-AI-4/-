@@ -46,10 +46,10 @@
             <div style="height: 1.5rem;"></div>
             <!-- 메인 인스타 아이디 -->
             <% if(info == null){ %>
-            <div style="height: 1.5rem; font-size: 1.5rem;"><a id="">로그인을해주세요~</a></div>
+            <div style="height: 1.5rem; font-size: 1.5rem;"><sapn id="">로그인을해주세요~</sapn></div>
             <div style="height: 2rem;"></div>
             <%}else{ %>
-            <div style="height: 1.5rem; font-size: 1.5rem;"><a id="">@<%=info.getINSTA_ID() %></a></div>
+            <div style="height: 1.5rem; font-size: 1.5rem;"><span id="">@<%=info.getINSTA_ID() %></span></div>
             <div style="height: 2rem;"></div>
             <%} %>
             <!-- 메인 인사글 -->

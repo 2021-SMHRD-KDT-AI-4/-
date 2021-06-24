@@ -94,7 +94,7 @@
 				<!-- 날짜 -->
 				<div class="likeInputDiv">
 					<div class="likeInputDiv_1">
-						<a>날짜</a>
+						<span>날짜</span>
 					</div>
 					<div class="likeInputDiv_2">
 						<input id="upload_day" name="upload_day" class="likeInput"
@@ -104,7 +104,7 @@
 				<!-- 시간 -->
 				<div class="likeInputDiv">
 					<div class="likeInputDiv_1">
-						<a>시간</a>
+						<span>시간</span>
 					</div>
 					<div class="likeInputDiv_2">
 						<input id="upload_time" name="upload_time" class="likeInput"
@@ -114,7 +114,7 @@
 				<!-- 해시태그 -->
 				<div class="likeInputDiv">
 					<div class="likeInputDiv_1">
-						<a>해시태그</a>
+						<span>해시태그</span>
 					</div>
 					<div class="likeInputDiv_2">
 						<input id="hashtag" name="hashtag" class="likeInput" type="text"
@@ -124,7 +124,7 @@
 				<!-- 계정태그 수 -->
 				<div class="likeInputDiv">
 					<div class="likeInputDiv_1">
-						<a>계정태그 수</a>
+						<span>계정태그 수</span>
 					</div>
 					<div class="likeInputDiv_2">
 						<input id="account_tag" name="account_tag" class="likeInput"
@@ -134,7 +134,7 @@
 				<!-- 장소태그 -->
 				<div class="likeInputDiv">
 					<div class="likeInputDiv_1">
-						<a>장소태그</a>
+						<span>장소태그</span>
 					</div>
 					<div class="likeInputDiv_2">
 						<label style="font-size: 1rem;"><input type="radio"
