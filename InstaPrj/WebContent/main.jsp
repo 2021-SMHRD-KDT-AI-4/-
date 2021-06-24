@@ -39,7 +39,7 @@
             <div style="height: 8.25rem;"></div>
             <!-- 메인 프로필 이미지 -->
             <% if (info == null){ %>
-            <div style="height: 18.75rem;"><img id="mainImg" src="./img/sample.jpg"></div>
+            <div style="height: 18.75rem;"><img id="mainImg" src="./img/maininstalogo4.jpg"></div>
             <%}else{ %>
             <div style="height: 18.75rem;"><img id="mainImg" src="./profileImg/<%=info.getINSTA_ID() %>.png"></div>
             <%} %>
