@@ -8,22 +8,22 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>main</title>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>main</title>
     <link rel="stylesheet" href="./css/style1.css" />
     <script src="https://kit.fontawesome.com/3e7e31d983.js" crossorigin="anonymous"></script>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">   
-		$(document).ready(function() {
-			$("#sidebar").load("./sidebar.jsp");
-		});
-	</script>
+      $(document).ready(function() {
+         $("#sidebar").load("./sidebar.jsp");
+      });
+   </script>
 </head>
 <body>
-	<% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
+   <% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
     <!-- 메뉴 사이드바 버튼 표시 -->
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
@@ -38,25 +38,25 @@
         <div class="main">
             <div style="height: 2rem;"></div>
             <div class="logoDiv">
-            	<a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
+               <a href="main.jsp"><img src="./img/logo.png" height="100%"></a>
             </div>
             <div style="height: 2rem;"></div>
             <!-- 페이지 제목 -->
             <%if(info == null) { %>
-            	<h3>회원만 이용가능한 서비스입니다.<br> 로그인을 진행해주세요!</h3>
+               <h3>회원만 이용가능한 서비스입니다.<br> 로그인을 진행해주세요!</h3>
             
-         	<% } else { 
-         		
-        		request.setCharacterEncoding("EUC-KR");
-        		String insta_id = info.getINSTA_ID();
-        		
-        		
-        		ResultDAO dao = new ResultDAO();
-        		ArrayList<ResultDTO> list = dao.view(insta_id);
-        		
-        		System.out.println(list.get(1).getFile_name());
-         		
-         	String pred = request.getParameter("pred");%>
+            <% } else { 
+               
+              request.setCharacterEncoding("EUC-KR");
+              String insta_id = info.getINSTA_ID();
+              
+              
+              ResultDAO dao = new ResultDAO();
+              ArrayList<ResultDTO> list = dao.view(insta_id);
+              
+              // System.out.println(list.get(1).getFile_name());
+               
+            //String pred = request.getParameter("pred");%>
             <div class="titleDiv">@<%= insta_id %> 님의 좋아요 분석</div>
             <div style="height: 1.25rem;"></div>
             <div id="likeReultDiv">
@@ -64,12 +64,13 @@
                     <div style="width: 25rem;">
                         <!-- 결과 이미지 -->
                         <div id="likeResultImg">
-                            <img id="resultImg" src="./img/sample.jpg" width="100%" height="100%">
+                            <img id="resultImg" src="./likeimg/<%=list.get(0).getFile_name() %>" width="100%" height="100%">
                         </div>
                         <div style="height: 3rem;"></div>
                         <!-- 결과 글 -->
                         <div id="likeResultTxt">
-                            좋아요 수는 <span id="resultTxtLike" class="txtPink">86개</span>로 예측되며<br>어울리는 해시태그는<br><span id="resultTxtHash" class="txtPink">#전지전능 #전연지 #박진희 #조영택 #김세나 #이창현</span><br>입니다.
+                            좋아요 수는 <span id="resultTxtLike" class="txtPink"><%=list.get(0).getResult_like() %>개</span>로 예측되며<br>어울리는 해시태그는<br>
+                            <span id="resultTxtHash" class="txtPink"><%= list.get(0).getRec_hash_tag() %></span><br>입니다.
                         </div>
                     </div>
                 </div>
@@ -92,7 +93,7 @@
                     
                 </div>
             </div>
-		<% } %>
+      <% } %>
         </div>
     </div>
 </body>
