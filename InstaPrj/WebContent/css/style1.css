@@ -441,7 +441,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 		margin-top: 2rem;
 	}
 	#likeReultDiv {
-		display: flex; flex-direction: column; justify-content: center; height: 85rem;
+		display: flex; flex-direction: column; justify-content: center; height: 92rem;
 	}
 	#likeResultDiv1 {
 		width: 45rem; height: 100%; display: flex; justify-content: center; margin: 0 auto;
@@ -450,7 +450,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 		width: 25rem; height: 25rem;
 	}
 	#likeResultTxt {
-		width: 22.5rem; height: 6.25rem; margin: auto; text-align: left; font-size: 1.5rem;
+		width: 22.5rem; height: 6.25rem; margin: auto; text-align: center; font-size: 1.5rem;
 	}
 	.likeResultListImg {
 		max-width: 18rem; height: 18rem; border: 0.25rem solid #E95099; border-radius: 1rem;

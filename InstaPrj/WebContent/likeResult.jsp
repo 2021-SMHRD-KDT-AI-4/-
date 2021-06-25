@@ -69,11 +69,13 @@
                         <div style="height: 3rem;"></div>
                         <!-- 결과 글 -->
                         <div id="likeResultTxt">
-                            좋아요 수는 <span id="resultTxtLike" class="txtPink"><%=list.get(0).getResult_like() %>개</span>로 예측되며<br>어울리는 해시태그는<br>
-                            <span id="resultTxtHash" class="txtPink"><%= list.get(0).getRec_hash_tag() %></span><br>입니다.
+                            <i class="fas fa-heart"></i> <span id="resultTxtLike" class="txtPink"><%=list.get(0).getResult_like() %>개</span><br><br>
+                            <i class="fas fa-thumbs-up"></i> <span id="resultTxtHash" class="txtPink"><%= list.get(0).getRec_hash_tag() %> #일상 #일상스타그램 #인포럼 #인포럼스타그램 #반갑습니다</span><br>
                         </div>
                     </div>
                 </div>
+	            <hr style="width: 46vh; height: 0.03125rem; margin-top: 4rem; margin-bottom: 4rem">
+                <div style="margin-bottom: 2.5rem">분석 결과 내역</div>
                 <div id="likeResultList">
                 <% for (int i = 0; i < list.size(); i++){ %>
                     <div class="likeResultListItem">
@@ -83,8 +85,8 @@
                         <div class="likeResultListTxt">
                             날짜 : <%=list.get(i).getUpload_day() %><br>
                             시간 : <%=list.get(i).getUpload_time() %><br>
-                            계정태그 : <%=list.get(i).getAccount_tag() %><br>
-                            장소태그 : <%=list.get(i).getPlace_tag() %><br>
+                            계정태그 : <%=list.get(i).getAccount_tag() %>개<br>
+                            장소태그 : <%=list.get(i).getPlace_tag() %>개<br>
                             해시태그<br>
                             <span id="txtHash<%= i %>" class="txtHash"><%= list.get(i).getRec_hash_tag() %></span><br>
                             좋아요 수 : <span id="txtLike<%= i %>" class="txtLike"><%=list.get(i).getResult_like() %>개</span>
