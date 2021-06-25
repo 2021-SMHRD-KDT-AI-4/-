@@ -39,14 +39,14 @@
             <div style="height: 8.25rem;"></div>
             <!-- 메인 프로필 이미지 -->
             <% if (info == null){ %>
-            <div style="height: 18.75rem;"><img id="mainImg" src="./img/maininstalogo4.jpg"></div>
+            <div style="height: 18.75rem;"><img id="" style="width: 18.75rem" src="./img/loading3.gif"></div>
             <%}else{ %>
             <div style="height: 18.75rem;"><img id="mainImg" src="./profileImg/<%=info.getINSTA_ID() %>.png"></div>
             <%} %>
             <div style="height: 1.5rem;"></div>
             <!-- 메인 인스타 아이디 -->
             <% if(info == null){ %>
-            <div style="height: 1.6rem; font-size: 1.6rem;"><sapn id="">로그인을해주세요~</sapn></div>
+            <div style="height: 1.6rem; font-size: 1.6rem;"><sapn id="">로그인을 해주세요~</sapn></div>
             <div style="height: 2rem;"></div>
             <%}else{ %>
             <div style="height: 1.6rem; font-size: 1.6rem;"><span id="">@<%=info.getINSTA_ID() %></span></div>
