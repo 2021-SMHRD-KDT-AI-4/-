@@ -87,7 +87,7 @@
                             장소태그 : <%=list.get(i).getPlace_tag() %><br>
                             해시태그<br>
                             <span id="txtHash<%= i %>" class="txtHash"><%= list.get(i).getRec_hash_tag() %></span><br>
-                            좋아요 수 : <span id="txtLike<%= i %>" class="txtLike"><%=list.get(i).getResult_like() %></span>
+                            좋아요 수 : <span id="txtLike<%= i %>" class="txtLike"><%=list.get(i).getResult_like() %>개</span>
                         </div>
                     </div>
                     

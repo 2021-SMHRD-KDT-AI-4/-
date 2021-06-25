@@ -48,7 +48,7 @@
             <!-- 로그인 했을시 -->
             <div id="loginDiv">
             	<div></div>
-            	<div style="height: 2rm; margin: auto;"><span id="">@<%= info.getINSTA_ID()  %></span></div>
+            	<div style="height: 2rem; margin: auto; font-size: 2.0rem"><span id="">@<%= info.getINSTA_ID()  %></span></div>
             	<div></div>
             </div>
             <div style="height: 2rem; font-size: 1rem;">

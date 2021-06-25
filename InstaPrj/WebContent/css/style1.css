@@ -55,7 +55,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	cursor: pointer;
 }
 #mainImg, #joinImg {
-	height: 18.75rem; width: 18.75rem;border-radius: 70%; overflow: hidden; border: 1px solid #707070;
+	height: 18.75rem; width: 18.75rem; border-radius: 70%; overflow: hidden; border: 0.25rem solid #E95099;
 }
 
 /* sidebar 설정 */
@@ -92,7 +92,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	height: 6rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 0.0625rem solid #707070; font-size: 1rem;
 }
 #logoutBtn {
-	height: 2rem; width: 4.5rem; background-color: #ffb47D; color: white; border: 0.0625rem solid #707070;
+	height: 2rem; width: 6.5rem; background-color: #ffb47D; color: white; border: 0.0625rem solid #707070; border-radius: 1rem; font-size: 1.2rem;
 }
 #loginBtn:hover, #logoutBtn:hover {
 	cursor: pointer;
@@ -100,10 +100,10 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 
 /* join */
 .joinInputDiv {
-	margin-bottom: 0.5rem; height: 2.5rem; display: flex; justify-content: space-between; width: 37.5rem;
+	margin-bottom: 0.5rem; height: 2.5rem; display: flex; justify-content: space-between; width: 37.5rem; padding-bottom: 0.5rem;
 }
 .joinInputDiv_1 {
-	width: 6.5rem; margin: auto 0; font-size: 1.25rem;
+	width: 6.5rem; margin: auto 0; font-size: 1.25rem; text-align: right;
 }
 .joinInputDiv_2 {
 	width: 22.5rem;
@@ -112,7 +112,7 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	width: 6.5rem;
 }
 .joinInput {
-	width: 22.5rem; height: 100%; border: 1px solid #707070;
+	width: 22.5rem; height: 100%; border: 0.0625rem solid #707070; border-radius: 1rem;
 }
 
 /* like */
@@ -383,6 +383,9 @@ a:hover { color: black; text-decoration: underline; cursor: pointer;}
 	}
 	.logoDiv {
 		text-align: center; margin-left: 0rem;
+	}
+	#logoutBtn {
+		height: 2.5rem; width: 8.5rem; background-color: #ffb47D; color: white; border: 0.0625rem solid #707070; border-radius: 1rem; font-size: 1.0rem;
 	}
 	/* forumList */
 	.forumListContainer {
